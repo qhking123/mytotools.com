@@ -1,0 +1,90 @@
+/* sidebar.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+}
+a:hover {
+    background-color: #e2e2e2;
+}
+.category-title {
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #eee;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-title:hover {
+    background-color: #e0e0e0;
+}
+.category-content {
+    display: none;
+    padding-left: 15px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+}
+.category-content.active {
+    display: block;
+    max-height: 2000px; /* Adjust as needed for max content */
+}
+.toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+.category-title.active .toggle-icon {
+    transform: rotate(90deg);
+}
+/* 添加以下样式以启用滚动条 */
+.sidebar { /* 假设您的导航栏容器的类名为 .sidebar */
+    height: 100vh; /* 设置导航栏高度为视口高度，或者您可以设置一个固定像素值，例如 600px */
+    overflow-y: auto; /* 当内容溢出时显示垂直滚动条 */
+    /* background-color: #f9f9f9; /* 可以选择添加一个背景色 */
+    /* border-right: 1px solid #ddd; /* 可以选择添加右边框 */
+}
+
+/* 柔和现代风的首页按钮样式 */
+.home-button {
+    background-color: #6c757d; /* 柔和的灰色蓝 */
+    color: white;
+    text-align: center;
+    padding: 12px 18px; /* 增加左右内边距 */
+    margin: 10px 15px; /* 增加上下左右外边距，让按钮有呼吸空间 */
+    border-radius: 8px; /* 更大的圆角 */
+    font-weight: 600; /* 稍微加粗字体 */
+    font-size: 1.1em; /* 稍微增大字体 */
+    text-decoration: none;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 更自然的阴影 */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* 增加过渡效果 */
+}
+
+.home-button:hover {
+    background-color: #5a6268; /* 鼠标悬停时颜色变深 */
+    transform: translateY(-2px); /* 向上轻微浮动效果 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 悬停时阴影增强 */
+}
+
+.home-button:active {
+    transform: translateY(0); /* 点击时恢复原位 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 点击时阴影减弱 */
+}
+
