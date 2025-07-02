@@ -99,13 +99,17 @@ export function highlightCurrentLink() { // 导出此函数
     const currentPath = window.location.pathname; // 获取当前页面的路径，例如 /converters/length.html
     const sidebarLinks = document.querySelectorAll('#left-panel a');
 
+    if(currentPath.includes("index"))
+        return;
+        
     sidebarLinks.forEach(link => {
         const linkHref = link.getAttribute('href'); // 获取链接的 href 属性，例如 converters/length.html
 
         // 构建完整的链接 URL，以便与 currentPath 比较
         // 假设所有链接都是相对路径，且与当前页面在同一级别或子级别
         // 确保比较的是绝对路径或相对于网站根目录的路径
-        const absoluteLinkHref = new URL(linkHref, window.location.origin).pathname;
+        const absoluteLinkHref = new URL(linkHref, window.location.origin).pathname;       
+      
 
         if (absoluteLinkHref === currentPath) {
             link.style.backgroundColor = '#d0d0d0'; // 设置高亮背景色
