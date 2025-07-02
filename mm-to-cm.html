@@ -599,7 +599,7 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            await initMeterToCmConverter("cm", "in");
+            await initMeterToCmConverter("mm", "cm");
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);

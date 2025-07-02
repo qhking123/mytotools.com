@@ -50,6 +50,7 @@ export function setLanguage(lang) {
  * @param {Function} setLanguageFunc - The setLanguage function from the main script.
  * @param {string} currentLang - The current language code.
  */
+/*
 export async function loadSidebarAndHighlight(setLanguageFunc, currentLang) {
     const leftPanel = document.getElementById('left-panel');
     const sidebarLoadStatus = document.getElementById('sidebar-load-status'); // 如果有这个元素
@@ -93,6 +94,7 @@ export async function loadSidebarAndHighlight(setLanguageFunc, currentLang) {
         }
     }
 }
+*/
 
 
 export function highlightCurrentLink() { // 导出此函数
@@ -106,7 +108,7 @@ export function highlightCurrentLink() { // 导出此函数
     if(!currentPath.includes(".html"))
         tag_currentPath = currentPath + ".html";
 
-    alert(tag_currentPath);
+    //alert(tag_currentPath);
         
     sidebarLinks.forEach(link => {
         const linkHref = link.getAttribute('href'); // 获取链接的 href 属性，例如 converters/length.html

@@ -150,14 +150,14 @@
                     <li><a href="/cm-to-ft.html" data-i18n="cmToFeetInches">cm to feet + inches</a></li>
                     <li><a href="/cm-to-inches.html" data-i18n="cmToInches">cm to inches</a></li>
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
-                    <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
+                    <li><a href="/ft​-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
                     <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
                     <li><a href="/feet-to-meters.html" data-i18n="feetToMeters">feet to meters</a></li>
-                    <li><a href="/cm-to-inch.html" data-i18n="heightConverter">Height Converter</a></li>
+                    <li><a href="/cm-to-ft.html" data-i18n="heightConverter">Height Converter</a></li>
                     <li><a href="/inches-to-cm.html"data-i18n="inchesToCm">Inches to cm</a></li>
                     <li><a href="/inches-to-feet.html" data-i18n="inchesToFeet">Inches to feet</a></li>
                     <li><a href="/in-to-m.html" data-i18n="inchesToMeters">Inches to meters</a></li>
@@ -599,7 +599,7 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            await initMeterToCmConverter("cm", "in");
+            await initMeterToCmConverter("ft", "m");
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);
