@@ -99,8 +99,11 @@ export function highlightCurrentLink() { // 导出此函数
     const currentPath = window.location.pathname; // 获取当前页面的路径，例如 /converters/length.html
     const sidebarLinks = document.querySelectorAll('#left-panel a');
 
-    if(currentPath.includes("index"))
+    if(currentPath.includes("index.html") || currentPath == "/")
+    {   
         return;
+    }
+     
         
     sidebarLinks.forEach(link => {
         const linkHref = link.getAttribute('href'); // 获取链接的 href 属性，例如 converters/length.html
