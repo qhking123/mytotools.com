@@ -1,0 +1,150 @@
+/* converter_tool.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 将内容对齐到顶部 */
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    margin: 20px;
+    box-sizing: border-box; /* 确保 padding 不增加元素总宽度 */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.input-group, .output-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="number"], select {
+    width: calc(100% - 20px); /* 减去 padding */
+    padding: 12px 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* 确保 padding 和 border 包含在宽度内 */
+    -webkit-appearance: none; /* 移除 Safari/Chrome 默认样式 */
+    -moz-appearance: none; /* 移除 Firefox 默认样式 */
+    appearance: none; /* 移除其他浏览器默认样式 */
+    background-color: #fdfdfd;
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.output-result {
+    background-color: #e9f5ff;
+    color: #0056b3;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #cce5ff;
+    min-height: 30px; /* 确保有最小高度，避免内容为空时塌陷 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+select {
+    cursor: pointer;
+}
+
+.swap-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.swap-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.swap-button:hover {
+    background-color: #218838;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 25px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    input[type="number"], select, .output-result {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 20px;
+    }
+    h1 {
+        font-size: 1.6em;
+    }
+}
+
+/* 移动端样式 */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; /* 减小内边距 */
+        margin: 10px; /* 添加外边距，避免贴边 */
+    }
+
+    .input-group, .output-group {
+        flex-direction: column; /* 输入组在小屏幕上垂直堆叠 */
+        align-items: stretch; /* 拉伸以填充宽度 */
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 100%; /* 输入框和选择器占据全部宽度 */
+        margin-bottom: 10px; /* 添加底部间距 */
+    }
+
+    .swap-button-container {
+        margin: 15px 0; /* 调整按钮容器的间距 */
+    }
+
+    .output-result {
+        font-size: 1.2em; /* 调整字体大小 */
+        padding: 10px 15px; /* 调整内边距 */
+    }
+}
