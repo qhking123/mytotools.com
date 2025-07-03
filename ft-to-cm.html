@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,148 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* General styling for the new content sections */
+        .info-section {
+            margin: 40px auto 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-section h2 {
+            font-size: 2em;
+            color: #0056b3;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .unit-detail,
+        .conversion-table-section,
+        .how-to-convert-section,
+        .important-considerations-section,
+        .fun-facts-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+        }
+
+        .unit-detail h3,
+        .conversion-table-section h3,
+        .how-to-convert-section h3,
+        .important-considerations-section h3,
+        .fun-facts-section h3 {
+            font-size: 1.6em;
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #e0e0e0;
+            padding-bottom: 8px;
+        }
+
+        .unit-detail h4 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            margin-bottom: 10px;
+        }
+
+        /* Table specific styles */
+        .conversion-table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .conversion-table-section th,
+        .conversion-table-section td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .conversion-table-section th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .conversion-table-section tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .conversion-table-section tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        /* Formula and example styles */
+        .formula {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e6ffe6;
+            border: 1px solid #28a745;
+            border-radius: 5px;
+        }
+
+        .example-calculation {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin: 15px 0;
+            white-space: pre-wrap; /* Ensures line breaks are respected */
+        }
+
+        /* List styles for considerations and fun facts */
+        .important-considerations-section ul,
+        .fun-facts-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .important-considerations-section li,
+        .fun-facts-section li {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +297,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +719,176 @@
                 </div>
             </div>
         </div>
-        </div>
 
+        <div class="info-section">
+                <h2>Feet to Centimeters Conversion: A Comprehensive Guide</h2>
+
+                <div class="unit-detail">
+                    <h3>Understanding Feet (ft)</h3>
+                    <p>
+                        The foot (plural: feet) is a unit of length in the imperial and U.S. customary systems of measurement.
+                        It is traditionally defined as 1/3 of a yard, or exactly 0.3048 meters.
+                    </p>
+                    <h4>Historical Origin of the Foot</h4>
+                    <p>
+                        Historically, the "foot" as a unit of measurement has been used in many different systems,
+                        including the Greek, Roman, Chinese, French, and English systems. Its size varied from country to country,
+                        and even from city to city within the same country. The name "foot" is derived from the average length
+                        of a human foot. Ancient civilizations often used body parts as a basis for measurement units,
+                        making the foot a natural and readily available standard.
+                    </p>
+                    <h4>Current Usage of the Foot</h4>
+                    <p>
+                        Despite the widespread adoption of the metric system, the foot remains a common unit of length
+                        in the United States, Canada, and the United Kingdom, particularly in specific contexts.
+                        It is widely used in aviation (for altitude), real estate, construction, and for measuring
+                        human height. For instance, an airplane's altitude is typically reported in feet,
+                        and building dimensions are often expressed in feet and inches.
+                    </p>
+                </div>
+
+                <div class="unit-detail">
+                    <h3>Understanding Centimeters (cm)</h3>
+                    <p>
+                        The centimeter (cm) is a unit of length in the metric system, equal to one hundredth of a meter.
+                        It is part of the International System of Units (SI), which is the modern form of the metric system.
+                    </p>
+                    <h4>Historical Origin of the Centimeter</h4>
+                    <p>
+                        The metric system, from which the centimeter originates, was first adopted in France in the late 18th century.
+                        It was conceived as a decimal-based system to standardize measurements, replacing the multitude of varying
+                        local units. The meter was originally defined as one ten-millionth of the distance from the North Pole
+                        to the Equator along the meridian passing through Paris. The centimeter, being a subdivision of the meter,
+                        naturally followed this decimal structure.
+                    </p>
+                    <h4>Current Usage of the Centimeter</h4>
+                    <p>
+                        The centimeter is used worldwide for everyday measurements where a smaller unit than the meter is practical,
+                        but larger than the millimeter. It's commonly seen in clothing sizes, measuring small objects,
+                        in medical contexts (e.g., measuring baby length, wound size), and in various scientific and engineering fields.
+                        Its ease of use and decimal nature make it a preferred unit in most parts of the world.
+                    </p>
+                </div>
+
+                <div class="conversion-table-section">
+                    <h3>Feet to Centimeters Conversion Table</h3>
+                    <p>This table provides quick conversions for common foot values to centimeters.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feet (ft)</th>
+                                <th>Centimeters (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0.01</td><td>0.3048</td></tr>
+                            <tr><td>0.1</td><td>3.048</td></tr>
+                            <tr><td>1</td><td>30.48</td></tr>
+                            <tr><td>2</td><td>60.96</td></tr>
+                            <tr><td>3</td><td>91.44</td></tr>
+                            <tr><td>4</td><td>121.92</td></tr>
+                            <tr><td>5</td><td>152.4</td></tr>
+                            <tr><td>6</td><td>182.88</td></tr>
+                            <tr><td>7</td><td>213.36</td></tr>
+                            <tr><td>8</td><td>243.84</td></tr>
+                            <tr><td>9</td><td>274.32</td></tr>
+                            <tr><td>10</td><td>304.8</td></tr>
+                            <tr><td>20</td><td>609.6</td></tr>
+                            <tr><td>30</td><td>914.4</td></tr>
+                            <tr><td>40</td><td>1219.2</td></tr>
+                            <tr><td>50</td><td>1524.0</td></tr>
+                            <tr><td>60</td><td>1828.8</td></tr>
+                            <tr><td>70</td><td>2133.6</td></tr>
+                            <tr><td>80</td><td>2438.4</td></tr>
+                            <tr><td>90</td><td>2743.2</td></tr>
+                            <tr><td>100</td><td>3048.0</td></tr>
+                            <tr><td>1000</td><td>30480.0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="how-to-convert-section">
+                    <h3>How to Convert Feet to Centimeters</h3>
+                    <p>
+                        To convert a value from feet to centimeters, you can use the following simple formula:
+                    </p>
+                    <p class="formula">
+                        Centimeters = Feet × 30.48
+                    </p>
+                    <p>
+                        This is because 1 foot is exactly equal to 30.48 centimeters.
+                    </p>
+                    <h4>Example:</h4>
+                    <p>
+                        Let's say you want to convert 5 feet to centimeters.
+                    </p>
+                    <p class="example-calculation">
+                        Centimeters = 5 ft × 30.48 cm/ft = 152.4 cm
+                    </p>
+                    <p>
+                        So, 5 feet is equal to 152.4 centimeters.
+                    </p>
+                </div>
+
+                <div class="important-considerations-section">
+                    <h3>Important Considerations for Feet to Centimeters Conversion</h3>
+                    <ul>
+                        <li>
+                            <strong>Precision:</strong> For most practical purposes, using 30.48 as the conversion factor
+                            provides sufficient precision. However, in highly scientific or engineering applications,
+                            ensure you use the exact conversion factor and consider the number of significant figures required.
+                        </li>
+                        <li>
+                            <strong>Feet and Inches:</strong> Often, height or length in the imperial system is given in
+                            feet and inches (e.g., 5 feet 6 inches). Remember to convert the inches part to a decimal
+                            fraction of a foot before converting to centimeters. For example, 6 inches is 0.5 feet,
+                            so 5 feet 6 inches is 5.5 feet. Then, 5.5 ft * 30.48 cm/ft = 167.64 cm.
+                        </li>
+                        <li>
+                            <strong>Context Matters:</strong> While converting, always consider the context.
+                            For instance, architectural drawings might use feet and fractions of an inch,
+                            which requires careful conversion to metric equivalents for international projects.
+                        </li>
+                        <li>
+                            <strong>Global Use:</strong> Be aware that outside of a few countries, the metric system
+                            (including centimeters) is the standard. When communicating measurements internationally,
+                            converting to centimeters (or meters) is generally preferred for clarity.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fun-facts-section">
+                    <h3>Fun Facts about Feet and Centimeters</h3>
+                    <ul>
+                        <li>
+                            <strong>Ancient Measures:</strong> The "foot" unit has existed for thousands of years,
+                            with varying lengths. Roman feet, Greek feet, and Egyptian feet all had slightly
+                            different standard lengths based on local traditions and rulers' decrees.
+                        </li>
+                        <li>
+                            <strong>Metric System's Logic:</strong> The metric system, introduced during the French Revolution,
+                            aimed to create a coherent and logical system of measurement based on natural constants
+                            and powers of ten, making conversions like cm to meters incredibly straightforward.
+                        </li>
+                        <li>
+                            <strong>Human Height:</strong> In many countries that use the metric system,
+                            human height is commonly expressed in centimeters. For example, someone who is
+                            "180 cm tall" is a common way to state height in Europe or Asia.
+                        </li>
+                        <li>
+                            <strong>"Foot" in Language:</strong> The word "foot" is used in many idiomatic expressions
+                            in English, such as "foot the bill," "put your best foot forward," or "get cold feet,"
+                            highlighting its long-standing presence in culture and language beyond just a unit of measure.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

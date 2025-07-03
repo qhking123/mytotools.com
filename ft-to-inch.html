@@ -112,124 +112,117 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
     <style>
-        /* General styling for the new content sections */
         .info-section {
-            margin: 40px auto 20px auto;
+            margin: 30px auto;
             padding: 20px;
             background-color: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            line-height: 1.6;
-            color: #333;
         }
 
-        .info-section h2 {
-            font-size: 2em;
-            color: #0056b3;
-            margin-bottom: 25px;
+        .info-section h2.section-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
             text-align: center;
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
         }
 
-        .unit-detail,
-        .conversion-table-section,
-        .how-to-convert-section,
-        .important-considerations-section,
-        .fun-facts-section {
-            margin-bottom: 30px;
-            padding: 15px;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-        }
-
-        .unit-detail h3,
-        .conversion-table-section h3,
-        .how-to-convert-section h3,
-        .important-considerations-section h3,
-        .fun-facts-section h3 {
-            font-size: 1.6em;
-            color: #007bff;
-            margin-top: 0;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed #e0e0e0;
-            padding-bottom: 8px;
-        }
-
-        .unit-detail h4 {
-            font-size: 1.2em;
+        .info-section h3 {
             color: #555;
-            margin-top: 20px;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-section h4 {
+            color: #777;
+            font-size: 1.2em;
+            margin-top: 15px;
             margin-bottom: 10px;
         }
 
         .info-section p {
+            line-height: 1.6;
             margin-bottom: 10px;
+            color: #444;
         }
 
-        /* Table specific styles */
-        .conversion-table-section table {
+        .unit-definition {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .conversion-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conversion-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 1em;
+            margin: 0 auto;
+            font-size: 0.95em;
         }
 
-        .conversion-table-section th,
-        .conversion-table-section td {
+        .conversion-table th, .conversion-table td {
             border: 1px solid #ddd;
-            padding: 12px;
+            padding: 10px 15px;
             text-align: center;
         }
 
-        .conversion-table-section th {
-            background-color: #007bff;
-            color: white;
+        .conversion-table th {
+            background-color: #eef;
             font-weight: bold;
+            color: #333;
         }
 
-        .conversion-table-section tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .conversion-table tbody tr:nth-child(odd) {
+            background-color: #f6f6f6;
         }
 
-        .conversion-table-section tr:hover {
-            background-color: #e9e9e9;
+        .conversion-table tbody tr:hover {
+            background-color: #e9f5ff;
         }
 
-        /* Formula and example styles */
         .formula {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #28a745;
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: #e6ffe6;
-            border: 1px solid #28a745;
-            border-radius: 5px;
-        }
-
-        .example-calculation {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-left: 5px solid #007bff;
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            padding: 10px 15px;
             margin: 15px 0;
-            white-space: pre-wrap; /* Ensures line breaks are respected */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto;
         }
 
-        /* List styles for considerations and fun facts */
-        .important-considerations-section ul,
-        .fun-facts-section ul {
+        .example {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196F3;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        .info-section ul {
             list-style-type: disc;
             margin-left: 20px;
             padding-left: 0;
+            margin-bottom: 15px;
         }
 
-        .important-considerations-section li,
-        .fun-facts-section li {
+        .info-section ul li {
             margin-bottom: 8px;
+            color: #444;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -719,171 +712,121 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="info-section">
-                <h2>Feet to Centimeters Conversion: A Comprehensive Guide</h2>
+            <h2 class="section-title">Understanding Feet and Inches</h2>
 
-                <div class="unit-detail">
-                    <h3>Understanding Feet (ft)</h3>
-                    <p>
-                        The foot (plural: feet) is a unit of length in the imperial and U.S. customary systems of measurement.
-                        It is traditionally defined as 1/3 of a yard, or exactly 0.3048 meters.
-                    </p>
-                    <h4>Historical Origin of the Foot</h4>
-                    <p>
-                        Historically, the "foot" as a unit of measurement has been used in many different systems,
-                        including the Greek, Roman, Chinese, French, and English systems. Its size varied from country to country,
-                        and even from city to city within the same country. The name "foot" is derived from the average length
-                        of a human foot. Ancient civilizations often used body parts as a basis for measurement units,
-                        making the foot a natural and readily available standard.
-                    </p>
-                    <h4>Current Usage of the Foot</h4>
-                    <p>
-                        Despite the widespread adoption of the metric system, the foot remains a common unit of length
-                        in the United States, Canada, and the United Kingdom, particularly in specific contexts.
-                        It is widely used in aviation (for altitude), real estate, construction, and for measuring
-                        human height. For instance, an airplane's altitude is typically reported in feet,
-                        and building dimensions are often expressed in feet and inches.
-                    </p>
-                </div>
-
-                <div class="unit-detail">
-                    <h3>Understanding Centimeters (cm)</h3>
-                    <p>
-                        The centimeter (cm) is a unit of length in the metric system, equal to one hundredth of a meter.
-                        It is part of the International System of Units (SI), which is the modern form of the metric system.
-                    </p>
-                    <h4>Historical Origin of the Centimeter</h4>
-                    <p>
-                        The metric system, from which the centimeter originates, was first adopted in France in the late 18th century.
-                        It was conceived as a decimal-based system to standardize measurements, replacing the multitude of varying
-                        local units. The meter was originally defined as one ten-millionth of the distance from the North Pole
-                        to the Equator along the meridian passing through Paris. The centimeter, being a subdivision of the meter,
-                        naturally followed this decimal structure.
-                    </p>
-                    <h4>Current Usage of the Centimeter</h4>
-                    <p>
-                        The centimeter is used worldwide for everyday measurements where a smaller unit than the meter is practical,
-                        but larger than the millimeter. It's commonly seen in clothing sizes, measuring small objects,
-                        in medical contexts (e.g., measuring baby length, wound size), and in various scientific and engineering fields.
-                        Its ease of use and decimal nature make it a preferred unit in most parts of the world.
-                    </p>
-                </div>
-
-                <div class="conversion-table-section">
-                    <h3>Feet to Centimeters Conversion Table</h3>
-                    <p>This table provides quick conversions for common foot values to centimeters.</p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Feet (ft)</th>
-                                <th>Centimeters (cm)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>0.01</td><td>0.3048</td></tr>
-                            <tr><td>0.1</td><td>3.048</td></tr>
-                            <tr><td>1</td><td>30.48</td></tr>
-                            <tr><td>2</td><td>60.96</td></tr>
-                            <tr><td>3</td><td>91.44</td></tr>
-                            <tr><td>4</td><td>121.92</td></tr>
-                            <tr><td>5</td><td>152.4</td></tr>
-                            <tr><td>6</td><td>182.88</td></tr>
-                            <tr><td>7</td><td>213.36</td></tr>
-                            <tr><td>8</td><td>243.84</td></tr>
-                            <tr><td>9</td><td>274.32</td></tr>
-                            <tr><td>10</td><td>304.8</td></tr>
-                            <tr><td>20</td><td>609.6</td></tr>
-                            <tr><td>30</td><td>914.4</td></tr>
-                            <tr><td>40</td><td>1219.2</td></tr>
-                            <tr><td>50</td><td>1524.0</td></tr>
-                            <tr><td>60</td><td>1828.8</td></tr>
-                            <tr><td>70</td><td>2133.6</td></tr>
-                            <tr><td>80</td><td>2438.4</td></tr>
-                            <tr><td>90</td><td>2743.2</td></tr>
-                            <tr><td>100</td><td>3048.0</td></tr>
-                            <tr><td>1000</td><td>30480.0</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="how-to-convert-section">
-                    <h3>How to Convert Feet to Centimeters</h3>
-                    <p>
-                        To convert a value from feet to centimeters, you can use the following simple formula:
-                    </p>
-                    <p class="formula">
-                        Centimeters = Feet × 30.48
-                    </p>
-                    <p>
-                        This is because 1 foot is exactly equal to 30.48 centimeters.
-                    </p>
-                    <h4>Example:</h4>
-                    <p>
-                        Let's say you want to convert 5 feet to centimeters.
-                    </p>
-                    <p class="example-calculation">
-                        Centimeters = 5 ft × 30.48 cm/ft = 152.4 cm
-                    </p>
-                    <p>
-                        So, 5 feet is equal to 152.4 centimeters.
-                    </p>
-                </div>
-
-                <div class="important-considerations-section">
-                    <h3>Important Considerations for Feet to Centimeters Conversion</h3>
-                    <ul>
-                        <li>
-                            <strong>Precision:</strong> For most practical purposes, using 30.48 as the conversion factor
-                            provides sufficient precision. However, in highly scientific or engineering applications,
-                            ensure you use the exact conversion factor and consider the number of significant figures required.
-                        </li>
-                        <li>
-                            <strong>Feet and Inches:</strong> Often, height or length in the imperial system is given in
-                            feet and inches (e.g., 5 feet 6 inches). Remember to convert the inches part to a decimal
-                            fraction of a foot before converting to centimeters. For example, 6 inches is 0.5 feet,
-                            so 5 feet 6 inches is 5.5 feet. Then, 5.5 ft * 30.48 cm/ft = 167.64 cm.
-                        </li>
-                        <li>
-                            <strong>Context Matters:</strong> While converting, always consider the context.
-                            For instance, architectural drawings might use feet and fractions of an inch,
-                            which requires careful conversion to metric equivalents for international projects.
-                        </li>
-                        <li>
-                            <strong>Global Use:</strong> Be aware that outside of a few countries, the metric system
-                            (including centimeters) is the standard. When communicating measurements internationally,
-                            converting to centimeters (or meters) is generally preferred for clarity.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="fun-facts-section">
-                    <h3>Fun Facts about Feet and Centimeters</h3>
-                    <ul>
-                        <li>
-                            <strong>Ancient Measures:</strong> The "foot" unit has existed for thousands of years,
-                            with varying lengths. Roman feet, Greek feet, and Egyptian feet all had slightly
-                            different standard lengths based on local traditions and rulers' decrees.
-                        </li>
-                        <li>
-                            <strong>Metric System's Logic:</strong> The metric system, introduced during the French Revolution,
-                            aimed to create a coherent and logical system of measurement based on natural constants
-                            and powers of ten, making conversions like cm to meters incredibly straightforward.
-                        </li>
-                        <li>
-                            <strong>Human Height:</strong> In many countries that use the metric system,
-                            human height is commonly expressed in centimeters. For example, someone who is
-                            "180 cm tall" is a common way to state height in Europe or Asia.
-                        </li>
-                        <li>
-                            <strong>"Foot" in Language:</strong> The word "foot" is used in many idiomatic expressions
-                            in English, such as "foot the bill," "put your best foot forward," or "get cold feet,"
-                            highlighting its long-standing presence in culture and language beyond just a unit of measure.
-                        </li>
-                    </ul>
-                </div>
+            <div class="unit-definition">
+                <h3>Feet (ft)</h3>
+                <p>The foot (plural: feet; abbreviation: ft) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as exactly 0.3048 meters.</p>
+                <h4>History of the Foot</h4>
+                <p>The use of the "foot" as a unit of measurement dates back to ancient civilizations. Historically, it was based on the length of a human foot, though its exact definition varied significantly by region and over time. For instance, the Roman foot (pes) was approximately 296 mm, while the Greek foot (pous) could range from 270 mm to 350 mm. In medieval Europe, the length of the foot was often standardized based on the foot of a reigning monarch or a specific physical standard. The current international foot, equal to 0.3048 meters, was agreed upon in 1959 by the United States and countries of the Commonwealth of Nations.</p>
+                <h4>Current Usage of the Foot</h4>
+                <p>Today, the foot is primarily used in the United States, Canada, and the United Kingdom for measuring height, altitude, and sometimes shorter distances in construction and engineering. It is also common in aviation for measuring altitude.</p>
+                <h4>Interesting Fact about the Foot</h4>
+                <p>The human foot, on which the unit is based, varies in size. This inherent variability led to many different "foot" standards throughout history before a more universal definition was adopted.</p>
             </div>
 
+            <div class="unit-definition">
+                <h3>Inches (in)</h3>
+                <p>The inch (plural: inches; abbreviation: in) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as 1/12 of a foot, or exactly 2.54 centimeters.</p>
+                <h4>History of the Inch</h4>
+                <p>The word "inch" comes from the Latin uncia, meaning "one-twelfth," referring to its relationship with the foot. Its history is also deeply rooted in ancient measurements. One early definition was based on the width of a human thumb. In England, an "inch" was defined in the 12th century as the length of "three grains of barley, dry and round, placed end to end." The modern international inch, equal to 2.54 cm, was established in 1959 as part of the international yard and pound agreement.</p>
+                <h4>Current Usage of the Inch</h4>
+                <p>The inch is widely used in the United States for measuring dimensions of objects, display sizes (like TV screens), clothing sizes, and in various engineering and manufacturing applications. It is also used in the UK and Canada for similar purposes, often alongside metric units.</p>
+                <h4>Interesting Fact about the Inch</h4>
+                <p>The diagonal measurement of television screens and computer monitors is almost universally given in inches, even in countries that primarily use the metric system for other measurements.</p>
+            </div>
+
+            <h2 class="section-title">Feet to Inches Conversion Table</h2>
+            <p>Below is a conversion table for common feet values to inches:</p>
+            <div class="conversion-table-container">
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Feet (ft)</th>
+                            <th>Inches (in)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.01</td><td>0.12</td></tr>
+                        <tr><td>0.1</td><td>1.2</td></tr>
+                        <tr><td>1</td><td>12</td></tr>
+                        <tr><td>2</td><td>24</td></tr>
+                        <tr><td>3</td><td>36</td></tr>
+                        <tr><td>4</td><td>48</td></tr>
+                        <tr><td>5</td><td>60</td></tr>
+                        <tr><td>6</td><td>72</td></tr>
+                        <tr><td>7</td><td>84</td></tr>
+                        <tr><td>8</td><td>96</td></tr>
+                        <tr><td>9</td><td>108</td></tr>
+                        <tr><td>10</td><td>120</td></tr>
+                        <tr><td>20</td><td>240</td></tr>
+                        <tr><td>30</td><td>360</td></tr>
+                        <tr><td>40</td><td>480</td></tr>
+                        <tr><td>50</td><td>600</td></tr>
+                        <tr><td>60</td><td>720</td></tr>
+                        <tr><td>70</td><td>840</td></tr>
+                        <tr><td>80</td><td>960</td></tr>
+                        <tr><td>90</td><td>1080</td></tr>
+                        <tr><td>100</td><td>1200</td></tr>
+                        <tr><td>1000</td><td>12000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title">How to Convert Feet to Inches</h2>
+            <p>Converting feet to inches is straightforward as there are exactly 12 inches in every foot. The formula for conversion is:</p>
+            <p class="formula">$$ \text{Inches} = \text{Feet} \times 12 $$</p>
+            <p><strong>Example 1:</strong> Convert 5 feet to inches.</p>
+            <p class="example">$$ \text{Inches} = 5 \text{ ft} \times 12 \text{ in/ft} = 60 \text{ inches} $$</p>
+            <p>So, 5 feet is equal to 60 inches.</p>
+            <p><strong>Example 2:</strong> Convert 7.5 feet to inches.</p>
+            <p class="example">$$ \text{Inches} = 7.5 \text{ ft} \times 12 \text{ in/ft} = 90 \text{ inches} $$</p>
+            <p>So, 7.5 feet is equal to 90 inches.</p>
+
+            <h2 class="section-title">Important Considerations for Feet to Inches Conversion</h2>
+            <ul>
+                <li><strong>Precision:</strong> When dealing with measurements that include both feet and inches (e.g., 5 feet 6 inches), remember to convert only the feet part to inches and then add the existing inches. For example, 5 feet 6 inches is $(5 \times 12) + 6 = 60 + 6 = 66$ inches.</li>
+                <li><strong>Context:</strong> Always consider the context of the measurement. In some fields, fractions of an inch are critical, while in others, rounding to the nearest whole inch might be acceptable.</li>
+                <li><strong>Imperial vs. Metric:</strong> While straightforward, converting between feet/inches and metric units (like meters or centimeters) requires a different conversion factor (1 foot = 0.3048 meters, 1 inch = 2.54 cm).</li>
+            </ul>
+
+            <h2 class="section-title">Fun Facts About Feet and Inches</h2>
+            <ul>
+                <li><strong>Tall Tales:</strong> The saying "feet of clay" refers to a hidden weakness in an otherwise strong character, highlighting the foundational role of the foot.</li>
+                <li><strong>Tiny Measures:</strong> The smallest unit on a standard ruler in the US customary system is often 1/16th of an inch, making precise measurements quite intricate without decimal conversion.</li>
+                <li><strong>Historical Quirks:</strong> Did you know that some historical "inches" were defined by the width of a man's thumb at the base of the nail? This led to varied measurements until standardization.</li>
+            </ul>
+
+            <h2 class="section-title">Why Conversion is Important</h2>
+            <p>Converting between feet and inches is crucial in various practical scenarios:</p>
+            <ul>
+                <li><strong>Construction and Architecture:</strong> Blueprints and building plans often use feet and inches. Accurate conversion ensures materials are cut correctly and structures are built to specification, preventing costly errors.</li>
+                <li><strong>Home Improvement:</strong> Measuring for furniture, curtains, or appliances often involves both feet and inches. Converting everything to a single unit (inches) simplifies calculations and avoids misfits.</li>
+                <li><strong>Fashion and Apparel:</strong> Body measurements for custom clothing or determining fabric requirements frequently use feet and inches. Precise conversions are vital for a good fit.</li>
+                <li><strong>Sports:</strong> In many sports, particularly in the US, heights of athletes and dimensions of fields or equipment are given in feet and inches, requiring quick conversions for understanding and comparison.</li>
+                <li><strong>Everyday Life:</strong> From estimating the height of a person to measuring the length of a garden bed, the ability to convert between these units helps in daily tasks and communication.</li>
+            </ul>
+
+            <h2 class="section-title">Common Misconceptions and Errors</h2>
+            <ul>
+                <li><strong>Forgetting the "12":</strong> The most common mistake is forgetting that there are 12 inches in a foot, leading to direct addition or subtraction errors instead of multiplication.</li>
+                <li><strong>Mixing Units Without Converting:</strong> Attempting to perform arithmetic operations (like adding or subtracting) directly with mixed units (e.g., 5 feet + 3 inches) without converting one to the other first. Always convert to a common unit before performing calculations.</li>
+                <li><strong>Decimal Feet vs. Feet and Inches:</strong> Confusing decimal feet (e.g., 5.5 feet) with feet and inches (e.g., 5 feet 6 inches). While 5.5 feet is indeed 5 feet and 6 inches ($0.5 \times 12 = 6$), assuming all decimals in feet directly correspond to inches is incorrect (e.g., 5.3 feet is not 5 feet 3 inches).</li>
+                <li><strong>Rounding Errors:</strong> Prematurely rounding during calculations can lead to inaccuracies, especially when high precision is required. It's best to perform the conversion and then round the final result if necessary.</li>
+            </ul>
+
+            <h2 class="section-title">Impact on Specific Industries</h2>
+            <ul>
+                <li><strong>Construction and Real Estate:</strong> Property sizes, ceiling heights, and room dimensions are almost universally communicated in feet and inches. Accurate conversion is paramount for architects, builders, and real estate agents.</li>
+                <li><strong>Manufacturing and Engineering:</strong> Precision in dimensions is critical. Parts, components, and assemblies often have specifications in inches, and tools may be calibrated in fractions of an inch. Converting designs from feet to inches is a common task.</li>
+                <li><strong>Aviation:</strong> Aircraft altitude is measured in feet, and many aircraft components are designed and manufactured using imperial measurements. Pilots and engineers must be proficient in these units.</li>
+                <li><strong>Retail and Consumer Goods:</strong> Products like televisions, computer monitors, and certain clothing items are marketed with dimensions in inches, even in metric-dominant countries.</li>
+                <li><strong>Sports and Fitness:</strong> Heights of athletes, lengths of tracks, and dimensions of sports equipment often use feet and inches, particularly in sports with strong American roots (e.g., basketball, American football).</li>
+            </ul>
+        </div>
+        
         <footer class="page-footer">
             <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
         </footer>
@@ -912,7 +855,7 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            await initMeterToCmConverter("ft", "cm");
+            await initMeterToCmConverter("ft", "in");
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);

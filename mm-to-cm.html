@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,127 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* mm-to-cm-content.css */
+        .conversion-details-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .conversion-details-container h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .conversion-details-container h3 {
+            color: #555;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .unit-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .unit-section p strong {
+            color: #333;
+        }
+
+        .conversion-table-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conversion-table-section th, .conversion-table-section td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .conversion-table-section th {
+            background-color: #e2e2e2;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .conversion-table-section tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .how-to-convert-section .formula {
+            background-color: #eaf7ed;
+            border-left: 5px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto; /* For long formulas */
+        }
+
+        .how-to-convert-section .example-solution {
+            background-color: #e6f7ff;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto; /* For long formulas */
+        }
+
+        .important-notes-section ul,
+        .interesting-facts-section ul,
+        .why-important-section ul,
+        .misconceptions-errors-section ul,
+        .industry-impact-section ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            padding: 0;
+            color: #666;
+        }
+
+        .important-notes-section li,
+        .interesting-facts-section li,
+        .why-important-section li,
+        .misconceptions-errors-section li,
+        .industry-impact-section li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +276,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +698,126 @@
                 </div>
             </div>
         </div>
-        </div>
 
+        <div class="conversion-details-container">
+                <section class="unit-section">
+                    <h2>Millimeter (mm)</h2>
+                    <p>The millimeter (mm) is a unit of length in the metric system, equal to one-thousandth of a meter. It is a fundamental unit for measuring small lengths with precision. It is widely used in engineering, manufacturing, and other fields where exact measurements are crucial.</p>
+                    <p><strong>History of Millimeter:</strong> The metric system, including the millimeter, originated in France in the late 18th century during the French Revolution, aiming for a more rational and universal system of measurement. The meter was originally defined as one ten-millionth of the distance from the North Pole to the equator along the meridian passing through Paris. The millimeter, as a sub-multiple of the meter, naturally followed this definition.</p>
+                    <p><strong>Current Usage:</strong> Millimeters are commonly used for small-scale measurements, such as the thickness of paper, the diameter of wires, the dimensions of electronic components, and in fields like machining, construction, and graphic design for precise specifications.</p>
+                </section>
+
+                <section class="unit-section">
+                    <h2>Centimeter (cm)</h2>
+                    <p>The centimeter (cm) is a unit of length in the metric system, equal to one-hundredth of a meter. It is a common unit for everyday measurements and is often used in contexts where millimeters would be too precise and meters too broad.</p>
+                    <p><strong>History of Centimeter:</strong> Like the millimeter, the centimeter is also a part of the metric system established during the French Revolution. Its definition is directly tied to the meter, making it a convenient and easily understandable unit for many practical applications.</p>
+                    <p><strong>Current Usage:</strong> Centimeters are frequently used for measuring objects of moderate size, such as body measurements, fabric lengths, the dimensions of furniture, and in educational settings. It provides a good balance between precision and ease of use for many common tasks.</p>
+                </section>
+
+                <section class="conversion-table-section">
+                    <h2>Millimeters to Centimeters Conversion Table</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Millimeters (mm)</th>
+                                <th>Centimeters (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0.01</td><td>0.001</td></tr>
+                            <tr><td>0.1</td><td>0.01</td></tr>
+                            <tr><td>1</td><td>0.1</td></tr>
+                            <tr><td>2</td><td>0.2</td></tr>
+                            <tr><td>3</td><td>0.3</td></tr>
+                            <tr><td>4</td><td>0.4</td></tr>
+                            <tr><td>5</td><td>0.5</td></tr>
+                            <tr><td>6</td><td>0.6</td></tr>
+                            <tr><td>7</td><td>0.7</td></tr>
+                            <tr><td>8</td><td>0.8</td></tr>
+                            <tr><td>9</td><td>0.9</td></tr>
+                            <tr><td>10</td><td>1</td></tr>
+                            <tr><td>20</td><td>2</td></tr>
+                            <tr><td>30</td><td>3</td></tr>
+                            <tr><td>40</td><td>4</td></tr>
+                            <tr><td>50</td><td>5</td></tr>
+                            <tr><td>60</td><td>6</td></tr>
+                            <tr><td>70</td><td>7</td></tr>
+                            <tr><td>80</td><td>8</td></tr>
+                            <tr><td>90</td><td>9</td></tr>
+                            <tr><td>100</td><td>10</td></tr>
+                            <tr><td>1000</td><td>100</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="how-to-convert-section">
+                    <h2>How to Convert Millimeters to Centimeters</h2>
+                    <p>Converting millimeters (mm) to centimeters (cm) is straightforward, as 1 centimeter is equal to 10 millimeters.</p>
+                    <p>The formula for converting millimeters to centimeters is:</p>
+                    <p class="formula">$$ \text{Centimeters} = \text{Millimeters} \div 10 $$</p>
+                    <p><strong>Example:</strong> Convert 150 mm to cm</p>
+                    <p class="example-solution">$$ 150 \text{ mm} \div 10 = 15 \text{ cm} $$</p>
+                    <p>So, 150 millimeters is equal to 15 centimeters.</p>
+                </section>
+
+                <section class="important-notes-section">
+                    <h2>Important Notes and Tips for Millimeters to Centimeters Conversion</h2>
+                    <ul>
+                        <li><strong>Decimal Shift:</strong> Converting mm to cm simply involves moving the decimal point one place to the left. For example, 25 mm becomes 2.5 cm.</li>
+                        <li><strong>Precision:</strong> Both units are part of the metric system, making conversions very simple and error-free compared to conversions between metric and imperial units.</li>
+                        <li><strong>Common Ruler Markings:</strong> Most rulers have markings for both millimeters and centimeters, which visually demonstrates their relationship. Every 10 small lines (mm) make up one larger line (cm).</li>
+                        <li><strong>Unit Consistency:</strong> Always ensure consistency in units within a calculation to avoid errors. If a design spec is in mm and another is in cm, convert one to match the other before proceeding.</li>
+                    </ul>
+                </section>
+
+                <section class="interesting-facts-section">
+                    <h2>Interesting Facts About Millimeters and Centimeters</h2>
+                    <ul>
+                        <li>Did you know that a typical credit card is about 0.76 mm thick?</li>
+                        <li>The average adult human fingernail grows about 3.5 mm per month.</li>
+                        <li>A standard paperclip is usually around 3 cm long.</li>
+                        <li>The "centi" prefix in centimeter means "one hundredth," while "milli" in millimeter means "one thousandth."</li>
+                    </ul>
+                </section>
+
+                <section class="why-important-section">
+                    <h2>Why Conversion is Important: Practical Significance</h2>
+                    <p>Understanding the conversion between millimeters and centimeters is crucial in various practical scenarios:</p>
+                    <ul>
+                        <li><strong>Everyday Life:</strong> When measuring small objects like a book, a photo frame, or the dimensions for a craft project, often one unit is more convenient than the other. For instance, explaining the size of a stamp might be easier in millimeters, while the size of a piece of paper in centimeters.</li>
+                        <li><strong>Construction and DIY:</strong> Architects and contractors often work with detailed blueprints in millimeters for high precision, while everyday DIY enthusiasts might prefer centimeters for general measurements. Accurate conversion prevents costly errors in building or assembling.</li>
+                        <li><strong>Fashion and Textiles:</strong> Clothing sizes, fabric dimensions, and patterns often use centimeters. However, specific detailing or accessory measurements might be in millimeters, requiring quick conversion for design and production.</li>
+                        <li><strong>Science and Education:</strong> In scientific experiments and educational contexts, students learn to appreciate the hierarchy of metric units. Converting between mm and cm reinforces understanding of the decimal nature of the metric system.</li>
+                        <li><strong>International Trade:</strong> As many countries use the metric system, seamless conversion facilitates communication and standardization in global trade, especially for products with precise dimensions.</li>
+                    </ul>
+                </section>
+
+                <section class="misconceptions-errors-section">
+                    <h2>Common Misconceptions and Errors</h2>
+                    <ul>
+                        <li><strong>Incorrect Decimal Placement:</strong> The most frequent error is shifting the decimal point in the wrong direction or by the wrong number of places. Always remember that 1 cm = 10 mm, so dividing by 10 makes the number smaller (fewer centimeters than millimeters).</li>
+                        <li><strong>Confusing Prefixes:</strong> Sometimes users confuse "milli" (thousandth) with "centi" (hundredth), leading to a factor of 100 error instead of 10.</li>
+                        <li><strong>Mixing Units in Calculations:</strong> Failing to convert all measurements to a single consistent unit before performing calculations can lead to significant inaccuracies. For example, adding 5 cm and 20 mm without converting one unit.</li>
+                    </ul>
+                </section>
+
+                <section class="industry-impact-section">
+                    <h2>Impact on Specific Industries</h2>
+                    <ul>
+                        <li><strong>Manufacturing and Engineering:</strong> Precision is paramount. Components are often designed and manufactured with tolerances in micrometers (even smaller than millimeters), but assembly instructions or final product dimensions might be in millimeters or centimeters. Accurate conversion is vital for quality control and interchangeability of parts.</li>
+                        <li><strong>Jewelry and Watchmaking:</strong> Small parts and intricate designs necessitate working with millimeters. However, the overall size of a watch face or a necklace might be described in centimeters for the consumer.</li>
+                        <li><strong>Medical Field:</strong> Measurements in medicine, such as the size of a lesion, the diameter of a blood vessel, or dosages based on body surface area, frequently involve both millimeters and centimeters. Accuracy here is critical for diagnosis and treatment.</li>
+                        <li><strong>Graphic Design and Printing:</strong> Layouts, image dimensions, and print specifications often alternate between millimeters (for very fine adjustments) and centimeters (for overall page or image size), requiring designers to be adept at both.</li>
+                        <li><strong>Textile and Apparel Industry:</strong> From designing patterns to cutting fabric, precise measurements are key. While overall garment dimensions might be in centimeters, intricate details like seam allowances or buttonhole sizes can be specified in millimeters.</li>
+                    </ul>
+                </section>
+            </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

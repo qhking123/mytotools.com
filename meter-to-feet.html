@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,139 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* Styles for the Meter to Feet Information Section */
+        .info-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .info-section .section-title {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .info-section .section-subtitle {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .info-section strong {
+            color: #333;
+        }
+
+        .unit-description {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .unit-description .unit-title {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .conversion-table th, .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .conversion-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .conversion-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .conversion-table tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .formula {
+            background-color: #e6f7ff;
+            border-left: 5px solid #007bff;
+            padding: 10px 15px;
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .example {
+            background-color: #f0fdf0;
+            border-left: 5px solid #28a745;
+            padding: 10px 15px;
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .info-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            color: #666;
+        }
+
+        .info-section ul li {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +288,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +710,112 @@
                 </div>
             </div>
         </div>
+        
+        <div class="info-section">
+            <h2 class="section-title">Understanding Meters and Feet</h2>
+
+            <div class="unit-description">
+                <h3 class="unit-title">Meter (m)</h3>
+                <p>The meter (m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second. This definition was adopted in 1983, ensuring extreme precision and universality.</p>
+                <p><strong>History:</strong> The concept of the meter originated in France during the late 18th century. Initially, it was defined as one ten-millionth of the distance from the North Pole to the Equator along a meridian passing through Paris. A physical prototype, the "Mètre des Archives," was cast in platinum in 1799. Over time, the definition evolved to improve accuracy, culminating in the current light-speed definition.</p>
+                <p><strong>Current Usage:</strong> The meter is used globally for most scientific, industrial, and everyday measurements. It forms the foundation of the metric system, which is widely adopted by most countries worldwide for its logical, decimal-based structure. From measuring distances in sports to architectural plans and scientific experiments, the meter is a fundamental unit.</p>
+            </div>
+
+            <div class="unit-description">
+                <h3 class="unit-title">Foot (ft)</h3>
+                <p>The foot (ft) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as exactly 0.3048 meters. The foot is subdivided into 12 inches, and three feet make up one yard.</p>
+                <p><strong>History:</strong> The foot as a unit of length has ancient origins, appearing in various forms across different cultures. Its exact length varied considerably throughout history, often based on the length of a human foot. For example, the Roman foot was slightly shorter than the modern foot, while the Greek foot was longer. The modern standardized foot evolved from various European systems, eventually being formalized as part of the imperial system. Its current definition as 0.3048 meters was agreed upon internationally in 1959.</p>
+                <p><strong>Current Usage:</strong> While most of the world uses the metric system, the foot remains a common unit of length in the United States, Canada (alongside meters), and the United Kingdom (for certain applications). It is widely used in aviation for altitude, in construction for building dimensions, and in personal measurements like height. Despite its non-decimal nature, its deep historical roots and established use in these regions persist.</p>
+            </div>
+
+            <h3 class="section-subtitle">Meter to Feet Conversion Table</h3>
+            <table class="conversion-table">
+                <thead>
+                    <tr>
+                        <th>Meters (m)</th>
+                        <th>Feet (ft)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0.01</td><td>0.0328084</td></tr>
+                    <tr><td>0.1</td><td>0.328084</td></tr>
+                    <tr><td>1</td><td>3.28084</td></tr>
+                    <tr><td>2</td><td>6.56168</td></tr>
+                    <tr><td>3</td><td>9.84252</td></tr>
+                    <tr><td>4</td><td>13.1234</td></tr>
+                    <tr><td>5</td><td>16.4042</td></tr>
+                    <tr><td>6</td><td>19.685</td></tr>
+                    <tr><td>7</td><td>22.9659</td></tr>
+                    <tr><td>8</td><td>26.2467</td></tr>
+                    <tr><td>9</td><td>29.5276</td></tr>
+                    <tr><td>10</td><td>32.8084</td></tr>
+                    <tr><td>20</td><td>65.6168</td></tr>
+                    <tr><td>30</td><td>98.4252</td></tr>
+                    <tr><td>40</td><td>131.234</td></tr>
+                    <tr><td>50</td><td>164.042</td></tr>
+                    <tr><td>60</td><td>196.85</td></tr>
+                    <tr><td>70</td><td>229.659</td></tr>
+                    <tr><td>80</td><td>262.467</td></tr>
+                    <tr><td>90</td><td>295.276</td></tr>
+                    <tr><td>100</td><td>328.084</td></tr>
+                    <tr><td>1000</td><td>3280.84</td></tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-subtitle">How to Convert Meters to Feet</h3>
+            <p>To convert meters to feet, you can use the following formula:</p>
+            <p class="formula">Feet = Meters × 3.28084</p>
+            <p>This conversion factor is derived from the definition that 1 meter is approximately equal to 3.28084 feet.</p>
+            <p><strong>Example:</strong> Convert 50 meters to feet.</p>
+            <p class="example">Feet = 50 m × 3.28084 ft/m = 164.042 ft</p>
+            <p>So, 50 meters is equal to 164.042 feet.</p>
+
+            <h3 class="section-subtitle">Important Considerations for Meter to Feet Conversion</h3>
+            <ul>
+                <li><strong>Precision:</strong> The conversion factor 3.28084 is an approximation. For highly precise scientific or engineering applications, it's crucial to use the exact definition: 1 foot = 0.3048 meters, which implies 1 meter = 1/0.3048 feet ≈ 3.280839895 feet. The level of precision needed depends on the context of the measurement.</li>
+                <li><strong>Contextual Use:</strong> Remember that meters are part of the metric system (SI), while feet belong to the imperial and U.S. customary systems. The choice of unit often depends on geographical location or industry standards.</li>
+                <li><strong>Rounding:</strong> When performing conversions, be mindful of appropriate rounding based on the significant figures of the original measurement. Excessive rounding can lead to significant errors in critical applications.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Interesting Facts About Meters and Feet</h3>
+            <ul>
+                <li>The "Metrication" debate: Many countries, including the UK and Canada, have officially adopted the metric system but still widely use imperial units like feet and inches in everyday language and certain industries due to historical and cultural reasons.</li>
+                <li>The "Mars Climate Orbiter" incident: In 1999, NASA lost a spacecraft due to a navigation error where one team used imperial units (pounds-force-seconds) and another used metric units (newton-seconds) for a key calculation, highlighting the critical importance of consistent unit usage.</li>
+                <li>The human element: Historically, many units of measurement, including the foot, were based on parts of the human body, leading to inconsistencies before standardization.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Why Conversion is Important</h3>
+            <p>Converting between meters and feet is crucial for several practical reasons:</p>
+            <ul>
+                <li><strong>International Collaboration:</strong> In a globalized world, projects often involve teams and materials from countries using different measurement systems. Accurate conversions prevent miscommunication and costly errors in manufacturing, construction, and research.</li>
+                <li><strong>Trade and Commerce:</strong> Goods are bought and sold internationally, often requiring conversion of dimensions or quantities to comply with local standards and regulations.</li>
+                <li><strong>Science and Engineering:</strong> While science predominantly uses the metric system, historical data, older equipment, and certain specialized fields may still operate with imperial units, making conversion skills essential for researchers and engineers.</li>
+                <li><strong>Everyday Life:</strong> From understanding building plans in a country that uses feet while accustomed to meters, to interpreting travel distances or personal heights, conversion helps individuals navigate diverse measurement landscapes.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Common Misconceptions and Errors</h3>
+            <ul>
+                <li><strong>Simple "x3" or "/3" Rule:</strong> A common oversimplification is to simply multiply or divide by 3, which is inaccurate. The correct conversion factor is 3.28084 (or 0.3048).</li>
+                <li><strong>Ignoring Units in Calculations:</strong> Failing to carry units through calculations can lead to incorrect results, as demonstrated by the Mars Climate Orbiter incident. Always double-check that units cancel out correctly.</li>
+                <li><strong>Confusion with Inches:</strong> Sometimes people confuse feet with inches, especially when estimating. A foot is 12 inches, not 10, which can lead to significant errors if not accounted for.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Impact on Specific Industries</h3>
+            <ul>
+                <li><strong>Construction:</strong> Many blueprints and building codes in the US and UK use feet and inches. International construction projects require precise conversion to ensure structural integrity and material compatibility.</li>
+                <li><strong>Aviation:</strong> Aircraft altitude is universally measured in feet, regardless of the country of origin or destination. Pilots and air traffic controllers must be adept at these measurements.</li>
+                <li><strong>Manufacturing:</strong> Components and machinery often come with specifications in either metric or imperial units. Accurate conversion is vital for ensuring parts fit together correctly and for quality control.</li>
+                <li><strong>Sports:</strong> Field dimensions (e.g., American football, basketball) are typically defined in feet and yards, while international sports like track and field use meters. Athletes and organizers often encounter both systems.</li>
+                <li><strong>Textile and Apparel:</strong> Fabric widths and lengths might be specified in meters in one region and yards/feet in another, requiring conversion for purchasing and production.</li>
+            </ul>
+
         </div>
 
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

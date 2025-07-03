@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,122 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .info-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .info-section .section-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .info-section h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .info-section ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .info-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .table-container th,
+        .table-container td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .table-container th {
+            background-color: #eef;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .table-container tr:nth-child(even) {
+            background-color: #f6f6f6;
+        }
+
+        .table-container tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .example {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-left: 5px solid #2196F3;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +271,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +693,131 @@
                 </div>
             </div>
         </div>
+        
+        <div class="info-section">
+            <h2 class="section-title">Mile</h2>
+            <p>
+                The mile is a unit of length in the Imperial system and United States customary units, equal to 5,280 feet, or 1,760 yards, and exactly 1,609.344 meters.
+            </p>
+            <h3>History of the Mile</h3>
+            <p>
+                The word "mile" comes from the Latin "mille passus," meaning "a thousand paces." A Roman pace was a double step, and the Roman mile therefore consisted of 1,000 paces or 5,000 Roman feet (pedes). The modern mile's length varies slightly across different historical periods and regions, but it eventually standardized in England. In 1593, the English Parliament defined the statute mile as 5,280 feet, influenced by the importance of the furlong, which was 1/8th of a mile.
+            </p>
+            <h3>Current Usage of the Mile</h3>
+            <p>
+                Today, the mile is primarily used in the United States, the United Kingdom, and a few other countries for measuring distances on roads, speed limits, and in some sporting events (like track and field, horse racing). While most of the world has adopted the metric system, the mile retains its significance in these specific contexts, especially in daily life.
+            </p>
+
+            <h2 class="section-title">Kilometer</h2>
+            <p>
+                The kilometer (km) is a unit of length in the metric system, equivalent to 1,000 meters. It is the most commonly used unit for measuring geographical distances on land in most parts of the world.
+            </p>
+            <h3>History of the Kilometer</h3>
+            <p>
+                The metric system, from which the kilometer originates, was conceived in France during the late 18th century as a universal and rational system of measurement. The meter was originally defined as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. The kilometer, as 1,000 meters, naturally followed this definition, providing a convenient larger unit for everyday distances. The system was designed for ease of use, with prefixes (like "kilo-") indicating powers of ten.
+            </p>
+            <h3>Current Usage of the Kilometer</h3>
+            <p>
+                The kilometer is the official unit of distance measurement in almost all countries worldwide, including all of Europe, Asia, Africa, and South America. It is used in road signs, maps, vehicle speedometers, and scientific applications. Its widespread adoption is due to the simplicity and coherence of the metric system, which makes calculations and conversions straightforward.
+            </p>
+
+            <h2 class="section-title">Miles to Kilometers Conversion Table</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Miles (mi)</th>
+                            <th>Kilometers (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.01</td><td>0.0160934</td></tr>
+                        <tr><td>0.1</td><td>0.160934</td></tr>
+                        <tr><td>1</td><td>1.60934</td></tr>
+                        <tr><td>2</td><td>3.21869</td></tr>
+                        <tr><td>3</td><td>4.82803</td></tr>
+                        <tr><td>4</td><td>6.43738</td></tr>
+                        <tr><td>5</td><td>8.04672</td></tr>
+                        <tr><td>6</td><td>9.65606</td></tr>
+                        <tr><td>7</td><td>11.2654</td></tr>
+                        <tr><td>8</td><td>12.8748</td></tr>
+                        <tr><td>9</td><td>14.4841</td></tr>
+                        <tr><td>10</td><td>16.0934</td></tr>
+                        <tr><td>20</td><td>32.1869</td></tr>
+                        <tr><td>30</td><td>48.2803</td></tr>
+                        <tr><td>40</td><td>64.3738</td></tr>
+                        <tr><td>50</td><td>80.4672</td></tr>
+                        <tr><td>60</td><td>96.5606</td></tr>
+                        <tr><td>70</td><td>112.654</td></tr>
+                        <tr><td>80</td><td>128.748</td></tr>
+                        <tr><td>90</td><td>144.841</td></tr>
+                        <tr><td>100</td><td>160.934</td></tr>
+                        <tr><td>1000</td><td>1609.34</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title">How to Convert Miles to Kilometers</h2>
+            <p>
+                To convert a distance from miles to kilometers, you can use the following formula:
+            </p>
+            <p class="formula">
+                Kilometers = Miles × 1.609344
+            </p>
+            <p>
+                <strong>Example:</strong> Convert 5 miles to kilometers.
+            </p>
+            <p class="example">
+                Kilometers = 5 × 1.609344 = 8.04672 km
+            </p>
+
+            <h2 class="section-title">Important Notes on Miles to Kilometers Conversion</h2>
+            <ul>
+                <li>The conversion factor 1.609344 is exact, based on the definition of the international yard and pound agreement of 1959.</li>
+                <li>When converting, consider the level of precision required. For everyday use, rounding to two or three decimal places is usually sufficient.</li>
+                <li>Always double-check your calculations, especially for critical applications like navigation or engineering projects.</li>
+            </ul>
+
+            <h2 class="section-title">Interesting Facts About Miles and Kilometers</h2>
+            <ul>
+                <li>The marathon race distance (42.195 km) is based on the legendary run of Pheidippides from Marathon to Athens. It translates to approximately 26.2 miles.</li>
+                <li>The "nautical mile" is a different unit of length, approximately 1.852 kilometers, used for marine and aviation navigation. It is not directly related to the land mile (statute mile).</li>
+                <li>The speed of light in a vacuum is approximately 299,792,458 meters per second, or roughly 1,079,252,848.8 kilometers per hour.</li>
+            </ul>
+
+            <h2 class="section-title">Why Conversion is Important</h2>
+            <p>
+                Converting between miles and kilometers is crucial in many real-world scenarios:
+            </p>
+            <ul>
+                <li><strong>International Travel:</strong> When driving or navigating in countries that use the metric system (most of the world), understanding kilometers is essential for road signs, speed limits, and distances. Conversely, visitors to the US or UK need to convert kilometers to miles.</li>
+                <li><strong>Sports and Fitness:</strong> Many international sporting events use metric distances (e.g., 100m sprint, 5k run), while some traditional events in the US and UK still use miles. Athletes and enthusiasts often need to convert between the two for training and comparison.</li>
+                <li><strong>Logistics and Shipping:</strong> For global logistics and shipping, accurate distance conversion is vital for calculating fuel consumption, delivery times, and costs, especially when routes span across countries using different measurement systems.</li>
+                <li><strong>Scientific and Academic Research:</strong> While the metric system is the standard in science, historical data or older research might be presented in miles, requiring conversion for analysis and consistency.</li>
+                <li><strong>Everyday Comprehension:</strong> For individuals, being able to quickly convert allows for better comprehension of distances mentioned in international news, books, or online content.</li>
+            </ul>
+
+            <h2 class="section-title">Common Misconceptions and Errors</h2>
+            <ul>
+                <li><strong>Simple Halving/Doubling:</strong> A common mistake is to assume a simpler conversion ratio, like "a mile is roughly half a kilometer" or "a kilometer is roughly double a mile." The actual factor is 1.609344.</li>
+                <li><strong>Confusing Statute Mile with Nautical Mile:</strong> As mentioned, the nautical mile is distinct and used in different contexts. Misusing the conversion factor for one when the other is intended can lead to significant errors in navigation.</li>
+                <li><strong>Ignoring Precision:</strong> For approximate estimations, rounding is fine, but for engineering or scientific work, using the precise conversion factor and appropriate significant figures is critical to avoid cumulative errors.</li>
+            </ul>
+
+            <h2 class="section-title">Impact on Specific Industries</h2>
+            <ul>
+                <li><strong>Automotive Industry:</strong> Vehicle manufacturing for different markets requires speedometers and odometers to display either miles per hour/miles or kilometers per hour/kilometers. GPS systems must also provide options for both.</li>
+                <li><strong>Aviation:</strong> While nautical miles are standard for air navigation, aircraft performance is often discussed in knots (nautical miles per hour), and flight plans may involve conversions to or from statute miles for ground distances or fuel calculations depending on the region.</li>
+                <li><strong>Transportation and Infrastructure:</strong> Road signs, railway distances, and urban planning in countries like the US and UK are based on miles, while most other countries use kilometers. This impacts signage, mapping, and infrastructure development.</li>
+                <li><strong>Sports and Media:</strong> Reporting on athletic events, especially those with international participation, often requires conversion of distances to be understood by audiences globally. For example, a 5K race needs to be contextualized as approximately 3.1 miles for a US audience.</li>
+            </ul>
         </div>
 
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

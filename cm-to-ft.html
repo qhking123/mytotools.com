@@ -11,16 +11,16 @@
     gtag('config', 'G-SYC7QK9J1X');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>CM to Feet Converter</title>
+    <meta name="description" content="Centimeters to Feet (cm to ft) converter and how to convert.">
+    <style>
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +92,159 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .content-section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .content-section h3 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 8px;
+        }
+
+        .content-section p {
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .content-section ul {
+            list-style: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .content-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conversion-table th,
+        .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .conversion-table th {
+            background-color: #e2f0ff;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .conversion-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .conversion-table tr:hover {
+            background-color: #e8e8e8;
+        }
+
+        .formula-box {
+            background-color: #eafaea;
+            border: 1px solid #c3e6cb;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .formula-box h4 {
+            color: #28a745;
+            margin-top: 0;
+        }
+
+        .formula-box code {
+            display: block;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .example-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+
+        .example-box h4 {
+            color: #ffc107;
+            margin-top: 0;
+        }
+
+        .important-notes {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .important-notes h4 {
+            color: #dc3545;
+            margin-top: 0;
+        }
+
+        .important-notes ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .important-notes ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .important-notes ul li:before {
+            content: "•";
+            color: #dc3545;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +310,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +732,112 @@
                 </div>
             </div>
         </div>
-        </div>
+        
+        <div class="content-section">
+                <h3>Centimeter (cm)</h3>
+                <p>The centimeter (cm) is a unit of length in the metric system, equal to one hundredth of a meter. It is part of the International System of Units (SI).</p>
+                <p>Historically, the metric system was first proposed in 1670 by Gabriel Mouton, a French vicar and scientist, with the meter defined as one ten-millionth of the distance from the North Pole to the Equator. The centimeter naturally derived from this definition as a convenient smaller unit.</p>
+                <p>Today, centimeters are widely used globally for various measurements, especially in fields like:</p>
+                <ul>
+                    <li><strong>Everyday Measurements:</strong> Measuring objects, fabric, or body dimensions.</li>
+                    <li><strong>Science and Engineering:</strong> Used in laboratory settings, blueprints, and small-scale designs.</li>
+                    <li><strong>Medical Field:</strong> For measuring patient's height, wound sizes, or organ dimensions.</li>
+                    <li><strong>Education:</strong> Taught as a fundamental unit of length in schools worldwide.</li>
+                </ul>
+                <p>Its ease of use, due to its base-10 nature, makes it a popular unit in countries that have adopted the metric system.</p>
+            </div>
 
+            <div class="content-section">
+                <h3>Foot (ft)</h3>
+                <p>The foot (plural: feet; abbreviation: ft or ′) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as exactly 0.3048 meters.</p>
+                <p>The history of the foot as a unit of measurement is long and varied, with its origins often traced back to ancient civilizations. It was originally based on the length of a human foot, though its exact length varied significantly across different regions and times.</p>
+                <p>Some historical references include:</p>
+                <ul>
+                    <li><strong>Ancient Egypt:</strong> Used a "royal cubit" and other foot-like measures.</li>
+                    <li><strong>Ancient Greece and Rome:</strong> Had their own versions of the foot. The Roman foot (pes) was approximately 29.6 cm.</li>
+                    <li><strong>Medieval Europe:</strong> Various local feet were in use.</li>
+                    <li><strong>British Empire:</strong> The modern international foot (0.3048 meters) largely derived from the British system, which was standardized over centuries.</li>
+                </ul>
+                <p>Today, the foot is primarily used in the United States, Canada, and the United Kingdom (informally) for applications such as:</p>
+                <ul>
+                    <li><strong>Height:</strong> Measuring people's height (e.g., 5 feet 10 inches).</li>
+                    <li><strong>Altitude and Aviation:</strong> Used for aircraft altitude and elevation.</li>
+                    <li><strong>Construction:</strong> Common in building and surveying.</li>
+                    <li><strong>Sports:</strong> Dimensions of sports fields and events.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h3>Centimeters to Feet Conversion Table</h3>
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Centimeters (cm)</th>
+                            <th>Feet (ft)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.01</td><td>0.000328084</td></tr>
+                        <tr><td>0.1</td><td>0.00328084</td></tr>
+                        <tr><td>1</td><td>0.0328084</td></tr>
+                        <tr><td>2</td><td>0.0656168</td></tr>
+                        <tr><td>3</td><td>0.0984252</td></tr>
+                        <tr><td>4</td><td>0.131234</td></tr>
+                        <tr><td>5</td><td>0.164042</td></tr>
+                        <tr><td>6</td><td>0.19685</td></tr>
+                        <tr><td>7</td><td>0.229659</td></tr>
+                        <tr><td>8</td><td>0.262467</td></tr>
+                        <tr><td>9</td><td>0.295276</td></tr>
+                        <tr><td>10</td><td>0.328084</td></tr>
+                        <tr><td>20</td><td>0.656168</td></tr>
+                        <tr><td>30</td><td>0.984252</td></tr>
+                        <tr><td>40</td><td>1.31234</td></tr>
+                        <tr><td>50</td><td>1.64042</td></tr>
+                        <tr><td>60</td><td>1.9685</td></tr>
+                        <tr><td>70</td><td>2.29659</td></tr>
+                        <tr><td>80</td><td>2.62467</td></tr>
+                        <tr><td>90</td><td>2.95276</td></tr>
+                        <tr><td>100</td><td>3.28084</td></tr>
+                        <tr><td>1000</td><td>32.8084</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h3>How to Convert Centimeters to Feet</h3>
+                <p>To convert a measurement in centimeters (cm) to feet (ft), you can use the following formula:</p>
+                <div class="formula-box">
+                    <h4>Conversion Formula:</h4>
+                    <code>Feet = Centimeters &times; 0.0328084</code>
+                </div>
+                <p>This is because 1 centimeter is approximately equal to 0.0328084 feet.</p>
+
+                <div class="example-box">
+                    <h4>Example:</h4>
+                    <p>Let's convert 150 cm to feet:</p>
+                    <code>Feet = 150 cm &times; 0.0328084 = 4.92126 ft</code>
+                    <p>So, 150 centimeters is approximately 4.92126 feet.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h3>Important Notes on CM to Feet Conversion</h3>
+                <div class="important-notes">
+                    <h4>Considerations:</h4>
+                    <ul>
+                        <li>The conversion factor <code>0.0328084</code> is an approximation. For more precise calculations, you might use more decimal places (e.g., 0.03280839895 feet per centimeter).</li>
+                        <li>Sometimes, feet measurements are expressed in feet and inches (e.g., 5 feet 6 inches). To convert a decimal foot value to feet and inches, multiply the fractional part of the foot by 12. For example, 4.92126 feet is 4 feet and <code>0.92126 &times; 12 = 11.05512</code> inches, so approximately 4 feet 11 inches.</li>
+                        <li>The imperial system (which includes feet) is non-decimal, which can sometimes make conversions and calculations more complex compared to the metric system's base-10 nature.</li>
+                        <li>When performing conversions for practical applications like construction or manufacturing, always consider the required precision and significant figures.</li>
+                    </ul>
+                </div>
+            </div>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

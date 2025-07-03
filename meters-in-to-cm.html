@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,114 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* m-to-cm-content.css */
+        .knowledge-content {
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            margin: 30px auto; /* Center the content and add some top margin */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .knowledge-content h2 {
+            color: #0056b3;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .knowledge-content h3 {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .knowledge-content p {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+        }
+
+        .knowledge-content ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            margin-bottom: 1em;
+        }
+
+        .knowledge-content ul li {
+            margin-bottom: 0.5em;
+        }
+
+        .knowledge-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.05em;
+            text-align: left;
+        }
+
+        .knowledge-content table thead tr {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .knowledge-content table th,
+        .knowledge-content table td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+
+        .knowledge-content table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .knowledge-content table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .conversion-formula {
+            background-color: #e9f7ef; /* Light green background for formulas */
+            border-left: 5px solid #28a745; /* Green border */
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #000000;
+            border-radius: 4px;
+        }
+
+        /* For LaTeX-like formatting within paragraphs */
+        .knowledge-content p strong {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +263,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +685,128 @@
                 </div>
             </div>
         </div>
-        </div>
 
+        <div class="knowledge-content">
+            <h2>Meter (m)</h2>
+            <p>The meter (symbol: m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path traveled by light in a vacuum during a time interval of 1/299,792,458 of a second. This definition was adopted in 1983 to ensure high precision and reproducibility.</p>
+            <h3>History of the Meter</h3>
+            <ul>
+                <li>The concept of the meter originated in France in the late 18th century during the French Revolution. The initial idea was to create a unit of length based on a natural, invariable standard.</li>
+                <li>In 1791, the French Academy of Sciences defined the meter as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris.</li>
+                <li>A platinum-iridium bar, known as the "Meter of the Archives," was created in 1799 to serve as the physical prototype of the meter.</li>
+                <li>In 1889, a new international prototype meter was adopted, an X-shaped platinum-iridium bar, and stored at the International Bureau of Weights and Measures (BIPM) near Paris.</li>
+                <li>Further refinements in definition occurred with advancements in technology, leading to the current light-based definition in 1983, ensuring a more fundamental and universal standard.</li>
+            </ul>
+            <h3>Current Usage of the Meter</h3>
+            <p>The meter is widely used globally for scientific, engineering, and everyday measurements. It is the foundation for other units of length in the metric system (e.g., kilometer, centimeter, millimeter) and is integral to international trade, construction, and mapping.</p>
+
+            <h2>Centimeter (cm)</h2>
+            <p>The centimeter (symbol: cm) is a unit of length in the metric system, equal to one hundredth of a meter. It is commonly used for everyday measurements of smaller objects, distances, and dimensions where a meter would be too large.</p>
+            <h3>History of the Centimeter</h3>
+            <ul>
+                <li>As part of the metric system, the centimeter's history is intertwined with that of the meter. When the meter was established as the base unit, prefixes like "centi-" (meaning one hundredth) were introduced to create smaller and larger units for convenience.</li>
+                <li>The metric system, including the centimeter, gained widespread adoption throughout the 19th and 20th centuries due to its simplicity, decimal nature, and coherence.</li>
+            </ul>
+            <h3>Current Usage of the Centimeter</h3>
+            <p>The centimeter is frequently used in various fields, including:</p>
+            <ul>
+                <li>**Fashion and Textiles:** Measuring fabric, body dimensions for clothing.</li>
+                <li>**Crafts and Hobbies:** Precise measurements in DIY projects, sewing, and art.</li>
+                <li>**Education:** Teaching fundamental concepts of length and measurement to children.</li>
+                <li>**Medical Field:** Measuring body parts, wound sizes, and in medical imaging.</li>
+                <li>**Everyday Life:** Measuring small objects, furniture, and general short distances.</li>
+            </ul>
+
+            <h2>Meter to Centimeter Conversion Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Meter (m)</th>
+                        <th>Centimeter (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0.01</td><td>1</td></tr>
+                    <tr><td>0.1</td><td>10</td></tr>
+                    <tr><td>1</td><td>100</td></tr>
+                    <tr><td>2</td><td>200</td></tr>
+                    <tr><td>3</td><td>300</td></tr>
+                    <tr><td>4</td><td>400</td></tr>
+                    <tr><td>5</td><td>500</td></tr>
+                    <tr><td>6</td><td>600</td></tr>
+                    <tr><td>7</td><td>700</td></tr>
+                    <tr><td>8</td><td>800</td></tr>
+                    <tr><td>9</td><td>900</td></tr>
+                    <tr><td>10</td><td>1000</td></tr>
+                    <tr><td>20</td><td>2000</td></tr>
+                    <tr><td>30</td><td>3000</td></tr>
+                    <tr><td>40</td><td>4000</td></tr>
+                    <tr><td>50</td><td>5000</td></tr>
+                    <tr><td>60</td><td>6000</td></tr>
+                    <tr><td>70</td><td>7000</td></tr>
+                    <tr><td>80</td><td>8000</td></tr>
+                    <tr><td>90</td><td>9000</td></tr>
+                    <tr><td>100</td><td>10000</td></tr>
+                    <tr><td>1000</td><td>100000</td></tr>
+                </tbody>
+            </table>
+
+            <h2>How to Convert Meters to Centimeters</h2>
+            <p>To convert meters to centimeters, you multiply the value in meters by 100.</p>
+            <p class="conversion-formula">Formula: $Centimeters = Meters \times 100$</p>
+            <h3>Example:</h3>
+            <p>If you have a length of 2.5 meters, to convert it to centimeters:</p>
+            <p>$Centimeters = 2.5 \times 100 = 250$ cm</p>
+            <p>So, 2.5 meters is equal to 250 centimeters.</p>
+
+            <h2>Points to Note for Meter to Centimeter Conversion</h2>
+            <ul>
+                <li>**Decimal System:** The conversion is straightforward due to the metric system's base-10 nature, making calculations simple.</li>
+                <li>**Precision:** Be mindful of significant figures and decimal places, especially in scientific or engineering contexts.</li>
+                <li>**Context Matters:** While technically correct, using centimeters for very long distances (e.g., distance between cities) or meters for very small objects (e.g., cell size) is impractical and can lead to less intuitive numbers. Choose the appropriate unit for the scale of measurement.</li>
+                <li>**Common Errors:** A common mistake is dividing by 100 instead of multiplying, or vice versa, when converting between meters and millimeters/centimeters.</li>
+            </ul>
+
+            <h2>Interesting Facts About Meter to Centimeter Conversion</h2>
+            <ul>
+                <li>The word "centimeter" literally means "one hundredth of a meter." "Centi" is a Latin prefix meaning 100.</li>
+                <li>Many everyday objects, especially in crafts, textiles, and school supplies, are designed with measurements in centimeters because it provides a convenient scale.</li>
+                <li>The human body is often measured in centimeters for height and various other dimensions in medical and fitness contexts.</li>
+                <li>In countries that primarily use the imperial system, the concept of meters and centimeters might be less intuitive, but the direct relationship ($1 \text{ m} = 100 \text{ cm}$) makes cross-system understanding easier.</li>
+            </ul>
+
+            <h2>Why Conversion is Important</h2>
+            <p>Converting between meters and centimeters is crucial for several practical reasons:</p>
+            <ul>
+                <li>**Standardization:** Ensures consistency in measurements across different projects, industries, and countries, especially in fields like construction, manufacturing, and international trade.</li>
+                <li>**Practicality:** Allows for using the most appropriate unit for a given scale. For instance, measuring a room's dimensions in meters is practical, while measuring a piece of paper is better done in centimeters.</li>
+                <li>**Accuracy:** Prevents errors and misunderstandings that can arise from using inconsistent units within a project or communication.</li>
+                <li>**Design and Planning:** Essential in architecture, engineering, and product design for precise specifications and fitting components together.</li>
+                <li>**Scientific Research:** Critical for data collection, analysis, and replication of experiments where precise length measurements are required.</li>
+            </ul>
+
+            <h2>Common Misconceptions and Errors</h2>
+            <ul>
+                <li>**Confusing with Millimeters:** Sometimes people mistakenly interchange centimeters with millimeters, forgetting that 1 cm = 10 mm.</li>
+                <li>**Incorrect Factor:** The most common error is using the wrong conversion factor (e.g., multiplying by 10 instead of 100, or dividing when one should multiply).</li>
+                <li>**Imperial System Mix-up:** Individuals accustomed to the imperial system (inches, feet) might struggle with the metric system's decimal nature initially, leading to conversion errors if not careful.</li>
+            </ul>
+
+            <h2>Impact on Specific Industries</h2>
+            <ul>
+                <li>**Construction and Architecture:** Blueprints and building plans often use meters for overall dimensions, but finer details like wall thickness or furniture placement might be in centimeters. Accurate conversion is vital for structural integrity and fit-out.</li>
+                <li>**Manufacturing and Engineering:** Precision parts and components are often specified in millimeters, but assembly dimensions might use centimeters or meters, requiring seamless conversion to ensure correct fitting and functionality.</li>
+                <li>**Textile and Fashion:** Fabric widths are typically in meters, while patterns and garment measurements are often in centimeters, necessitating frequent conversions for designers and tailors.</li>
+                <li>**Healthcare:** Patient height, wound size, and instrument lengths are commonly measured in centimeters, while some medical equipment specifications might be in meters or millimeters.</li>
+                <li>**Education:** Teaching meter to centimeter conversion helps students grasp the decimal system and proportional reasoning, foundational skills for science and math.</li>
+            </ul>
+        </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

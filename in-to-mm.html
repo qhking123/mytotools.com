@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,111 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .conversion-info-section {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .conversion-info-section .section-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .conversion-info-section p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .conversion-info-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            color: #555;
+        }
+
+        .conversion-info-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conversion-table th, .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .conversion-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .conversion-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .conversion-table tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .formula {
+            font-weight: bold;
+            color: #007bff;
+            background-color: #e6f2ff;
+            padding: 10px;
+            border-left: 5px solid #0056b3;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .example {
+            font-style: italic;
+            color: #333;
+            background-color: #f0f8ff;
+            padding: 10px;
+            border-left: 5px solid #6cb2eb;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +260,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +682,121 @@
                 </div>
             </div>
         </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Inch (in)</h2>
+            <p>The inch is a unit of length in the British imperial and United States customary systems of measurement. It is approximately equal to 2.54 centimeters. Historically, the inch has been defined in various ways. One of the earliest definitions was based on the width of a man's thumb. Later, it was standardized, with the current international inch being defined as exactly 25.4 millimeters. Inches are commonly used in the United States, Canada, and the United Kingdom for many purposes, including screen sizes, tire diameters, and some construction measurements.</p>
+            <p>The term "inch" comes from the Old English word "ynce," which itself derived from the Latin "uncia," meaning "one twelfth." This refers to its traditional definition as one twelfth of a foot.</p>
         </div>
 
+        <div class="conversion-info-section">
+            <h2 class="section-title">Millimeter (mm)</h2>
+            <p>The millimeter is a unit of length in the metric system, equal to one thousandth of a meter (0.001 meters). It is a standard unit within the International System of Units (SI) and is widely used globally for precise measurements in engineering, manufacturing, and scientific fields. The metric system was first introduced in France during the late 18th century as a universal and more rational system of measurement, based on powers of ten.</p>
+            <p>Millimeters are particularly useful for small-scale measurements where a high degree of precision is required, such as in designing electronic components, measuring rainfall, or specifying the thickness of materials.</p>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Inch to Millimeter Conversion Table</h2>
+            <table class="conversion-table">
+                <thead>
+                    <tr>
+                        <th>Inches (in)</th>
+                        <th>Millimeters (mm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0.01</td><td>0.254</td></tr>
+                    <tr><td>0.1</td><td>2.54</td></tr>
+                    <tr><td>1</td><td>25.4</td></tr>
+                    <tr><td>2</td><td>50.8</td></tr>
+                    <tr><td>3</td><td>76.2</td></tr>
+                    <tr><td>4</td><td>101.6</td></tr>
+                    <tr><td>5</td><td>127.0</td></tr>
+                    <tr><td>6</td><td>152.4</td></tr>
+                    <tr><td>7</td><td>177.8</td></tr>
+                    <tr><td>8</td><td>203.2</td></tr>
+                    <tr><td>9</td><td>228.6</td></tr>
+                    <tr><td>10</td><td>254.0</td></tr>
+                    <tr><td>20</td><td>508.0</td></tr>
+                    <tr><td>30</td><td>762.0</td></tr>
+                    <tr><td>40</td><td>1016.0</td></tr>
+                    <tr><td>50</td><td>1270.0</td></tr>
+                    <tr><td>60</td><td>1524.0</td></tr>
+                    <tr><td>70</td><td>1778.0</td></tr>
+                    <tr><td>80</td><td>2032.0</td></tr>
+                    <tr><td>90</td><td>2286.0</td></tr>
+                    <tr><td>100</td><td>2540.0</td></tr>
+                    <tr><td>1000</td><td>25400.0</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">How to Convert Inches to Millimeters</h2>
+            <p>To convert a measurement in inches to millimeters, you multiply the number of inches by 25.4. This is because one inch is precisely equal to 25.4 millimeters.</p>
+            <p class="formula">Formula: $\text{Millimeters} = \text{Inches} \times 25.4$</p>
+            <p><strong>Example:</strong> Convert 5 inches to millimeters.</p>
+            <p class="example">Millimeters = $5 \times 25.4 = 127$ mm</p>
+            <p>So, 5 inches is equal to 127 millimeters.</p>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Important Considerations for Inches to Millimeters Conversion</h2>
+            <ul>
+                <li><strong>Precision:</strong> While 1 inch = 25.4 mm is an exact conversion, always consider the required precision for your application. For some tasks, rounding might be acceptable, while others demand high accuracy.</li>
+                <li><strong>Standardization:</strong> The adoption of the metric system (which uses millimeters) is nearly global, making conversions crucial for international collaboration and trade.</li>
+                <li><strong>Historical Context:</strong> Understanding the historical reasons for different units helps appreciate the challenges and benefits of standardization.</li>
+                <li><strong>Common Usage:</strong> Even in metric-dominant countries, some products (like display screens) are still commonly marketed using inches.</li>
+            </ul>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Fun Facts About Inches and Millimeters</h2>
+            <ul>
+                <li>The "inch" historically had many local definitions before its modern standardization, including the length of three barleycorns laid end to end.</li>
+                <li>The metric system, from which the millimeter originates, was a revolutionary concept born out of the French Revolution, aimed at creating a coherent and universally applicable system of measurement.</li>
+                <li>The precision of millimeters allows for incredibly detailed engineering and scientific work, from micro-electronics to advanced medical devices.</li>
+            </ul>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Why Conversion is Important</h2>
+            <p>Converting between inches and millimeters is crucial in a globalized world for several reasons:</p>
+            <ul>
+                <li><strong>International Trade and Manufacturing:</strong> Many products are designed and manufactured in countries using different measurement systems. Accurate conversion ensures compatibility and avoids costly errors in production and assembly.</li>
+                <li><strong>Scientific Research:</strong> The scientific community predominantly uses the metric system, making conversions essential for sharing and replicating research findings globally.</li>
+                <li><strong>Engineering and Construction:</strong> Projects often involve components or materials from various sources. Precise conversions are vital for structural integrity and proper fit.</li>
+                <li><strong>Education:</strong> Understanding both systems and how to convert between them is a fundamental part of a comprehensive education in science, technology, engineering, and mathematics (STEM).</li>
+                <li><strong>Daily Life:</strong> From understanding product specifications (e.g., TV screen size in inches vs. dimensions in mm) to DIY projects, conversions can be relevant in everyday scenarios.</li>
+            </ul>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Common Misconceptions and Errors</h2>
+            <ul>
+                <li><strong>Simple Division/Multiplication Errors:</strong> The most common error is using the wrong conversion factor (e.g., accidentally multiplying by 2.54 instead of 25.4, or vice-versa, when dealing with centimeters). Always remember: 1 inch = 25.4 mm.</li>
+                <li><strong>Rounding Too Early:</strong> Rounding intermediate conversion results can lead to inaccuracies in the final answer, especially in multi-step calculations. It's best to retain full precision until the very end.</li>
+                <li><strong>Confusing Imperial and US Customary Inches:</strong> While the "international inch" (25.4 mm) is now universally accepted, historically there were slight differences between the imperial inch and the US customary inch before the 1959 agreement.</li>
+                <li><strong>Ignoring Significant Figures:</strong> When converting, the precision of your result should generally reflect the precision of your least precise input measurement. Avoid presenting results with more decimal places than are justified by the original data.</li>
+            </ul>
+        </div>
+
+        <div class="conversion-info-section">
+            <h2 class="section-title">Impact on Specific Industries</h2>
+            <ul>
+                <li><strong>Automotive:</strong> Car parts, especially from older vehicles or certain manufacturing regions, might still use imperial measurements. Conversions are vital for maintenance, repairs, and design integration.</li>
+                <li><strong>Electronics:</strong> Component sizes, PCB layouts, and screen dimensions often involve both inches (especially for display diagonals) and millimeters (for detailed component spacing).</li>
+                <li><strong>Construction and Architecture:</strong> Blueprints and material specifications can vary. Ensuring all measurements are consistent (either entirely metric or imperial, or accurately converted) prevents structural issues and material waste.</li>
+                <li><strong>Fashion and Textiles:</strong> Fabric widths, garment sizes, and pattern measurements may be specified in inches or centimeters/millimeters depending on the origin, requiring careful conversion for production.</li>
+                <li><strong>Medical Devices:</strong> Precision is paramount in medical device manufacturing. Accurate conversions are critical for the functionality and safety of instruments and implants.</li>
+            </ul>
+        </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,141 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .info-section {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .info-section h2.section-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .info-section h3 {
+            color: #555;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-section h4 {
+            color: #777;
+            font-size: 1.2em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .unit-definition {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .conversion-table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 0.95em;
+        }
+
+        .conversion-table th, .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        .conversion-table th {
+            background-color: #eef;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .conversion-table tbody tr:nth-child(odd) {
+            background-color: #f6f6f6;
+        }
+
+        .conversion-table tbody tr:hover {
+            background-color: #e9f5ff;
+        }
+
+        .formula {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4CAF50;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        .example {
+            background-color: #e3f2fd;
+            border-left: 5px solid #2196F3;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto;
+        }
+
+        .info-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .info-section ul li {
+            margin-bottom: 8px;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +290,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +712,126 @@
                 </div>
             </div>
         </div>
+        
+        <div class="info-section">
+            <h2 class="section-title">Understanding Feet and Inches</h2>
+
+            <div class="unit-definition">
+                <h3>Feet (ft)</h3>
+                <p>The foot (plural: feet; abbreviation: ft) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as exactly 0.3048 meters.</p>
+                <h4>History of the Foot</h4>
+                <p>The use of the "foot" as a unit of measurement dates back to ancient civilizations. Historically, it was based on the length of a human foot, though its exact definition varied significantly by region and over time. For instance, the Roman foot (pes) was approximately 296 mm, while the Greek foot (pous) could range from 270 mm to 350 mm. In medieval Europe, the length of the foot was often standardized based on the foot of a reigning monarch or a specific physical standard. The current international foot, equal to 0.3048 meters, was agreed upon in 1959 by the United States and countries of the Commonwealth of Nations.</p>
+                <h4>Current Usage of the Foot</h4>
+                <p>Today, the foot is primarily used in the United States, Canada, and the United Kingdom for measuring height, altitude, and sometimes shorter distances in construction and engineering. It is also common in aviation for measuring altitude.</p>
+                <h4>Interesting Fact about the Foot</h4>
+                <p>The human foot, on which the unit is based, varies in size. This inherent variability led to many different "foot" standards throughout history before a more universal definition was adopted.</p>
+            </div>
+
+            <div class="unit-definition">
+                <h3>Inches (in)</h3>
+                <p>The inch (plural: inches; abbreviation: in) is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as 1/12 of a foot, or exactly 2.54 centimeters.</p>
+                <h4>History of the Inch</h4>
+                <p>The word "inch" comes from the Latin uncia, meaning "one-twelfth," referring to its relationship with the foot. Its history is also deeply rooted in ancient measurements. One early definition was based on the width of a human thumb. In England, an "inch" was defined in the 12th century as the length of "three grains of barley, dry and round, placed end to end." The modern international inch, equal to 2.54 cm, was established in 1959 as part of the international yard and pound agreement.</p>
+                <h4>Current Usage of the Inch</h4>
+                <p>The inch is widely used in the United States for measuring dimensions of objects, display sizes (like TV screens), clothing sizes, and in various engineering and manufacturing applications. It is also used in the UK and Canada for similar purposes, often alongside metric units.</p>
+                <h4>Interesting Fact about the Inch</h4>
+                <p>The diagonal measurement of television screens and computer monitors is almost universally given in inches, even in countries that primarily use the metric system for other measurements.</p>
+            </div>
+
+            <h2 class="section-title">Feet to Inches Conversion Table</h2>
+            <p>Below is a conversion table for common feet values to inches:</p>
+            <div class="conversion-table-container">
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Feet (ft)</th>
+                            <th>Inches (in)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.01</td><td>0.12</td></tr>
+                        <tr><td>0.1</td><td>1.2</td></tr>
+                        <tr><td>1</td><td>12</td></tr>
+                        <tr><td>2</td><td>24</td></tr>
+                        <tr><td>3</td><td>36</td></tr>
+                        <tr><td>4</td><td>48</td></tr>
+                        <tr><td>5</td><td>60</td></tr>
+                        <tr><td>6</td><td>72</td></tr>
+                        <tr><td>7</td><td>84</td></tr>
+                        <tr><td>8</td><td>96</td></tr>
+                        <tr><td>9</td><td>108</td></tr>
+                        <tr><td>10</td><td>120</td></tr>
+                        <tr><td>20</td><td>240</td></tr>
+                        <tr><td>30</td><td>360</td></tr>
+                        <tr><td>40</td><td>480</td></tr>
+                        <tr><td>50</td><td>600</td></tr>
+                        <tr><td>60</td><td>720</td></tr>
+                        <tr><td>70</td><td>840</td></tr>
+                        <tr><td>80</td><td>960</td></tr>
+                        <tr><td>90</td><td>1080</td></tr>
+                        <tr><td>100</td><td>1200</td></tr>
+                        <tr><td>1000</td><td>12000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="section-title">How to Convert Feet to Inches</h2>
+            <p>Converting feet to inches is straightforward as there are exactly 12 inches in every foot. The formula for conversion is:</p>
+            <p class="formula">$$ \text{Inches} = \text{Feet} \times 12 $$</p>
+            <p><strong>Example 1:</strong> Convert 5 feet to inches.</p>
+            <p class="example">$$ \text{Inches} = 5 \text{ ft} \times 12 \text{ in/ft} = 60 \text{ inches} $$</p>
+            <p>So, 5 feet is equal to 60 inches.</p>
+            <p><strong>Example 2:</strong> Convert 7.5 feet to inches.</p>
+            <p class="example">$$ \text{Inches} = 7.5 \text{ ft} \times 12 \text{ in/ft} = 90 \text{ inches} $$</p>
+            <p>So, 7.5 feet is equal to 90 inches.</p>
+
+            <h2 class="section-title">Important Considerations for Feet to Inches Conversion</h2>
+            <ul>
+                <li><strong>Precision:</strong> When dealing with measurements that include both feet and inches (e.g., 5 feet 6 inches), remember to convert only the feet part to inches and then add the existing inches. For example, 5 feet 6 inches is $(5 \times 12) + 6 = 60 + 6 = 66$ inches.</li>
+                <li><strong>Context:</strong> Always consider the context of the measurement. In some fields, fractions of an inch are critical, while in others, rounding to the nearest whole inch might be acceptable.</li>
+                <li><strong>Imperial vs. Metric:</strong> While straightforward, converting between feet/inches and metric units (like meters or centimeters) requires a different conversion factor (1 foot = 0.3048 meters, 1 inch = 2.54 cm).</li>
+            </ul>
+
+            <h2 class="section-title">Fun Facts About Feet and Inches</h2>
+            <ul>
+                <li><strong>Tall Tales:</strong> The saying "feet of clay" refers to a hidden weakness in an otherwise strong character, highlighting the foundational role of the foot.</li>
+                <li><strong>Tiny Measures:</strong> The smallest unit on a standard ruler in the US customary system is often 1/16th of an inch, making precise measurements quite intricate without decimal conversion.</li>
+                <li><strong>Historical Quirks:</strong> Did you know that some historical "inches" were defined by the width of a man's thumb at the base of the nail? This led to varied measurements until standardization.</li>
+            </ul>
+
+            <h2 class="section-title">Why Conversion is Important</h2>
+            <p>Converting between feet and inches is crucial in various practical scenarios:</p>
+            <ul>
+                <li><strong>Construction and Architecture:</strong> Blueprints and building plans often use feet and inches. Accurate conversion ensures materials are cut correctly and structures are built to specification, preventing costly errors.</li>
+                <li><strong>Home Improvement:</strong> Measuring for furniture, curtains, or appliances often involves both feet and inches. Converting everything to a single unit (inches) simplifies calculations and avoids misfits.</li>
+                <li><strong>Fashion and Apparel:</strong> Body measurements for custom clothing or determining fabric requirements frequently use feet and inches. Precise conversions are vital for a good fit.</li>
+                <li><strong>Sports:</strong> In many sports, particularly in the US, heights of athletes and dimensions of fields or equipment are given in feet and inches, requiring quick conversions for understanding and comparison.</li>
+                <li><strong>Everyday Life:</strong> From estimating the height of a person to measuring the length of a garden bed, the ability to convert between these units helps in daily tasks and communication.</li>
+            </ul>
+
+            <h2 class="section-title">Common Misconceptions and Errors</h2>
+            <ul>
+                <li><strong>Forgetting the "12":</strong> The most common mistake is forgetting that there are 12 inches in a foot, leading to direct addition or subtraction errors instead of multiplication.</li>
+                <li><strong>Mixing Units Without Converting:</strong> Attempting to perform arithmetic operations (like adding or subtracting) directly with mixed units (e.g., 5 feet + 3 inches) without converting one to the other first. Always convert to a common unit before performing calculations.</li>
+                <li><strong>Decimal Feet vs. Feet and Inches:</strong> Confusing decimal feet (e.g., 5.5 feet) with feet and inches (e.g., 5 feet 6 inches). While 5.5 feet is indeed 5 feet and 6 inches ($0.5 \times 12 = 6$), assuming all decimals in feet directly correspond to inches is incorrect (e.g., 5.3 feet is not 5 feet 3 inches).</li>
+                <li><strong>Rounding Errors:</strong> Prematurely rounding during calculations can lead to inaccuracies, especially when high precision is required. It's best to perform the conversion and then round the final result if necessary.</li>
+            </ul>
+
+            <h2 class="section-title">Impact on Specific Industries</h2>
+            <ul>
+                <li><strong>Construction and Real Estate:</strong> Property sizes, ceiling heights, and room dimensions are almost universally communicated in feet and inches. Accurate conversion is paramount for architects, builders, and real estate agents.</li>
+                <li><strong>Manufacturing and Engineering:</strong> Precision in dimensions is critical. Parts, components, and assemblies often have specifications in inches, and tools may be calibrated in fractions of an inch. Converting designs from feet to inches is a common task.</li>
+                <li><strong>Aviation:</strong> Aircraft altitude is measured in feet, and many aircraft components are designed and manufactured using imperial measurements. Pilots and engineers must be proficient in these units.</li>
+                <li><strong>Retail and Consumer Goods:</strong> Products like televisions, computer monitors, and certain clothing items are marketed with dimensions in inches, even in metric-dominant countries.</li>
+                <li><strong>Sports and Fitness:</strong> Heights of athletes, lengths of tracks, and dimensions of sports equipment often use feet and inches, particularly in sports with strong American roots (e.g., basketball, American football).</li>
+            </ul>
         </div>
 
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

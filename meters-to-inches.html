@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,121 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .content-section h2 {
+            color: #0056b3;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #0056b3;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content-section ul {
+            list-style-type: disc;
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .content-section table th,
+        .content-section table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .content-section table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .content-section table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .content-section table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .formula {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0056b3;
+        }
+
+        .example {
+            background-color: #f0fdf4;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            font-family: 'Courier New', Courier, monospace;
+            color: #218838;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +270,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +692,116 @@
                 </div>
             </div>
         </div>
-        </div>
 
+        <div class="content-section">
+                <h2>Meter (m)</h2>
+                <p>The meter (m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second. This precise definition ensures its universality and accuracy across scientific and practical applications worldwide.</p>
+                <h3>History of the Meter</h3>
+                <p>The concept of the meter originated in France during the late 18th century. Initially, it was defined as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. This definition, though revolutionary for its time, proved difficult to reproduce accurately. Over the years, the definition evolved. In 1889, it was redefined as the length of a prototype bar made of platinum-iridium alloy. The current definition, based on the speed of light, was adopted in 1983, providing a more fundamental and reproducible standard.</p>
+                <h3>Current Usage of the Meter</h3>
+                <p>The meter is widely used globally in almost all fields, including science, engineering, construction, sports, and everyday measurements. It is the foundation of the metric system, which emphasizes powers of ten, making conversions within the system straightforward (e.g., 1 kilometer = 1,000 meters, 1 meter = 100 centimeters = 1,000 millimeters).</p>
+
+                <h2>Inch (in)</h2>
+                <p>The inch (in) is a unit of length in the imperial and United States customary systems of measurement. It is defined as exactly 25.4 millimeters or 2.54 centimeters. The inch is commonly used in countries like the United States, Canada, and the United Kingdom for various measurements, especially in construction, manufacturing, and consumer goods.</p>
+                <h3>History of the Inch</h3>
+                <p>The origin of the inch can be traced back to various ancient measurement systems. Historically, it was defined in several ways, including the width of a man's thumb or three barleycorns laid end to end. The legal definition varied significantly across regions and over time. In 1959, the international yard and pound agreement standardized the inch to exactly 25.4 millimeters, providing a consistent conversion factor between the imperial and metric systems.</p>
+                <h3>Current Usage of the Inch</h3>
+                <p>Despite the global prevalence of the metric system, the inch remains a common unit in specific industries and contexts. In the United States, it is widely used for measuring screen sizes (e.g., TVs, monitors), tire diameters, clothing sizes, and construction materials. In some parts of the world, it is still used in conjunction with feet for measuring height and other dimensions.</p>
+
+                <h2>Meter to Inch Conversion Table</h2>
+                <p>Here's a conversion table for common meter values to inches:</p>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Meters (m)</th>
+                                <th>Inches (in)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0.01</td><td>0.3937</td></tr>
+                            <tr><td>0.1</td><td>3.937</td></tr>
+                            <tr><td>1</td><td>39.37</td></tr>
+                            <tr><td>2</td><td>78.74</td></tr>
+                            <tr><td>3</td><td>118.11</td></tr>
+                            <tr><td>4</td><td>157.48</td></tr>
+                            <tr><td>5</td><td>196.85</td></tr>
+                            <tr><td>6</td><td>236.22</td></tr>
+                            <tr><td>7</td><td>275.59</td></tr>
+                            <tr><td>8</td><td>314.96</td></tr>
+                            <tr><td>9</td><td>354.33</td></tr>
+                            <tr><td>10</td><td>393.70</td></tr>
+                            <tr><td>20</td><td>787.40</td></tr>
+                            <tr><td>30</td><td>1181.10</td></tr>
+                            <tr><td>40</td><td>1574.80</td></tr>
+                            <tr><td>50</td><td>1968.50</td></tr>
+                            <tr><td>60</td><td>2362.20</td></tr>
+                            <tr><td>70</td><td>2755.90</td></tr>
+                            <tr><td>80</td><td>3149.60</td></tr>
+                            <tr><td>90</td><td>3543.30</td></tr>
+                            <tr><td>100</td><td>3937.00</td></tr>
+                            <tr><td>1000</td><td>39370.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>How to Convert Meters to Inches</h2>
+                <p>To convert meters to inches, you can use the following formula:</p>
+                <p class="formula">Inches = Meters × 39.3701</p>
+                <p>This conversion factor is derived from the fact that 1 meter is approximately equal to 39.3701 inches.</p>
+                <h3>Example:</h3>
+                <p>Convert 2.5 meters to inches:</p>
+                <p class="example">Inches = 2.5 m × 39.3701 in/m = 98.4252 inches</p>
+
+                <h2>Important Considerations for Meter to Inch Conversion</h2>
+                <ul>
+                    <li><strong>Precision and Significant Figures:</strong> When converting between units, especially for engineering or scientific applications, pay close attention to the required precision and the number of significant figures. Rounding too early can introduce errors.</li>
+                    <li><strong>Context Matters:</strong> The choice between meters and inches often depends on the geographical location and the industry. Always confirm the preferred unit system for your specific context to avoid miscommunication.</li>
+                    <li><strong>Historical vs. Modern Definitions:</strong> Be aware that historical definitions of units like the inch varied. Always use the modern, standardized conversion factors for accuracy.</li>
+                    <li><strong>Impact on Design and Manufacturing:</strong> In fields like architecture and manufacturing, even small conversion errors can lead to significant discrepancies in dimensions, material waste, or structural integrity.</li>
+                </ul>
+
+                <h2>Interesting Facts about Meter and Inch Conversion</h2>
+                <ul>
+                    <li>The standardization of the meter and inch to a common millimetre value (1 inch = 25.4 mm) was a crucial step in facilitating international trade and scientific collaboration.</li>
+                    <li>The ongoing coexistence of metric and imperial systems in various parts of the world necessitates conversion tools and a clear understanding of both.</li>
+                    <li>The term "inch" is thought to derive from the Latin word "uncia," meaning "one-twelfth," referring to its historical definition as one-twelfth of a foot.</li>
+                    <li>The meter's definition based on the speed of light makes it one of the most stable and fundamental units of measurement, not subject to physical wear or environmental changes.</li>
+                </ul>
+
+                <h2>Why Conversion is Important</h2>
+                <p>Converting between meters and inches is essential for several practical reasons:</p>
+                <ul>
+                    <li><strong>International Collaboration:</strong> In a globalized world, different countries use different measurement systems. Accurate conversion ensures smooth communication and collaboration in international projects, trade, and research.</li>
+                    <li><strong>Compatibility:</strong> Many products, designs, and specifications originate in countries using either metric or imperial units. Conversion is necessary to ensure compatibility and proper fit when integrating components from various sources.</li>
+                    <li><strong>Error Prevention:</strong> Incorrect conversions can lead to costly errors, wasted materials, and safety hazards, particularly in engineering, construction, and manufacturing.</li>
+                    <li><strong>Educational Purposes:</strong> Understanding unit conversion is a fundamental skill in science, mathematics, and vocational training, promoting a deeper comprehension of measurement principles.</li>
+                </ul>
+
+                <h2>Common Misconceptions and Errors</h2>
+                <ul>
+                    <li><strong>Simple Division/Multiplication Assumption:</strong> A common mistake is to assume a simple, easily memorized conversion factor without using the precise value (39.3701).</li>
+                    <li><strong>Rounding Errors:</strong> Premature rounding during intermediate steps of a calculation can accumulate and lead to significant inaccuracies in the final result.</li>
+                    <li><strong>Confusing Units:</strong> Sometimes, people mistakenly interchange similar-sounding units (e.g., centimeters and inches) if not paying close attention.</li>
+                    <li><strong>Ignoring Context:</strong> Applying a conversion without considering the specific industry standards or regional practices can lead to misinterpretations of measurements.</li>
+                </ul>
+
+                <h2>Impact on Specific Industries</h2>
+                <ul>
+                    <li><strong>Construction:</strong> Architects and builders frequently convert between metric and imperial plans, especially in countries where both systems are in use. This is crucial for material ordering, design specifications, and ensuring structural integrity.</li>
+                    <li><strong>Manufacturing:</strong> Global supply chains require precise conversions for product design, component manufacturing, and quality control. Tools and machinery often need to be compatible with both unit systems.</li>
+                    <li><strong>Textile and Apparel:</strong> Fabric widths, garment sizes, and patterns often require conversion, particularly when sourcing materials or selling products internationally.</li>
+                    <li><strong>Sports and Fitness:</strong> Track and field events, swimming pools, and sports equipment dimensions are often specified in one system but discussed or measured in another, requiring conversions for clear understanding and fair competition.</li>
+                    <li><strong>Science and Research:</strong> While metric is dominant, historical data or specialized equipment may use imperial units, necessitating conversions for data analysis and comparison.</li>
+                </ul>
+
+            </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

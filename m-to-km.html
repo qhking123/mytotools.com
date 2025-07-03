@@ -13,14 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +90,130 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        .additional-content {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .additional-content section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .additional-content section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .additional-content h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+        }
+
+        .additional-content h3 {
+            color: #555;
+            font-size: 1.4em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .additional-content p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .additional-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            color: #666;
+        }
+
+        .additional-content ul li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .conversion-table th,
+        .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .conversion-table th {
+            background-color: #e0f2f7;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .conversion-table tr:nth-child(even) {
+            background-color: #f6f6f6;
+        }
+
+        .conversion-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .formula {
+            background-color: #e6f7ff;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            color: #0d47a1;
+            font-weight: bold;
+        }
+
+        .example-calculation {
+            background-color: #f3f9f3;
+            border-left: 5px solid #4CAF50;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #2e7d32;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +279,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +701,131 @@
                 </div>
             </div>
         </div>
-        </div>
+        
+        <div class="additional-content">
+                <section>
+                    <h2>The Meter (m)</h2>
+                    <p>The meter (m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second. This precise definition ensures that the meter is universally consistent and reproducible.</p>
+                    <h3>History of the Meter</h3>
+                    <p>The concept of the meter originated in 18th-century France during the Age of Enlightenment. Initially, it was conceived as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. A platinum bar, the "Mètre des Archives," was created in 1799 to embody this definition.</p>
+                    <p>Over time, the definition of the meter evolved to increase accuracy and independence from Earth's dimensions. In 1889, it was redefined as the length of a platinum-iridium bar, the International Prototype Meter. The current definition, based on the speed of light, was adopted in 1983, reflecting advancements in scientific understanding and technology.</p>
+                    <h3>Current Usage of the Meter</h3>
+                    <p>The meter is widely used globally in almost all fields of science, engineering, and everyday life. It is the standard unit for measuring distances, heights, depths, and widths in numerous applications. From construction plans and architectural designs to athletic events and scientific experiments, the meter provides a coherent and universally understood measure of length.</p>
+                </section>
 
+                <section>
+                    <h2>The Kilometer (km)</h2>
+                    <p>The kilometer (km) is a unit of length in the metric system, equal to one thousand meters (1,000 m). It is commonly used for measuring longer distances, such as geographical distances between places, road lengths, and travel distances.</p>
+                    <h3>History of the Kilometer</h3>
+                    <p>As a derivative of the meter, the kilometer shares its historical roots with the metric system. The prefix "kilo-" comes from the Greek word "khilioi," meaning thousand. The metric system itself was developed in France during the late 18th century to standardize measurements and promote easier international trade and scientific exchange. The kilometer quickly became a practical unit for expressing larger distances within this rationalized system of units.</p>
+                    <h3>Current Usage of the Kilometer</h3>
+                    <p>The kilometer is the predominant unit for measuring distance in most countries worldwide, with the notable exception of the United States and the United Kingdom, where miles are still commonly used. It is fundamental in cartography for mapping, in transportation for road signs and vehicle speedometers, and in sports for races like marathons and cycling events. Its simplicity, being a multiple of 10 of the meter, makes calculations straightforward and intuitive.</p>
+                </section>
+
+                <section>
+                    <h2>Meter to Kilometer Conversion Table</h2>
+                    <p>Here is a conversion table for common meter values to kilometers:</p>
+                    <table class="conversion-table">
+                        <thead>
+                            <tr>
+                                <th>Meters (m)</th>
+                                <th>Kilometers (km)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0.01</td><td>0.00001</td></tr>
+                            <tr><td>0.1</td><td>0.0001</td></tr>
+                            <tr><td>1</td><td>0.001</td></tr>
+                            <tr><td>2</td><td>0.002</td></tr>
+                            <tr><td>3</td><td>0.003</td></tr>
+                            <tr><td>4</td><td>0.004</td></tr>
+                            <tr><td>5</td><td>0.005</td></tr>
+                            <tr><td>6</td><td>0.006</td></tr>
+                            <tr><td>7</td><td>0.007</td></tr>
+                            <tr><td>8</td><td>0.008</td></tr>
+                            <tr><td>9</td><td>0.009</td></tr>
+                            <tr><td>10</td><td>0.01</td></tr>
+                            <tr><td>20</td><td>0.02</td></tr>
+                            <tr><td>30</td><td>0.03</td></tr>
+                            <tr><td>40</td><td>0.04</td></tr>
+                            <tr><td>50</td><td>0.05</td></tr>
+                            <tr><td>60</td><td>0.06</td></tr>
+                            <tr><td>70</td><td>0.07</td></tr>
+                            <tr><td>80</td><td>0.08</td></tr>
+                            <tr><td>90</td><td>0.09</td></tr>
+                            <tr><td>100</td><td>0.1</td></tr>
+                            <tr><td>1000</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>How to Convert Meters to Kilometers</h2>
+                    <p>To convert meters to kilometers, you divide the number of meters by 1,000 (since 1 kilometer equals 1,000 meters).</p>
+                    <p class="formula">Formula: Kilometers = Meters / 1000</p>
+                    <h3>Example:</h3>
+                    <p>Convert 5000 meters to kilometers:</p>
+                    <p class="example-calculation">Kilometers = 5000 m / 1000 = 5 km</p>
+                </section>
+
+                <section>
+                    <h2>Important Considerations for Meter to Kilometer Conversion</h2>
+                    <ul>
+                        <li><strong>Unit Consistency:</strong> Always ensure all other measurements in a calculation are in the same unit system to avoid errors.</li>
+                        <li><strong>Precision:</strong> For scientific or engineering applications, pay attention to the required number of significant figures in your conversion.</li>
+                        <li><strong>Contextual Relevance:</strong> While 1000 meters is exactly 1 kilometer, choose the unit that is most appropriate for the scale of the distance being described (e.g., meters for building dimensions, kilometers for road trips).</li>
+                        <li><strong>Global Standard:</strong> The metric system, including meters and kilometers, is the internationally accepted standard, facilitating global communication and collaboration in many fields.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Fun Facts About Meters and Kilometers</h2>
+                    <ul>
+                        <li>The speed of light in a vacuum is exactly 299,792,458 meters per second. This speed is fundamental to the modern definition of the meter.</li>
+                        <li>A standard marathon race is 42.195 kilometers (approximately 26.2 miles) long, a distance often measured and announced in kilometers in most parts of the world.</li>
+                        <li>The Earth's circumference at the equator is approximately 40,075 kilometers.</li>
+                        <li>The Great Wall of China is estimated to be over 21,000 kilometers long, showcasing the use of kilometers for vast distances.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Why Conversion is Important</h2>
+                    <p>Converting between meters and kilometers is crucial for several practical reasons:</p>
+                    <ul>
+                        <li><strong>Navigation and Travel:</strong> Road signs, maps, and GPS systems often display distances in kilometers in most countries, making conversion essential for drivers and travelers.</li>
+                        <li><strong>Scientific Research:</strong> Scientists frequently need to convert between these units depending on the scale of their experiments, from microscopic measurements in meters to astronomical distances better expressed in kilometers.</li>
+                        <li><strong>Construction and Engineering:</strong> While meters are common for building dimensions, larger infrastructure projects like roads, bridges, and pipelines require measurements in kilometers for planning and execution.</li>
+                        <li><strong>International Communication:</strong> Given that the metric system is global, understanding how to convert ensures clear and unambiguous communication across different regions and industries.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Common Misconceptions and Errors</h2>
+                    <ul>
+                        <li><strong>Forgetting the Factor of 1000:</strong> The most common error is simply forgetting that there are 1000 meters in a kilometer, leading to incorrect calculations (e.g., multiplying instead of dividing).</li>
+                        <li><strong>Confusion with Miles:</strong> Especially for those accustomed to imperial units, confusing kilometers with miles can lead to significant overestimation or underestimation of distances.</li>
+                        <li><strong>Rounding Errors:</strong> While meters to kilometers is a direct division by 1000, in more complex calculations involving other units, improper rounding at intermediate steps can accumulate errors.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Impact on Specific Industries</h2>
+                    <ul>
+                        <li><strong>Automotive Industry:</strong> Vehicle speedometers and odometers outside the US and UK display kilometers per hour (km/h) and total distance in kilometers.</li>
+                        <li><strong>Aviation:</strong> Flight distances are often quoted in kilometers for internal planning and international air traffic control.</li>
+                        <li><strong>Sports and Athletics:</strong> Race distances (e.g., 5K, 10K, marathon) are almost universally measured and referred to in kilometers.</li>
+                        <li><strong>Logistics and Shipping:</strong> Route planning and fuel consumption calculations for long-distance transport rely heavily on kilometers.</li>
+                        <li><strong>Real Estate and Urban Planning:</strong> While individual property sizes might be in square meters, distances between urban centers or within large developments are expressed in kilometers.</li>
+                    </ul>
+                </section>
+
+            </div>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

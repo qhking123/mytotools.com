@@ -12,15 +12,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+    <title>CM to Meters Converter</title>
+    <meta name="description" content="Centimeters to Metters (cm to m) converter and how to convert.">
+    <style>
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +92,109 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* cm_to_meters_content.css */
+        .cm-to-meters-content {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .cm-to-meters-content .section-title {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .cm-to-meters-content p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .cm-to-meters-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .cm-to-meters-content ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .cm-to-meters-content .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        .cm-to-meters-content .conversion-table th,
+        .cm-to-meters-content .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .cm-to-meters-content .conversion-table th {
+            background-color: #e0e0e0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cm-to-meters-content .conversion-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .cm-to-meters-content .conversion-table tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .cm-to-meters-content .formula,
+        .cm-to-meters-content .example-calculation {
+            background-color: #e6f7ff;
+            border-left: 5px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            color: #333;
+            overflow-x: auto; /* For long formulas */
+        }
+
+        /* For LaTeX-like display */
+        .cm-to-meters-content .formula span.latex-math,
+        .cm-to-meters-content .example-calculation span.latex-math {
+            display: inline-block;
+            padding: 0 5px;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +260,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +682,92 @@
                 </div>
             </div>
         </div>
+        
+        <div class="cm-to-meters-content">
+            <h2 class="section-title">Centimeter (cm)</h2>
+            <p>The centimeter (symbol: cm) is a unit of length in the metric system, equal to one hundredth of a meter. It is a commonly used unit of length for everyday measurements. For example, the height of a person, the length of a book, or the dimensions of a small object are often expressed in centimeters.</p>
+            <p>Historically, the metric system, including the centimeter, was developed in France during the late 18th century. It aimed to create a unified and rational system of measurement based on natural phenomena, as opposed to arbitrary historical units. The centimeter, as a sub-multiple of the meter, naturally emerged from this decimal-based system.</p>
+            <p>Today, the centimeter is widely used globally in various fields, including:</p>
+            <ul>
+                <li><strong>Everyday Measurements:</strong> For measuring clothing sizes, body measurements, small distances, and dimensions of household items.</li>
+                <li><strong>Engineering and Manufacturing:</strong> Used in design and production for precise measurements of components and materials.</li>
+                <li><strong>Science and Education:</strong> Common in scientific experiments, laboratory work, and educational settings for its ease of use in calculations due to its decimal nature.</li>
+                <li><strong>Sports:</strong> Used for measuring distances in many athletic events, such as long jump, high jump, and shot put.</li>
+            </ul>
+
+            <h2 class="section-title">Meter (m)</h2>
+            <p>The meter (symbol: m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second. This definition links the meter directly to the fundamental constant of the speed of light, ensuring its precision and universality.</p>
+            <p>The concept of the meter originated in France during the French Revolution in the late 18th century. The original definition of the meter was intended to be one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. This ambitious project aimed to create a standard of length that was immutable and derived from nature itself. Over time, the definition has been refined for greater accuracy and stability, culminating in the current light-speed definition adopted in 1983.</p>
+            <p>The meter is the cornerstone of the metric system and is used extensively worldwide across countless disciplines, including:</p>
+            <ul>
+                <li><strong>Construction and Architecture:</strong> For measuring building dimensions, land plots, and structural elements.</li>
+                <li><strong>Geography and Cartography:</strong> Used for mapping distances, elevations, and geographical features.</li>
+                <li><strong>Physics and Astronomy:</strong> Fundamental in scientific research for measuring distances at all scales, from subatomic particles to astronomical objects.</li>
+                <li><strong>Daily Life:</strong> While centimeters are common for smaller items, meters are used for larger objects like room dimensions, vehicle lengths, and general distances.</li>
+            </ul>
+
+            <h2 class="section-title">Centimeters to Meters Conversion Table</h2>
+            <p>The following table shows common conversions from centimeters to meters:</p>
+            <table class="conversion-table">
+                <thead>
+                    <tr>
+                        <th>Centimeters (cm)</th>
+                        <th>Meters (m)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0.01 cm</td><td>0.0001 m</td></tr>
+                    <tr><td>0.1 cm</td><td>0.001 m</td></tr>
+                    <tr><td>1 cm</td><td>0.01 m</td></tr>
+                    <tr><td>2 cm</td><td>0.02 m</td></tr>
+                    <tr><td>3 cm</td><td>0.03 m</td></tr>
+                    <tr><td>4 cm</td><td>0.04 m</td></tr>
+                    <tr><td>5 cm</td><td>0.05 m</td></tr>
+                    <tr><td>6 cm</td><td>0.06 m</td></tr>
+                    <tr><td>7 cm</td><td>0.07 m</td></tr>
+                    <tr><td>8 cm</td><td>0.08 m</td></tr>
+                    <tr><td>9 cm</td><td>0.09 m</td></tr>
+                    <tr><td>10 cm</td><td>0.1 m</td></tr>
+                    <tr><td>20 cm</td><td>0.2 m</td></tr>
+                    <tr><td>30 cm</td><td>0.3 m</td></tr>
+                    <tr><td>40 cm</td><td>0.4 m</td></tr>
+                    <tr><td>50 cm</td><td>0.5 m</td></tr>
+                    <tr><td>60 cm</td><td>0.6 m</td></tr>
+                    <tr><td>70 cm</td><td>0.7 m</td></tr>
+                    <tr><td>80 cm</td><td>0.8 m</td></tr>
+                    <tr><td>90 cm</td><td>0.9 m</td></tr>
+                    <tr><td>100 cm</td><td>1 m</td></tr>
+                    <tr><td>1000 cm</td><td>10 m</td></tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">How to Convert Centimeters to Meters</h2>
+            <p>To convert a measurement in centimeters (cm) to meters (m), you can use the following formula:</p>
+            <p class="formula">
+                $$ \text{Meters (m)} = \text{Centimeters (cm)} \div 100 $$
+            </p>
+            <p>This is because there are 100 centimeters in 1 meter.</p>
+            <h3>Example:</h3>
+            <p>If you have 250 centimeters and want to convert it to meters, you would do the following:</p>
+            <p class="example-calculation">
+                $$ 250 \text{ cm} \div 100 = 2.5 \text{ m} $$
+            </p>
+            <p>So, 250 centimeters is equal to 2.5 meters.</p>
+
+            <h2 class="section-title">Important Notes on Centimeter to Meter Conversion</h2>
+            <ul>
+                <li><strong>Decimal System Advantage:</strong> The metric system, which includes centimeters and meters, is based on powers of 10. This makes conversions straightforward, primarily involving shifting the decimal point. For cm to m, you shift the decimal two places to the left.</li>
+                <li><strong>Precision:</strong> When converting, be mindful of the required precision. If your initial measurement in centimeters has a certain number of significant figures, your converted value in meters should maintain that precision.</li>
+                <li><strong>Common Applications:</strong> This conversion is frequently used in construction, interior design, and any field where measurements need to transition between smaller and larger metric units of length.</li>
+                <li><strong>Context Matters:</strong> While the conversion factor is always 100, understanding the context of the measurement can help in verifying if the converted value makes sense. For instance, a person's height is typically measured in centimeters and converted to meters for official documents or scientific data.</li>
+            </ul>
         </div>
 
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';

@@ -12,15 +12,15 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="lengthConversion"></title> <style>
-        /* length.html 原有的样式保持不变 */
-        body {
+    <title>CM to Millimeter Converter</title>
+    <meta name="description" content="Centimeters to Millimeter (cm to mm) converter and how to convert.">
+    <style>
+         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
-            overflow: hidden;
         }
         #left-panel {
             width: 250px;
@@ -92,10 +92,154 @@
         .category-content a[style*="background-color: #d0d0d0"] {
             font-weight: bold;
         }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
     </style>
     <link rel="stylesheet" href="templates/converter_tool.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="templates/google_search.css">
+    <style>
+        /* cm-to-mm-content.css */
+        .content-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .content-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .content-section ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .conversion-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .conversion-table th, .conversion-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .conversion-table th {
+            background-color: #e2e2e2;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .conversion-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .formula-box {
+            background-color: #e8f5e9; /* Light green */
+            border: 1px solid #c8e6c9; /* Green border */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .formula-box code {
+            font-family: Consolas, monospace;
+            background-color: #dcedc8; /* Slightly darker green for code */
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #333;
+        }
+
+        .example-box {
+            background-color: #e3f2fd; /* Light blue */
+            border: 1px solid #bbdefb; /* Blue border */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .important-notes {
+            background-color: #fff3e0; /* Light orange */
+            border: 1px solid #ffe0b2; /* Orange border */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .important-notes h3 {
+            color: #e65100; /* Dark orange */
+        }
+
+        .important-notes ul {
+            list-style-type: circle;
+        }
+
+        .fun-facts {
+            background-color: #e0f7fa; /* Light cyan */
+            border: 1px solid #b2ebf2; /* Cyan border */
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .fun-facts h3 {
+            color: #00838f; /* Dark cyan */
+        }
+
+        .fun-facts ul {
+            list-style-type: square;
+        }
+    </style>
 </head>
 <body>
     <div id="language-switcher">
@@ -161,7 +305,7 @@
                     <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
                     <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">feet + inches to cm</a></li>
                     <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">feet + inches to meters</a></li>
-                    <li><a href="/feet-to-m.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">feet + inches to mm</a></li>
                     <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
                     <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
                     <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
@@ -583,8 +727,129 @@
                 </div>
             </div>
         </div>
-        </div>
 
+        <div class="content-section">
+                <h2>Centimeter (cm)</h2>
+                <h3>What is a Centimeter?</h3>
+                <p>A centimeter (cm) is a unit of length in the metric system, equal to one hundredth of a meter. It is one of the most commonly used units for everyday measurements.</p>
+                <h3>History of the Centimeter</h3>
+                <p>The metric system, from which the centimeter originates, was first introduced in France in the late 18th century during the French Revolution. Its goal was to create a unified and rational system of weights and measures based on natural units, rather than arbitrary historical standards. The meter was originally defined as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. The centimeter, as a subdivision, followed naturally from this definition.</p>
+                <h3>Current Usage of Centimeters</h3>
+                <p>Centimeters are widely used across the globe for various purposes, including:</p>
+                <ul>
+                    <li><strong>Everyday Measurements:</strong> Measuring objects like paper, books, furniture, and body dimensions.</li>
+                    <li><strong>Fashion and Tailoring:</strong> Garment sizing and fabric measurements.</li>
+                    <li><strong>Medical Field:</strong> Measuring wounds, organ sizes, and growth in children.</li>
+                    <li><strong>Engineering and Construction:</strong> Often used in architectural drawings and small-scale plans.</li>
+                    <li><strong>Science and Education:</strong> Standard unit for many scientific experiments and educational contexts, especially in primary and secondary schools.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Millimeter (mm)</h2>
+                <h3>What is a Millimeter?</h3>
+                <p>A millimeter (mm) is a unit of length in the metric system, equivalent to one thousandth of a meter. It is a smaller unit than the centimeter, primarily used for precise measurements where greater accuracy is required.</p>
+                <h3>History of the Millimeter</h3>
+                <p>Like the centimeter, the millimeter is an integral part of the metric system established in France. As the metric system evolved, smaller and larger decimal prefixes were added to the base units (like the meter) to accommodate a vast range of magnitudes. The prefix "milli-" denotes a factor of 10<sup>-3</sup> (one thousandth), making a millimeter exactly 1/1000 of a meter.</p>
+                <h3>Current Usage of Millimeters</h3>
+                <p>Millimeters are essential for applications demanding high precision:</p>
+                <ul>
+                    <li><strong>Manufacturing and Machining:</strong> Critical for specifying tolerances, dimensions of parts, and tool sizes.</li>
+                    <li><strong>Electronics:</strong> Measuring components like resistors, capacitors, and circuit board traces.</li>
+                    <li><strong>Jewelry and Gemology:</strong> Sizing gemstones and other small components.</li>
+                    <li><strong>Graphic Design and Printing:</strong> Measuring precise elements in design layouts.</li>
+                    <li><strong>Weather and Climate:</strong> Rainfall measurements are often given in millimeters.</li>
+                    <li><strong>Biology and Microscopy:</strong> Measuring microscopic organisms and structures.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Centimeters to Millimeters Conversion Table</h2>
+                <p>Here's a quick conversion table for common centimeter values to millimeters:</p>
+                <table class="conversion-table">
+                    <thead>
+                        <tr>
+                            <th>Centimeters (cm)</th>
+                            <th>Millimeters (mm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0.01</td><td>0.1</td></tr>
+                        <tr><td>0.1</td><td>1</td></tr>
+                        <tr><td>1</td><td>10</td></tr>
+                        <tr><td>2</td><td>20</td></tr>
+                        <tr><td>3</td><td>30</td></tr>
+                        <tr><td>4</td><td>40</td></tr>
+                        <tr><td>5</td><td>50</td></tr>
+                        <tr><td>6</td><td>60</td></tr>
+                        <tr><td>7</td><td>70</td></tr>
+                        <tr><td>8</td><td>80</td></tr>
+                        <tr><td>9</td><td>90</td></tr>
+                        <tr><td>10</td><td>100</td></tr>
+                        <tr><td>20</td><td>200</td></tr>
+                        <tr><td>30</td><td>300</td></tr>
+                        <tr><td>40</td><td>400</td></tr>
+                        <tr><td>50</td><td>500</td></tr>
+                        <tr><td>60</td><td>600</td></tr>
+                        <tr><td>70</td><td>700</td></tr>
+                        <tr><td>80</td><td>800</td></tr>
+                        <tr><td>90</td><td>900</td></tr>
+                        <tr><td>100</td><td>1000</td></tr>
+                        <tr><td>1000</td><td>10000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h2>How to Convert Centimeters to Millimeters</h2>
+                <p>Converting centimeters to millimeters is straightforward because both are part of the metric system, which is based on powers of 10.</p>
+                <h3>Conversion Formula:</h3>
+                <div class="formula-box">
+                    <p>To convert centimeters (cm) to millimeters (mm), you multiply the centimeter value by 10.</p>
+                    <p><code>Millimeters (mm) = Centimeters (cm) × 10</code></p>
+                </div>
+                <h3>Example:</h3>
+                <div class="example-box">
+                    <p><strong>Example 1: Convert 5 cm to mm</strong></p>
+                    <p>Given: 5 cm</p>
+                    <p>Using the formula: $5 \text{ cm} \times 10 = 50 \text{ mm}$</p>
+                    <p>So, 5 centimeters is equal to 50 millimeters.</p>
+                    <p><strong>Example 2: Convert 12.5 cm to mm</strong></p>
+                    <p>Given: 12.5 cm</p>
+                    <p>Using the formula: $12.5 \text{ cm} \times 10 = 125 \text{ mm}$</p>
+                    <p>So, 12.5 centimeters is equal to 125 millimeters.</p>
+                </div>
+            </div>
+
+            <div class="content-section important-notes">
+                <h2>Important Notes on Centimeter to Millimeter Conversion</h2>
+                <p>When performing conversions between centimeters and millimeters, keep the following points in mind:</p>
+                <ul>
+                    <li><strong>Decimal System Simplicity:</strong> The conversion is simple due to the metric system's decimal nature. Unlike imperial units, you don't need complex fractions.</li>
+                    <li><strong>Precision:</strong> Millimeters offer finer precision than centimeters. If a measurement requires high accuracy (e.g., in engineering), millimeters are generally preferred.</li>
+                    <li><strong>Context Matters:</strong> The choice between using centimeters or millimeters often depends on the scale of the object being measured. For small items like screws or wires, millimeters are more practical. For everyday objects, centimeters are often sufficient.</li>
+                    <li><strong>Avoid Rounding Errors:</strong> When converting, especially if you're dealing with very small numbers or measurements that will be used in further calculations, be mindful of rounding. Multiplying by 10 typically doesn't introduce significant rounding issues unless the initial centimeter value itself has many decimal places.</li>
+                    <li><strong>Visualizing the Difference:</strong> It helps to visualize that a millimeter is roughly the thickness of a credit card, while a centimeter is about the width of an adult's fingernail. This can aid in understanding the scale.</li>
+                </ul>
+            </div>
+
+            <div class="content-section fun-facts">
+                <h2>Fun Facts about Centimeters and Millimeters</h2>
+                <ul>
+                    <li>A standard human fingernail grows about 1 millimeter per week.</li>
+                    <li>The average diameter of a raindrop is about 2 millimeters.</li>
+                    <li>The smallest insect in the world, the parasitic wasp *Dicopomorpha echmepterygis*, is about 0.139 mm long, which is tiny even in millimeters!</li>
+                    <li>Many rulers have both centimeter and millimeter markings, with each centimeter typically divided into 10 millimeters, making it easy to see the relationship.</li>
+                    <li>The term "centimeter" comes from the Latin "centum" (meaning one hundred) and "metrum" (meaning measure). Similarly, "millimeter" comes from "mille" (meaning one thousand).</li>
+                    <li>In some countries, especially in construction and carpentry, dimensions might be given in meters and millimeters (e.g., 2.5 meters and 300 millimeters) rather than mixing meters and centimeters, to maintain consistency in the smallest unit.</li>
+                </ul>
+            </div>
+        
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';
