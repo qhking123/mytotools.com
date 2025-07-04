@@ -18,6 +18,8 @@ body {
     width: 100%;
     max-width: 600px;
     text-align: center;
+    margin-left: auto; /* 新增：左外边距自动 */
+    margin-right: auto; /* 新增：右外边距自动 */
 }
 
 h1 {
@@ -125,7 +127,7 @@ select {
 @media (max-width: 600px) {
     .container {
         padding: 20px; /* 减小内边距 */
-        margin: 10px; /* 添加外边距，避免贴边 */
+        margin: 10px auto; /* 添加外边距，避免贴边，并实现水平居中 */
     }
 
     .input-group, .output-group {

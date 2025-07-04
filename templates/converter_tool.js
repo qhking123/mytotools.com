@@ -21,6 +21,7 @@ let isInitialized = false; // 标记是否已经初始化
 let translations = {}; // 存储加载的语言包
 
 // 异步加载语言文件并应用翻译
+/*
 async function loadAndApplyTranslations(lang) {
     try {
         const response = await fetch(`./lang/${lang}.json`);
@@ -40,9 +41,10 @@ async function loadAndApplyTranslations(lang) {
         console.error(`Failed to load translations for ${lang}:`, error);
         return false;
     }
-}
+}*/
 
 // 应用翻译到页面元素
+/* 
 function applyTranslations() {
     // 翻译常规文本内容
     document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -82,6 +84,8 @@ function applyTranslations() {
         metaDescriptionElement.setAttribute('content', translations[metaDescriptionElement.dataset.i18n]);
     }
 }
+*/
+
 
 
 // 初始化元素和事件监听器
