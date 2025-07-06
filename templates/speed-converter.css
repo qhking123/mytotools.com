@@ -1,7 +1,7 @@
 /* speed-converter.css */
 
 .speed-converter-container {
-    max-width: 800px;
+    max-width: 700px;
     margin: 15px auto; /* Reduced margin from 20px */
     padding: 20px; /* Reduced padding from 25px */
     background-color: #f9f9f9;

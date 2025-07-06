@@ -16,7 +16,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
     margin-left: auto; /* 新增：左外边距自动 */
     margin-right: auto; /* 新增：右外边距自动 */
