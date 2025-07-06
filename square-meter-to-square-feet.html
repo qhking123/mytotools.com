@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Millimeters to M Converter</title>
-    <meta name="description" content="Millimeters to Meters (mi to m) converter and how to convert.">
+    <title>CM to Feet Converter</title>
+    <meta name="description" content="Centimeters to Feet (cm to ft) converter and how to convert.">
     <style>
          body {
             font-family: Arial, sans-serif;
@@ -110,82 +110,9 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="stylesheet" href="templates/converter_tool.css">
-    <link rel="stylesheet" href="sidebar.css">
-    <link rel="stylesheet" href="templates/google_search.css">
-    <style>
-        /* Styling for the new knowledge sections */
-        .knowledge-section {
-            padding: 20px;
-            margin-top: 30px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .knowledge-section .section-title {
-            color: #333;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .knowledge-section p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .knowledge-section ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .knowledge-section ul li {
-            margin-bottom: 5px;
-        }
-
-        .conversion-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 0.95em;
-            background-color: #fff;
-            border: 1px solid #ddd;
-        }
-
-        .conversion-table th,
-        .conversion-table td {
-            border: 1px solid #ddd;
-            padding: 10px 15px;
-            text-align: left;
-        }
-
-        .conversion-table th {
-            background-color: #e0e0e0;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .conversion-table tbody tr:nth-child(odd) {
-            background-color: #f5f5f5;
-        }
-
-        .conversion-table tbody tr:hover {
-            background-color: #e9e9e9;
-        }
-
-        .formula {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #007bff;
-            margin: 15px 0;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/sidebar.css">
+    <link rel="stylesheet" href="/templates/google_search.css">
+    <link rel="stylesheet" href="/templates/area-converter.css">
 </head>
 <body>
     <div id="language-switcher">
@@ -346,172 +273,71 @@
 
     <div class="main-content">
         
-        
-        <div id="converter-tool-container">
-            <div class="main-header">
-                <h2 data-i18n="websiteTitle">My Tools Website</h2>
-                <p data-i18n="websiteDescription">提供各种实用在线转换和计算工具，助您轻松解决日常生活和工作中的单位换算、数据计算等问题。</p>
-                <div class="google-search-container">
-                    <input type="text" id="google-search-input" placeholder="Google 站内搜索..." data-i18n="googleSearchPlaceholder">
-                    <button id="google-search-button" data-i18n="googleSearchButton">搜索</button>
-                </div>                
+        <div class="main-header">
+            <h2 data-i18n="websiteTitle">My Tools Website</h2>
+            <p data-i18n="websiteDescription">提供各种实用在线转换和计算工具，助您轻松解决日常生活和工作中的单位换算、数据计算等问题。</p>
+            <div class="google-search-container">
+                <input type="text" id="google-search-input" placeholder="Google 站内搜索..." data-i18n="googleSearchPlaceholder">
+                <button id="google-search-button" data-i18n="googleSearchButton">搜索</button>
+            </div>                
+        </div>
+
+        <div class="converter-container">
+            <h3 data-i18n="areaConverterTitle">Area Converter</h3>
+            <div class="input-group">
+                <h4 data-i18n="fromUnitTitle">From Unit</h4>
+                <input type="number" id="fromAreaValue" value="1" min="0">
+                <select id="fromAreaUnit">
+                    <option value="sq_meter" data-i18n="sq_meter_unit">m² (Square Meter)</option>
+                    <option value="sq_kilometer" data-i18n="sq_kilometer_unit">km² (Square Kilometer)</option>
+                    <option value="sq_centimeter" data-i18n="sq_centimeter_unit">cm² (Square Centimeter)</option>
+                    <option value="sq_millimeter" data-i18n="sq_millimeter_unit">mm² (Square Millimeter)</option>
+                    <option value="sq_micrometer" data-i18n="sq_micrometer_unit">µm² (Square Micrometer)</option>
+                    <option value="hectare" data-i18n="hectare_unit">ha (Hectare)</option>
+                    <option value="acre" data-i18n="acre_unit">ac (Acre)</option>
+                    <option value="sq_mile" data-i18n="sq_mile_unit">mi² (Square Mile)</option>
+                    <option value="sq_yard" data-i18n="sq_yard_unit">yd² (Square Yard)</option>
+                    <option value="sq_foot" data-i18n="sq_foot_unit">ft² (Square Foot)</option>
+                    <option value="sq_inch" data-i18n="sq_inch_unit">in² (Square Inch)</option>
+                    <option value="sq_decameter" data-i18n="sq_decameter_unit">dam² (Square Decameter)</option>
+                    <option value="sq_hectometer" data-i18n="sq_hectometer_unit">hm² (Square Hectometer)</option>
+                    <option value="sq_decimeter" data-i18n="sq_decimeter_unit">dm² (Square Decimeter)</option>
+                    <option value="sq_nanometer" data-i18n="sq_nanometer_unit">nm² (Square Nanometer)</option>
+                </select>
             </div>
-            <div class="container">
-                <h1 data-i18n="h1_main_title">Length Unit Converter</h1>
-                <div class="input-group">
-                    <label for="inputValue" data-i18n="label_input_value">Input Value:</label>
-                    <input type="number" id="inputValue" value="1" data-i18n-placeholder="placeholder_input_value" placeholder="Enter the value to convert">
-                    <label for="inputUnit" style="margin-top: 15px;" data-i18n="label_input_unit">Original Unit:</label>
-                    <select id="inputUnit">
-                        <option value="mm" data-i18n="unit_mm">Millimeter (mm)</option>
-                        <option value="cm" data-i18n="unit_cm">Centimeter (cm)</option>
-                        <option value="m" selected data-i18n="unit_m">Meter (m)</option>
-                        <option value="km" data-i18n="unit_km">Kilometer (km)</option>
-                        <option value="in" data-i18n="unit_in">Inch (in)</option>
-                        <option value="ft" data-i18n="unit_ft">Foot (ft)</option>
-                        <option value="yd" data-i18n="unit_yd">Yard (yd)</option>
-                        <option value="mi" data-i18n="unit_mi">Mile (mi)</option>
-                    </select>
-                </div>
 
-                <div class="swap-button-container">
-                    <button id="swapUnitsBtn" class="swap-button" data-i18n="swap_units_button">⇅ Swap Units</button>
-                </div>
+            <div class="swap-button-container">
+                <button id="swapAreaUnits" data-i18n="swapUnitsButton">⇄ Swap Units</button>
+            </div>
 
-                <div class="output-group">
-                    <label for="outputUnit" data-i18n="label_output_unit">Target Unit:</label>
-                    <select id="outputUnit">
-                        <option value="mm" data-i18n="unit_mm">Millimeter (mm)</option>
-                        <option value="cm" selected data-i18n="unit_cm">Centimeter (cm)</option>
-                        <option value="m" data-i18n="unit_m">Meter (m)</option>
-                        <option value="km" data-i18n="unit_km">Kilometer (km)</option>
-                        <option value="in" data-i18n="unit_in">Inch (in)</option>
-                        <option value="ft" data-i18n="unit_ft">Foot (ft)</option>
-                        <option value="yd" data-i18n="unit_yd">Yard (yd)</option>
-                        <option value="mi" data-i18n="unit_mi">Mile (mi)</option>
-                    </select>
-                    <label style="margin-top: 15px;" data-i18n="label_conversion_result">Conversion Result:</label>
-                    <div id="outputResult" class="output-result"></div>
-                </div>
+            <div class="input-group">
+                <h4 data-i18n="toUnitTitle">To Unit</h4>
+                <input type="text" id="toAreaValue" readonly>
+                <select id="toAreaUnit">
+                    <option value="sq_meter" data-i18n="sq_meter_unit">m² (Square Meter)</option>
+                    <option value="sq_kilometer" data-i18n="sq_kilometer_unit">km² (Square Kilometer)</option>
+                    <option value="sq_centimeter" data-i18n="sq_centimeter_unit">cm² (Square Centimeter)</option>
+                    <option value="sq_millimeter" data-i18n="sq_millimeter_unit">mm² (Square Millimeter)</option>
+                    <option value="sq_micrometer" data-i18n="sq_micrometer_unit">µm² (Square Micrometer)</option>
+                    <option value="hectare" data-i18n="hectare_unit">ha (Hectare)</option>
+                    <option value="acre" data-i18n="acre_unit">ac (Acre)</option>
+                    <option value="sq_mile" data-i18n="sq_mile_unit">mi² (Square Mile)</option>
+                    <option value="sq_yard" data-i18n="sq_yard_unit">yd² (Square Yard)</option>
+                    <option value="sq_foot" data-i18n="sq_foot_unit">ft² (Square Foot)</option>
+                    <option value="sq_inch" data-i18n="sq_inch_unit">in² (Square Inch)</option>
+                    <option value="sq_decameter" data-i18n="sq_decameter_unit">dam² (Square Decameter)</option>
+                    <option value="sq_hectometer" data-i18n="sq_hectometer_unit">hm² (Square Hectometer)</option>
+                    <option value="sq_decimeter" data-i18n="sq_decimeter_unit">dm² (Square Decimeter)</option>
+                    <option value="sq_nanometer" data-i18n="sq_nanometer_unit">nm² (Square Nanometer)</option>
+                </select>
+            </div>
+
+            <div class="formula-box">
+                <h4 data-i18n="conversionFormulaTitle">Conversion Formula</h4>
+                <p id="conversionFormula"></p>
             </div>
         </div>
 
-        <div class="knowledge-section">
-            <h2 class="section-title">Millimeter (mm)</h2>
-            <p>
-                The millimeter (mm) is a unit of length in the metric system, equal to one thousandth of a meter (0.001 m). It is derived from the Greek words "milli" meaning one thousand, and "metron" meaning a measure.
-            </p>
-            <p>
-                Historically, the concept of a standardized unit of length dates back to ancient civilizations, but the millimeter as part of the metric system was formally introduced in France in the late 18th century during the French Revolution. The meter was originally defined as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris. The millimeter then became a convenient sub-unit for measuring smaller dimensions.
-            </p>
-            <p>
-                Today, the millimeter is widely used in engineering, manufacturing, construction, and many scientific disciplines where precise measurements are required. For example, it's common to see dimensions of electronic components, screw sizes, and material thicknesses specified in millimeters. Its base-10 relationship with other metric units like centimeters and meters makes calculations straightforward and intuitive.
-            </p>
-
-            <h2 class="section-title">Meter (m)</h2>
-            <p>
-                The meter (m) is the base unit of length in the International System of Units (SI). It is defined as the length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second. This definition was adopted in 1983 and ensures high precision and reproducibility.
-            </p>
-            <p>
-                The history of the meter is rich and spans centuries. The idea of a universal measure gained traction during the Enlightenment. The initial definition in the 18th century was based on the Earth's circumference. Later, physical prototypes like the "Mètre des Archives" and the international prototype meter were used. The current definition, based on the speed of light, reflects significant advancements in metrology and physics.
-            </p>
-            <p>
-                The meter is fundamental in various aspects of daily life and scientific endeavors. It's used for measuring distances, heights, widths, and depths in fields ranging from architecture and cartography to sports and everyday household tasks. Its coherent integration within the metric system simplifies unit conversions and scientific computations globally.
-            </p>
-
-            <h2 class="section-title">Millimeter to Meter Conversion Table</h2>
-            <table class="conversion-table">
-                <thead>
-                    <tr>
-                        <th>Millimeters (mm)</th>
-                        <th>Meters (m)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>0.01</td><td>0.00001</td></tr>
-                    <tr><td>0.1</td><td>0.0001</td></tr>
-                    <tr><td>1</td><td>0.001</td></tr>
-                    <tr><td>2</td><td>0.002</td></tr>
-                    <tr><td>3</td><td>0.003</td></tr>
-                    <tr><td>4</td><td>0.004</td></tr>
-                    <tr><td>5</td><td>0.005</td></tr>
-                    <tr><td>6</td><td>0.006</td></tr>
-                    <tr><td>7</td><td>0.007</td></tr>
-                    <tr><td>8</td><td>0.008</td></tr>
-                    <tr><td>9</td><td>0.009</td></tr>
-                    <tr><td>10</td><td>0.01</td></tr>
-                    <tr><td>20</td><td>0.02</td></tr>
-                    <tr><td>30</td><td>0.03</td></tr>
-                    <tr><td>40</td><td>0.04</td></tr>
-                    <tr><td>50</td><td>0.05</td></tr>
-                    <tr><td>60</td><td>0.06</td></tr>
-                    <tr><td>70</td><td>0.07</td></tr>
-                    <tr><td>80</td><td>0.08</td></tr>
-                    <tr><td>90</td><td>0.09</td></tr>
-                    <tr><td>100</td><td>0.1</td></tr>
-                    <tr><td>1000</td><td>1</td></tr>
-                </tbody>
-            </table>
-
-            <h2 class="section-title">How to Convert Millimeters to Meters</h2>
-            <p>
-                To convert millimeters (mm) to meters (m), you need to divide the value in millimeters by 1000. This is because there are 1000 millimeters in 1 meter.
-            </p>
-            <p class="formula">
-                Formula: $ Meters = Millimeters \div 1000 $
-            </p>
-            <p>
-                <strong>Example 1:</strong> Convert 500 millimeters to meters.
-                <br> $ Meters = 500 \div 1000 = 0.5 \text{ m} $
-            </p>
-            <p>
-                <strong>Example 2:</strong> Convert 2500 millimeters to meters.
-                <br> $ Meters = 2500 \div 1000 = 2.5 \text{ m} $
-            </p>
-
-            <h2 class="section-title">Important Considerations for Millimeter to Meter Conversion</h2>
-            <ul>
-                <li><strong>Precision:</strong> When dealing with very small measurements in millimeters that need to be represented in meters, be mindful of decimal places. Small errors can compound, especially in precision engineering.</li>
-                <li><strong>Context:</strong> The choice of unit often depends on the scale of the object being measured. Millimeters are ideal for small components, while meters are more suitable for room dimensions or larger structures.</li>
-                <li><strong>Common Mistakes:</strong> A frequent error is multiplying by 1000 instead of dividing, or confusing the conversion factor with centimeters (where 1 meter = 100 cm). Always double-check the operation.</li>
-            </ul>
-
-            <h2 class="section-title">Interesting Facts About Millimeters and Meters</h2>
-            <ul>
-                <li>A typical credit card is about 0.76 millimeters thick.</li>
-                <li>The average human hair is approximately 0.05 to 0.1 millimeters in diameter.</li>
-                <li>The meter was originally intended to be a universal unit, helping to standardize measurements across different countries and industries, thus fostering international trade and scientific collaboration.</li>
-                <li>Before the modern definition based on the speed of light, the meter was defined by a physical prototype bar, which was stored in a vault in France.</li>
-            </ul>
-
-            <h2 class="section-title">Why Conversion is Important</h2>
-            <p>
-                Converting between millimeters and meters is crucial in many practical scenarios:
-            </p>
-            <ul>
-                <li><strong>Interoperability:</strong> It ensures that different components or parts designed with varying units can fit together seamlessly in manufacturing and construction.</li>
-                <li><strong>Clarity and Communication:</strong> Using the appropriate unit for the scale of measurement improves clarity in communication among professionals, reducing misinterpretations and errors.</li>
-                <li><strong>Standardization:</strong> It supports the global adoption of the metric system, facilitating international trade, scientific research, and engineering projects by providing a common language for measurements.</li>
-                <li><strong>Design and Planning:</strong> Engineers and architects frequently switch between these units to detail small parts within larger designs, ensuring precision at all scales.</li>
-            </ul>
-
-            <h2 class="section-title">Common Misconceptions and Errors</h2>
-            <ul>
-                <li><strong>Confusing Multiplier/Divisor:</strong> The most common error is multiplying by 1000 instead of dividing by 1000. Remember, a millimeter is a *smaller* unit, so you'll have *fewer* meters for the same length.</li>
-                <li><strong>Decimal Point Errors:</strong> Shifting the decimal point incorrectly (e.g., by two places instead of three) due to confusion with centimeters.</li>
-                <li><strong>Lack of Context:</strong> Applying a conversion without considering the appropriate context. While a small error in a large distance might be negligible, the same error in a tiny component could be catastrophic.</li>
-            </ul>
-
-            <h2 class="section-title">Impact on Specific Industries</h2>
-            <ul>
-                <li><strong>Manufacturing and Engineering:</strong> Precision is paramount. Millimeters are used for exact specifications of parts, while meters define overall assembly sizes. Accurate conversion is vital to avoid production errors.</li>
-                <li><strong>Construction:</strong> Architects and builders use meters for large-scale plans (e.g., building dimensions), but often rely on millimeters for detailed drawings of elements like window frames or piping to ensure exact fit.</li>
-                <li><strong>Textile Industry:</strong> Fabric thickness might be measured in millimeters, while the length of fabric rolls is in meters.</li>
-                <li><strong>Medicine:</strong> In some medical imaging and instrumentation, small biological structures might be measured in millimeters, while patient height or room dimensions are in meters.</li>
-                <li><strong>Science and Research:</strong> Depending on the scale of phenomena studied, scientists constantly convert between these units. For example, atomic distances are in nanometers, while lab equipment dimensions might be in millimeters, and experimental setups in meters.</li>
-            </ul>
-        </div>
-        
         <footer class="page-footer">
             <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
         </footer>
@@ -519,9 +345,10 @@
         </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
-        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';
-        import { initMeterToCmConverter } from './templates/converter_tool.js'; // 导入新的初始化函数
-        import { attachSidebarEventListeners } from './sidebar.js'; // 导入 attachSidebarEventListeners
+        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
+        //import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
+        import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
+        import { initAreaConverter } from '/templates/area-converter.js'; // Import the new area converter initialization
 
         
         document.addEventListener('DOMContentLoaded', async () => {
@@ -540,7 +367,7 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            await initMeterToCmConverter("mm", "m");
+            initAreaConverter("sq_meter", "sq_foot"); // Initialize the area converter
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);
@@ -553,6 +380,6 @@
         });
 
     </script>
-    <script src="templates/google_search.js"></script>
+    <script src="/templates/google_search.js"></script>
 </body>
 </html>
