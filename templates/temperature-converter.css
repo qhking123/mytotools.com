@@ -1,0 +1,118 @@
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.converter-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-group h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.input-group input[type="number"],
+.input-group select {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.swap-button-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#swapUnitsBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#swapUnitsBtn:hover {
+    background-color: #0056b3;
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e0f7fa; /* Light blue background for visual effect */
+    border: 1px solid #b2ebf2; /* Slightly darker border */
+    border-radius: 8px;
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #00796b; /* Darker text for contrast */
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.5); /* 3D effect */
+    word-wrap: break-word; /* Ensure long results wrap */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .converter-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .converter-container h2 {
+        font-size: 1.5em;
+    }
+
+    .input-group h3 {
+        font-size: 1em;
+    }
+
+    .input-group input[type="number"],
+    .input-group select {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    #swapUnitsBtn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .result-box {
+        font-size: 1.4em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .converter-container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    .input-group input[type="number"],
+    .input-group select {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

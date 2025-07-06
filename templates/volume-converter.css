@@ -1,0 +1,171 @@
+/* volume-converter.css */
+
+.converter-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* Adjust max-width for centering */
+    margin: 30px auto; /* Center the container and add space */
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.converter-container h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group select {
+    width: 90%; /* Adjust width for better responsiveness */
+    padding: 12px 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding in width */
+    -webkit-appearance: none; /* Remove default select styling on WebKit */
+    -moz-appearance: none;    /* Remove default select styling on Mozilla */
+    appearance: none;         /* Remove default select styling */
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.input-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M192%20256L64%20128v256l128-128z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    padding-right: 35px; /* Make space for the arrow */
+}
+
+
+.swap-button-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.swap-button-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.swap-button-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.swap-button-container button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.result-box {
+    background-color: #e6f7ff; /* Light blue background */
+    border: 1px solid #b3e0ff; /* Slightly darker blue border */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inset shadow for 3D effect */
+    text-align: center;
+}
+
+.result-box p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.result-box #volume-result-value {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #007bff; /* Highlight the result value */
+    word-wrap: break-word; /* Ensure long results wrap */
+    display: block; /* Ensures it takes its own line */
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .converter-container {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .input-group input[type="number"],
+    .input-group input[type="text"],
+    .input-group select {
+        width: 95%;
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+
+    .converter-container h3 {
+        font-size: 1.5em;
+    }
+
+    .swap-button-container button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .result-box #volume-result-value {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .converter-container {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+
+    .input-group input[type="number"],
+    .input-group input[type="text"],
+    .input-group select {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    .input-group label {
+        font-size: 1em;
+    }
+
+    .converter-container h3 {
+        font-size: 1.3em;
+    }
+
+    .swap-button-container button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .result-box #volume-result-value {
+        font-size: 1.2em;
+    }
+}

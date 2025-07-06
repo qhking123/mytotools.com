@@ -1,32 +1,34 @@
-/* google_search.css */
+/* Google Search.css */
 
 .main-header {
     background-color: #e6f7ff; /* 柔和的天蓝色，比原来的浅灰色更具活力 */
-    padding: 20px;
+    padding: 10px 20px; /* Restoring some vertical padding for a softer look */
     border-bottom: 1px solid #cce5ff; /* 调整底部边框颜色以匹配新背景 */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Slightly reduced margin-bottom */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 更明显的柔和阴影效果 */
     border-radius: 10px; /* 略微增大圆角，增加柔和感 */
 }
 
 .main-header h2 {
     color: #333;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.8em;
+    margin-top: 0; /* Keep top margin at 0 for tighter space */
+    margin-bottom: 5px; /* Slightly reduced margin-bottom for title */
+    font-size: 1.6em; /* Slightly reduced font size for the main title */
 }
 
 .main-header p {
     color: #666;
-    margin-bottom: 5px;
-    line-height: 1.5;
+    margin-bottom: 5px; /* Keep some margin for description */
+    line-height: 1.4; /* Slightly reduced line height */
+    font-size: 0.9em; /* Slightly reduced font size for description */
 }
 
 .main-header a {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.9em; /* Match font size with description for visual consistency */
 }
 
 .main-header a:hover {
@@ -37,15 +39,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px; /* Keep some top margin for the search bar */
     flex-wrap: wrap; /* 允许在小屏幕上换行 */
 }
 
 #google-search-input {
-    padding: 10px 15px;
+    padding: 8px 15px; /* Slightly reduced padding */
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 0.95em; /* Slightly reduced font size for input */
     width: 70%; /* 默认宽度 */
     max-width: 400px; /* 最大宽度 */
     margin-right: 10px;
@@ -53,13 +55,13 @@
 }
 
 #google-search-button {
-    padding: 10px 20px;
+    padding: 8px 20px; /* Slightly reduced padding */
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 0.95em; /* Slightly reduced font size for button */
     transition: background-color 0.3s ease;
 }
 
@@ -70,12 +72,12 @@
 /* 响应式调整 */
 @media (max-width: 600px) {
     .main-header {
-        padding: 15px;
-        margin-bottom: 15px;
+        padding: 8px; /* Adjusted padding for small screens */
+        margin-bottom: 10px;
     }
 
     .main-header h2 {
-        font-size: 1.5em;
+        font-size: 1.4em; /* Further reduce font size for small screens */
     }
 
     .google-search-container {
@@ -85,10 +87,10 @@
     #google-search-input {
         width: 100%; /* 占据全宽 */
         margin-right: 0;
-        margin-bottom: 10px; /* 按钮上方留白 */
+        margin-bottom: 8px; /* Button top spacing */
     }
 
     #google-search-button {
-        width: 100%; /* 按钮占据全宽 */
+        width: 100%; /* Button full width */
     }
 }

@@ -1,0 +1,137 @@
+/* speed-converter.css */
+
+.speed-converter-container {
+    max-width: 800px;
+    margin: 15px auto; /* Reduced margin from 20px */
+    padding: 20px; /* Reduced padding from 25px */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced gap from 20px */
+    align-items: center; /* Center content horizontally */
+}
+
+.speed-converter-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px; /* Reduced margin-bottom from 25px */
+    font-size: 1.8em;
+    width: 100%; /* Take full width */
+}
+
+.converter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap from 15px */
+    width: 100%;
+    align-items: center; /* Center items within the block */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 8px; /* Reduced margin-bottom from 10px */
+}
+
+.input-group label {
+    margin-bottom: 5px; /* Reduced margin-bottom from 8px */
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group select {
+    padding: 10px 12px; /* Reduced padding from 12px 15px */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input[type="number"]:focus,
+.input-group input[type="text"]:focus,
+.input-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#swap-speed-units {
+    padding: 8px 18px; /* Reduced padding from 10px 20px */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 8px 0; /* Reduced margin from 10px 0 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#swap-speed-units:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.formula-display {
+    width: 90%;
+    margin-top: 15px; /* Reduced margin-top from 25px */
+    text-align: center;
+}
+
+.formula-display h4 {
+    color: #333;
+    margin-bottom: 10px; /* Reduced margin-bottom from 15px */
+    font-size: 1.4em;
+}
+
+.formula-box {
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    padding: 15px; /* Reduced padding from 20px */
+    border-radius: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    color: #004085;
+    text-align: left;
+    white-space: pre-wrap;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .speed-converter-container {
+        margin: 10px auto; /* Further reduced margin */
+        padding: 15px; /* Further reduced padding */
+    }
+    .input-group {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .speed-converter-container {
+        margin: 5px auto; /* Further reduced margin */
+        padding: 10px; /* Further reduced padding */
+    }
+    .input-group input,
+    .input-group select {
+        font-size: 0.9em; /* Slightly smaller font for smaller screens */
+        padding: 8px 10px;
+    }
+    .speed-converter-container h3 {
+        font-size: 1.4em;
+    }
+    .formula-box {
+        font-size: 0.95em;
+        padding: 12px;
+    }
+}

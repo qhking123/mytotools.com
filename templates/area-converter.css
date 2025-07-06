@@ -1,0 +1,128 @@
+/* area-converter.css */
+
+.converter-container {
+    max-width: 800px;
+    margin: 20px auto; /* Adjusted from 40px to 20px top/bottom margin */
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.converter-container h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.converter-container h4 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group select {
+    width: 80%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    text-align: center;
+}
+
+.input-group input[type="text"] {
+    background-color: #e9e9e9;
+    color: #333;
+    cursor: default;
+}
+
+.swap-button-container {
+    margin: 25px 0;
+}
+
+.swap-button-container button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.swap-button-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.swap-button-container button:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+.formula-box {
+    background-color: #e0f7fa; /* Light blue background for visual distinction */
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+}
+
+.formula-box h4 {
+    color: #00796b; /* Darker blue-green for formula title */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.formula-box p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    word-wrap: break-word; /* Ensure long formulas wrap */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .converter-container {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .input-group input,
+    .input-group select {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .converter-container h3 {
+        font-size: 1.5em;
+    }
+
+    .input-group input,
+    .input-group select,
+    .swap-button-container button {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
