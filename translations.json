@@ -8,6 +8,7 @@
         
         "pageTitle": "Unit Conversion & Electrical Calculation Tools",
         "category_unitConversion": "Unit Conversion",
+        "category_homeConversion": "Home Conversion",
         "colorConversion": "Color Conversion",
         "chargeConversion": "Charge Conversion",
         "energyConversion": "Energy Conversion",
@@ -530,6 +531,7 @@
 
         "pageTitle": "单位换算与电气计算工具",
         "category_unitConversion": "单位换算",
+        "category_homeConversion": "首页换算",
         "colorConversion": "颜色转换",
         "chargeConversion": "电荷转换",
         "energyConversion": "能量转换",

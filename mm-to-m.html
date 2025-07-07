@@ -110,9 +110,10 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="stylesheet" href="templates/converter_tool.css">
-    <link rel="stylesheet" href="sidebar.css">
-    <link rel="stylesheet" href="templates/google_search.css">
+    <link rel="stylesheet" href="/templates/converter_tool.css">
+    <link rel="stylesheet" href="/sidebar.css">
+    <link rel="stylesheet" href="/templates/google_search.css">
+    <link rel="stylesheet" href="/templates/breadcrumb.css">
     <style>
         /* Styling for the new knowledge sections */
         .knowledge-section {
@@ -206,12 +207,12 @@
                     <span data-i18n="category_unitConversion">Unit Conversion</span> <span class="toggle-icon">▶</span>
                 </div>
                 <ul class="category-content" id="unit-conversion-content">
-                    <li><a href="#" data-src="/cm-to-feet.html" data-i18n="lengthConversion">Length Conversion</a></li>
-                    <li><a href="#" data-src="celsius-to-fahrenheit.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
-                    <li><a href="#" data-src="kg-to-lbs.html" data-i18n="weightConversion">Weight Conversion</a></li>
-                    <li><a href="#" data-src="liters-to-gallons.html" data-i18n="volumeConversion">Volume Conversion</a></li>
-                    <li><a href="#" data-src="knots-to-mph.html" data-i18n="speedConversion">speed Conversion</a></li>
-                    <li><a href="#" data-src="square-meter-to-square-feet.html" data-i18n="areaConversion">area Conversion</a></li>
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">area Conversion</a></li>
                 </ul>
             </li>
     
@@ -345,7 +346,14 @@
     </div>
 
     <div class="main-content">
-        
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">首页</a>
+                <span class="separator">-></span>
+                <a href="length-conversion.html" data-i18n="category_lengthConversion">Length Conversion</a>
+                <span class="separator">-></span>Current Page
+            </nav>
+        </div>
         
         <div id="converter-tool-container">
             <div class="main-header">
@@ -519,9 +527,9 @@
         </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
-        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';
-        import { initMeterToCmConverter } from './templates/converter_tool.js'; // 导入新的初始化函数
-        import { attachSidebarEventListeners } from './sidebar.js'; // 导入 attachSidebarEventListeners
+        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
+        import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
+        import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
 
         
         document.addEventListener('DOMContentLoaded', async () => {
@@ -553,6 +561,6 @@
         });
 
     </script>
-    <script src="templates/google_search.js"></script>
+    <script src="/templates/google_search.js"></script>
 </body>
 </html>

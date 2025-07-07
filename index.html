@@ -111,6 +111,8 @@
         }
     </style>
     <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="/templates/navigation-list.css">
+    <link rel="stylesheet" href="/templates/breadcrumb.css">
 </head>
 <body>
     <div id="language-switcher">
@@ -131,12 +133,12 @@
                     <span data-i18n="category_unitConversion">Unit Conversion</span> <span class="toggle-icon">▶</span>
                 </div>
                 <ul class="category-content" id="unit-conversion-content">
-                    <li><a href="#" data-src="/cm-to-feet.html" data-i18n="lengthConversion">Length Conversion</a></li>
-                    <li><a href="#" data-src="celsius-to-fahrenheit.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
-                    <li><a href="#" data-src="kg-to-lbs.html" data-i18n="weightConversion">Weight Conversion</a></li>
-                    <li><a href="#" data-src="liters-to-gallons.html" data-i18n="volumeConversion">Volume Conversion</a></li>
-                    <li><a href="#" data-src="knots-to-mph.html" data-i18n="speedConversion">speed Conversion</a></li>
-                    <li><a href="#" data-src="square-meter-to-square-feet.html" data-i18n="areaConversion">area Conversion</a></li>
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">area Conversion</a></li>
                 </ul>
             </li>
     
@@ -269,10 +271,127 @@
         </ul>
     </div>
 
-    <div class="main-content">        
+    <div class="main-content">      
         <h1 data-i18n="welcomeTitle"></h1>
-        <p data-i18n="initialContent"></p>
+        
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">首页</a>
+            </nav>
+        </div>
+
+        <div id="navigation-list">
+            <h2>All Conversion Categories</h2>
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="index.html" data-i18n="category_homeConversion">Home Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">Speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">Area Conversion</a></li>
+                </ul>
+            </div>
     
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="weight-conversion.html" data-i18n="category_weightConversion">Weight Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="kg-to-lbs.html" data-i18n="kgToPounds">kg to lbs</a></li>
+                    <li><a href="lbs-to-kg.html" data-i18n="poundsToKg">lbs to kg</a></li>
+                    <li><a href="grams-to-ounces.html" data-i18n="gramsToOunces">grams to ounces</a></li>
+                    <li><a href="grams-to-pounds.html" data-i18n="gramsToPounds">grams to pounds</a></li>
+                    <li><a href="oz-to-grams.html" data-i18n="ouncesToGrams">oz to grams</a></li>
+                    <li><a href="oz-to-lbs.html" data-i18n="ouncesToPounds">oz to lbs</a></li>
+                    <li><a href="lb-to-oz.html" data-i18n="poundsToOunces">lb to oz</a></li>
+                    <li><a href="lb-to-kg.html" data-i18n="lbToKg">lb to kg</a></li>
+                    <li><a href="100kg-to-lbs.html" data-i18n="_100kgToLbs">100kg to lbs</a></li>
+                    <li><a href="32kg-to-lbs.html" data-i18n="_32kgToLbs">32kg to lbs</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="length-conversion.html" data-i18n="category_lengthConversion">Length Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="/cm-to-feet.html" data-i18n="cmToFeet">cm to feet</a></li>
+                    <li><a href="/cm-to-ft.html" data-i18n="cmToFeetInches">cm to ft</a></li>
+                    <li><a href="/cm-to-inches.html" data-i18n="cmToInches">cm to inches</a></li>
+                    <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
+                    <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">ft to cm</a></li>
+                    <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">ft to meters</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">ft to mm</a></li>
+                    <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
+                    <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
+                    <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
+                    <li><a href="/feet-to-meters.html" data-i18n="feetToMeters">feet to meters</a></li>
+                    <li><a href="/cm-to-inch.html" data-i18n="heightConverter">Height Converter</a></li>
+                    <li><a href="/inches-to-cm.html"data-i18n="inchesToCm">inches to cm</a></li>
+                    <li><a href="/inches-to-feet.html" data-i18n="inchesToFeet">inches to feet</a></li>
+                    <li><a href="/in-to-m.html" data-i18n="inchesToMeters">in to m</a></li>
+                    <li><a href="/inch-to-mm.html" data-i18n="inchesToMm">Inche to mm</a></li>
+                    <li><a href="/km-to-miles.html" data-i18n="kmToMiles">km to miles</a></li>
+                    <li><a href="/meters-to-feet.html" data-i18n="metersToFeet">meters to feet</a></li>
+                    <li><a href="/meters-in-to-cm.html" data-i18n="metersToFeetInches">meters in to cm</a></li>
+                    <li><a href="/meters-to-inches.html"data-i18n="metersToInches">meters to inches</a></li>
+                    <li><a href="/miles-to-km.html" data-i18n="milesToKm">miles to km</a></li>
+                    <li><a href="/mm-to-cm.html" data-i18n="mmToCm">mm to cm</a></li>
+                    <li><a href="/mm-to-inches.html" data-i18n="mmToInches">mm to inches</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="temperature-conversion.html" data-i18n="category_temperatureConversion">Temperature Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="celsius-to-fahrenheit.html" data-i18n="celsiusToFahrenheit">celsius to fahrenheit</a></li>
+                    <li><a href="celcius-to-kelvin.html" data-i18n="celsiusToKelvin">celsius to kelvin</a></li>
+                    <li><a href="fahrenheit-to-celsius.html" data-i18n="fahrenheitToCelsius">fahrenheit to celsius</a></li>
+                    <li><a href="fahrenheit-to-kelvin.html" data-i18n="fahrenheitToKelvin">fahrenheit to kelvin</a></li>
+                    <li><a href="kelvin-to-celcius.html" data-i18n="kelvinToCelsius">kelvin to celsius</a></li>
+                    <li><a href="kelvin-to-fahrenheit.html" data-i18n="kelvinToFahrenheit">kelvin to fahrenheit</a></li>
+                    <li><a href="180-c-to-f.html" data-i18n="zeroCToF">180 c to f</a></li>
+                    <li><a href="30-celsius-to-fahrenheit.html" data-i18n="thirtyCToF">30 celsius to fahrenheit</a></li>
+                    <li><a href="40c-to-f.html" data-i18n="tenCToF">40c to f</a></li>
+                    <li><a href="20-celsius-to-fahrenheit.html" data-i18n="twentyCToF">20 celsius to fahrenheit</a></li>
+                    <li><a href="200-celsius-to-fahrenheit.html" data-i18n="oneHundredCToF">200 celsius to fahrenheit</a></li>
+                    <li><a href="26-celsius-to-fahrenheit.html" data-i18n="zeroFToC">26 celsius to fahrenheit</a></li>
+                    <li><a href="35-celsius-to-fahrenheit.html" data-i18n="tenFToC">35 celsius to fahrenheit</a></li>
+                    <li><a href="37-celsius-to-fahrenheit.html" data-i18n="twentyFToC">37 celsius to fahrenheit</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="volume-conversion.html" data-i18n="volume_temperatureConversion">Volume Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="liters-to-gallons.html" data-i18n="liters_to_gallons">liters to gallons</a></li>
+                    <li><a href="gallons-to-liters.html" data-i18n="gallons_to_liters">gallons to liters</a></li>
+                    <li><a href="tablespoons-to-cups.html" data-i18n="tablespoons_to_cups">tablespoons to cups</a></li>
+                    <li><a href="cups-to-tablespoons.html" data-i18n="cups_to_tablespoons">cups to tablespoons</a></li>
+                    <li><a href="liter-to-gallon.html" data-i18n="liter_to_gallon">liter to gallon</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="speed-conversion.html" data-i18n="speed_temperatureConversion">Speed Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="knots-to-mph.html" data-i18n="knots_to_mph">knots to mph</a></li>
+                    <li><a href="mph-to-feet-per-second.html" data-i18n="mph_to_feet_per_second">mph to feet per second</a></li>
+                    <li><a href="mph-to-kph.html" data-i18n="mph_to_kph">mph to kph</a></li>
+                    <li><a href="feet-per-second-to-mph.html" data-i18n="feet_per_second_to_mph">feet per second to mph</a></li>
+                    <li><a href="kph-to-mph.html" data-i18n="kph_to_mph">kph to mph</a></li>
+                </ul>
+            </div>            
+
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="area-conversion.html" data-i18n="area_temperatureConversion">Area Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="square-meter-to-square-feet.html" data-i18n="square_meter_to_square_feet">square meter to square feet</a></li>
+                    <li><a href="square-feet-to-square-meter.html" data-i18n="square_feet_to_square_meter">square feet to square meter</a></li>
+                    <li><a href="square-feet-to-acres.html" data-i18n="square_feet_to_acres">square feet to acres</a></li>
+                    <li><a href="acres-to-hectare.html" data-i18n="acres_to_hectare">acres to hectare</a></li>
+                </ul>
+            </div>
+        </div>
+
         <footer class="page-footer">
             <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
         </footer>
@@ -280,9 +399,9 @@
         </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
-        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from './common.js';
-        //import { initMeterToCmConverter } from './templates/converter_tool.js'; // 导入新的初始化函数
-        import { attachSidebarEventListeners } from './sidebar.js'; // 导入 attachSidebarEventListeners
+        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
+        //import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
+        import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
 
         
         document.addEventListener('DOMContentLoaded', async () => {

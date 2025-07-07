@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM to Feet Converter</title>
-    <meta name="description" content="Centimeters to Feet (cm to ft) converter and how to convert.">
+    <title>Feet to CM Converter</title>
+    <meta name="description" content="Feet to Centimeters (ft to cm) converter and how to convert.">
     <style>
          body {
             font-family: Arial, sans-serif;
@@ -110,9 +110,8 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="stylesheet" href="/templates/weight-converter.css">
-    <link rel="stylesheet" href="/sidebar.css">
-    <link rel="stylesheet" href="/templates/google_search.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="/templates/navigation-list.css">
     <link rel="stylesheet" href="/templates/breadcrumb.css">
 </head>
 <body>
@@ -272,79 +271,58 @@
         </ul>
     </div>
 
-    <div class="main-content">        
+    <div class="main-content">      
+        <h1 data-i18n="welcomeTitle"></h1>
+        
         <div class="breadcrumb-container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="/">首页</a>
                 <span class="separator">-></span>
                 <a href="weight-conversion.html" data-i18n="category_weightConversion">Weight Conversion</a>
-                <span class="separator">-></span>Current Page
             </nav>
         </div>
 
-        <div class="main-header">
-            <h2 data-i18n="websiteTitle">My Tools Website</h2>
-            <p data-i18n="websiteDescription">提供各种实用在线转换和计算工具，助您轻松解决日常生活和工作中的单位换算、数据计算等问题。</p>
-            <div class="google-search-container">
-                <input type="text" id="google-search-input" placeholder="Google 站内搜索..." data-i18n="googleSearchPlaceholder">
-                <button id="google-search-button" data-i18n="googleSearchButton">搜索</button>
-            </div>                
+        <div id="navigation-list">
+            <h2>Weight Conversion Categories</h2>
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="index.html" data-i18n="category_homeConversion">Home Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">Speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">Area Conversion</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="weight-conversion.html" data-i18n="category_weightConversion">Weight Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="kg-to-lbs.html" data-i18n="kgToPounds">kg to lbs</a></li>
+                    <li><a href="lbs-to-kg.html" data-i18n="poundsToKg">lbs to kg</a></li>
+                    <li><a href="grams-to-ounces.html" data-i18n="gramsToOunces">grams to ounces</a></li>
+                    <li><a href="grams-to-pounds.html" data-i18n="gramsToPounds">grams to pounds</a></li>
+                    <li><a href="oz-to-grams.html" data-i18n="ouncesToGrams">oz to grams</a></li>
+                    <li><a href="oz-to-lbs.html" data-i18n="ouncesToPounds">oz to lbs</a></li>
+                    <li><a href="lb-to-oz.html" data-i18n="poundsToOunces">lb to oz</a></li>
+                    <li><a href="lb-to-kg.html" data-i18n="lbToKg">lb to kg</a></li>
+                    <li><a href="100kg-to-lbs.html" data-i18n="_100kgToLbs">100kg to lbs</a></li>
+                    <li><a href="32kg-to-lbs.html" data-i18n="_32kgToLbs">32kg to lbs</a></li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="converter-container">
-            <h3 data-i18n="weightConverterTitle">Weight Converter</h3>
-
-            <h4 data-i18n="sourceWeightTitle">Input Weight</h4>
-            <div class="input-group">
-                <input type="number" id="sourceWeightInput" value="1" min="0" step="any">
-                <select id="sourceWeightUnit">
-                    <option value="ug" data-i18n="unit_micrograms">Micrograms</option>
-                    <option value="mg" data-i18n="unit_milligrams">Milligrams</option>
-                    <option value="g" data-i18n="unit_grams">Grams</option>
-                    <option value="kg" data-i18n="unit_kilograms">Kilograms</option>
-                    <option value="mt" data-i18n="unit_metric_tons">Metric Tons</option>
-                    <option value="oz" data-i18n="unit_ounces">Ounces</option>
-                    <option value="lbs" data-i18n="unit_pounds">Pounds</option>
-                    <option value="st" data-i18n="unit_stone">Stone</option>
-                    <option value="ton" data-i18n="unit_tons">Tons</option>
-                </select>
-            </div>
-            <div class="swap-button-container">
-                <button id="swapUnitsBtn" data-i18n="swapUnits">Swap Units</button>
-            </div>
-            <h4 data-i18n="targetWeightTitle">Output Weight</h4>
-            <div class="input-group">
-                <input type="text" id="targetWeightInput" readonly>
-                <select id="targetWeightUnit">
-                    <option value="ug" data-i18n="unit_micrograms">Micrograms</option>
-                    <option value="mg" data-i18n="unit_milligrams">Milligrams</option>
-                    <option value="g" data-i18n="unit_grams">Grams</option>
-                    <option value="kg" data-i18n="unit_kilograms">Kilograms</option>
-                    <option value="mt" data-i18n="unit_metric_tons">Metric Tons</option>
-                    <option value="oz" data-i18n="unit_ounces">Ounces</option>
-                    <option value="lbs" data-i18n="unit_pounds">Pounds</option>
-                    <option value="st" data-i18n="unit_stone">Stone</option>
-                    <option value="ton" data-i18n="unit_tons">Tons</option>
-                </select>
-            </div>
-            <h4 data-i18n="conversionResultTitle">Conversion Result</h4>
-            <p class="conversion-result">
-                <span id="resultValue"></span>
-                <span id="resultUnit"></span>
-            </p>
-        </div>        
 
         <footer class="page-footer">
             <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
         </footer>
 
-    </div>
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
         //import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
         import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
-        import { initWeightConverter } from '/templates/weight-converter.js'; // Import the new function
 
         
         document.addEventListener('DOMContentLoaded', async () => {
@@ -363,15 +341,12 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            //await initMeterToCmConverter("cm", "ft");
+            //await initMeterToCmConverter("cm", "in");
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);
 
-            // 6. Initialize the new weight converter
-            initWeightConverter("lbs", "oz"); // Call the new function
-
-            // 7. 为语言切换器添加事件监听
+            // 6. 为语言切换器添加事件监听
             languageSelect.addEventListener('change', (event) => {
                 setLanguage(event.target.value);
                 highlightCurrentLink(); // 切换语言后重新高亮
@@ -379,7 +354,5 @@
         });
 
     </script>
-    <script src="/templates/google_search.js"></script>
-    <script type="module" src="/templates/weight-converter.js"></script>
 </body>
 </html>

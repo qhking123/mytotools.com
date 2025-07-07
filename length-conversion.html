@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM to Feet Converter</title>
-    <meta name="description" content="Centimeters to Feet (cm to ft) converter and how to convert.">
+    <title>Feet to CM Converter</title>
+    <meta name="description" content="Feet to Centimeters (ft to cm) converter and how to convert.">
     <style>
          body {
             font-family: Arial, sans-serif;
@@ -110,9 +110,8 @@
             text-decoration: underline;
         }
     </style>
-    <link rel="stylesheet" href="/templates/weight-converter.css">
-    <link rel="stylesheet" href="/sidebar.css">
-    <link rel="stylesheet" href="/templates/google_search.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="/templates/navigation-list.css">
     <link rel="stylesheet" href="/templates/breadcrumb.css">
 </head>
 <body>
@@ -272,79 +271,92 @@
         </ul>
     </div>
 
-    <div class="main-content">        
+    <div class="main-content">      
+        <h1 data-i18n="welcomeTitle"></h1>
+        
         <div class="breadcrumb-container">
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="/">首页</a>
                 <span class="separator">-></span>
-                <a href="weight-conversion.html" data-i18n="category_weightConversion">Weight Conversion</a>
-                <span class="separator">-></span>Current Page
+                <a href="length-conversion.html" data-i18n="category_lengthConversion">Length Conversion</a>
             </nav>
         </div>
 
-        <div class="main-header">
-            <h2 data-i18n="websiteTitle">My Tools Website</h2>
-            <p data-i18n="websiteDescription">提供各种实用在线转换和计算工具，助您轻松解决日常生活和工作中的单位换算、数据计算等问题。</p>
-            <div class="google-search-container">
-                <input type="text" id="google-search-input" placeholder="Google 站内搜索..." data-i18n="googleSearchPlaceholder">
-                <button id="google-search-button" data-i18n="googleSearchButton">搜索</button>
-            </div>                
+        <div id="navigation-list">
+            <h2>Length Conversion Categories</h2>
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="index.html" data-i18n="category_homeConversion">Home Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">Speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">Area Conversion</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-category">
+                <div class="nav-category-title"><a href="length-conversion.html" data-i18n="category_lengthConversion">Length Conversion</a></div>
+                <ul class="nav-category-content">
+                    <li><a href="/cm-to-feet.html" data-i18n="cmToFeet">cm to feet</a></li>
+                    <li><a href="/cm-to-ft.html" data-i18n="cmToFeetInches">cm to ft</a></li>
+                    <li><a href="/cm-to-inches.html" data-i18n="cmToInches">cm to inches</a></li>
+                    <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
+                    <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">ft to cm</a></li>
+                    <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">ft to meters</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">ft to mm</a></li>
+                    <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
+                    <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
+                    <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
+                    <li><a href="/feet-to-meters.html" data-i18n="feetToMeters">feet to meters</a></li>
+                    <li><a href="/cm-to-inch.html" data-i18n="heightConverter">Height Converter</a></li>
+                    <li><a href="/inches-to-cm.html"data-i18n="inchesToCm">inches to cm</a></li>
+                    <li><a href="/inches-to-feet.html" data-i18n="inchesToFeet">inches to feet</a></li>
+                    <li><a href="/in-to-m.html" data-i18n="inchesToMeters">in to m</a></li>
+                    <li><a href="/inch-to-mm.html" data-i18n="inchesToMm">Inche to mm</a></li>
+                    <li><a href="/km-to-miles.html" data-i18n="kmToMiles">km to miles</a></li>
+                    <li><a href="/meters-to-feet.html" data-i18n="metersToFeet">meters to feet</a></li>
+                    <li><a href="/meters-in-to-cm.html" data-i18n="metersToFeetInches">meters in to cm</a></li>
+                    <li><a href="/meters-to-inches.html"data-i18n="metersToInches">meters to inches</a></li>
+                    <li><a href="/miles-to-km.html" data-i18n="milesToKm">miles to km</a></li>
+                    <li><a href="/mm-to-cm.html" data-i18n="mmToCm">mm to cm</a></li>
+                    <li><a href="/mm-to-inches.html" data-i18n="mmToInches">mm to inches</a></li>
+                </ul>
+            </div>
+    
+            <div class="nav-category">
+                <div class="nav-category-title">Top Search Conversion</div>
+                <ul class="nav-category-content">
+                    <li><a href="155cm-to-feet.html">155cm-to-feet</a></li>
+                    <li><a href="155-cm-to-feet.html">155-cm-to-feet</a></li>
+                    <li><a href="156cm-in-feet.html">156cm-in-feet</a></li>
+                    <li><a href="157cm-in-feet.html">157cm-in-feet</a></li>
+                    <li><a href="158-cm-in-feet.html">158-cm-in-feet</a></li>
+                    <li><a href="164-cm-in-feet.html">164-cm-in-feet</a></li>
+                    <li><a href="164cm-to-feet.html">164cm-to-feet</a></li>
+                    <li><a href="166cm-in-feet.html">166cm-in-feet</a></li>
+                    <li><a href="168-cm-to-feet.html">168-cm-to-feet</a></li>
+                    <li><a href="169-cm-in-feet.html">169-cm-in-feet</a></li>
+                    <li><a href="170cm-in-feet.html">170cm-in-feet</a></li>
+                    <li><a href="170-cm-to-feet.html">170-cm-to-feet</a></li>
+                    <li><a href="174cm-to-feet.html">174cm-to-feet</a></li>
+                    <li><a href="176-cm-in-feet.html">176-cm-in-feet</a></li>
+                    <li><a href="179-cm-in-feet.html">179-cm-in-feet</a></li>
+                </ul>
+            </div>
         </div>
-        
-        <div class="converter-container">
-            <h3 data-i18n="weightConverterTitle">Weight Converter</h3>
-
-            <h4 data-i18n="sourceWeightTitle">Input Weight</h4>
-            <div class="input-group">
-                <input type="number" id="sourceWeightInput" value="1" min="0" step="any">
-                <select id="sourceWeightUnit">
-                    <option value="ug" data-i18n="unit_micrograms">Micrograms</option>
-                    <option value="mg" data-i18n="unit_milligrams">Milligrams</option>
-                    <option value="g" data-i18n="unit_grams">Grams</option>
-                    <option value="kg" data-i18n="unit_kilograms">Kilograms</option>
-                    <option value="mt" data-i18n="unit_metric_tons">Metric Tons</option>
-                    <option value="oz" data-i18n="unit_ounces">Ounces</option>
-                    <option value="lbs" data-i18n="unit_pounds">Pounds</option>
-                    <option value="st" data-i18n="unit_stone">Stone</option>
-                    <option value="ton" data-i18n="unit_tons">Tons</option>
-                </select>
-            </div>
-            <div class="swap-button-container">
-                <button id="swapUnitsBtn" data-i18n="swapUnits">Swap Units</button>
-            </div>
-            <h4 data-i18n="targetWeightTitle">Output Weight</h4>
-            <div class="input-group">
-                <input type="text" id="targetWeightInput" readonly>
-                <select id="targetWeightUnit">
-                    <option value="ug" data-i18n="unit_micrograms">Micrograms</option>
-                    <option value="mg" data-i18n="unit_milligrams">Milligrams</option>
-                    <option value="g" data-i18n="unit_grams">Grams</option>
-                    <option value="kg" data-i18n="unit_kilograms">Kilograms</option>
-                    <option value="mt" data-i18n="unit_metric_tons">Metric Tons</option>
-                    <option value="oz" data-i18n="unit_ounces">Ounces</option>
-                    <option value="lbs" data-i18n="unit_pounds">Pounds</option>
-                    <option value="st" data-i18n="unit_stone">Stone</option>
-                    <option value="ton" data-i18n="unit_tons">Tons</option>
-                </select>
-            </div>
-            <h4 data-i18n="conversionResultTitle">Conversion Result</h4>
-            <p class="conversion-result">
-                <span id="resultValue"></span>
-                <span id="resultUnit"></span>
-            </p>
-        </div>        
 
         <footer class="page-footer">
             <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
         </footer>
 
-    </div>
+        </div>
     <script type="module">
         // 确保 common.js 和 sidebar.js 的路径正确
         import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
         //import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
         import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
-        import { initWeightConverter } from '/templates/weight-converter.js'; // Import the new function
 
         
         document.addEventListener('DOMContentLoaded', async () => {
@@ -363,15 +375,12 @@
             highlightCurrentLink();
 
             // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
-            //await initMeterToCmConverter("cm", "ft");
+            //await initMeterToCmConverter("cm", "in");
 
             // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
             setLanguage(currentLanguage);
 
-            // 6. Initialize the new weight converter
-            initWeightConverter("lbs", "oz"); // Call the new function
-
-            // 7. 为语言切换器添加事件监听
+            // 6. 为语言切换器添加事件监听
             languageSelect.addEventListener('change', (event) => {
                 setLanguage(event.target.value);
                 highlightCurrentLink(); // 切换语言后重新高亮
@@ -379,7 +388,5 @@
         });
 
     </script>
-    <script src="/templates/google_search.js"></script>
-    <script type="module" src="/templates/weight-converter.js"></script>
 </body>
 </html>
