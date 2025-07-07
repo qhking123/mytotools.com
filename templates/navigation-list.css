@@ -1,0 +1,139 @@
+/* Concise and Professional Navigation List Styles with clear flat links and | separator */
+#navigation-list {
+    margin-top: 0px;
+    padding: 0px 40px; /* Increased padding for a more spacious, premium feel */
+    background-color: #ffffff;
+    border-radius: 6px; /* Sharper, more professional corners */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06); /* A lighter, more contained shadow for the container */
+    max-width: 900px; /* Wider for more links per line */
+    margin-left: 0;
+}
+
+#navigation-list h2 {
+    color: #333333; /* A standard, professional dark grey */
+    margin-bottom: 30px; /* More space below heading */
+    border-bottom: 1px solid #e7e7e7; /* Very subtle bottom border */
+    padding-bottom: 18px; /* More padding for the border */
+    font-size: 1.9em; /* Prominent but balanced heading */
+    font-weight: 700; /* Bolder for impact */
+    letter-spacing: -0.02em; /* Slightly tighter letter spacing for a modern look */
+}
+
+.nav-category {
+    margin-bottom: 28px; /* Consistent spacing between categories */
+}
+
+/* Style for category titles that are now links */
+.nav-category-title {
+    font-weight: 600; /* Semi-bold for clear distinction */
+    font-size: 1.25em; /* Slightly larger for emphasis */
+    padding-bottom: 10px; /* Space for the underline */
+    margin-bottom: 18px; /* More space before the links begin */
+    position: relative;
+    border-bottom: 1px solid #eeeeee; /* A clear, thin line */
+}
+
+.nav-category-title a {
+    text-decoration: none;
+    color: #4a5a6a; /* A sophisticated dark blue-grey */
+    display: block;
+    transition: color 0.2s ease-out;
+}
+
+.nav-category-title a:hover {
+    color: #007bff; /* Standard accent blue on hover */
+}
+
+
+/* Adjustments for the links - concise, clear, flat style with | separator */
+.nav-category-content {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px; /* Slightly adjusted gap for cleaner look */
+    line-height: 1.6; /* Improved line height for readability */
+}
+
+.nav-category-content li {
+    display: inline-flex; /* Use inline-flex for better alignment of separator and link */
+    align-items: center; /* Vertically center content */
+    margin-bottom: 5px; /* Small vertical spacing */
+}
+
+.nav-category-content li:not(:first-child)::before {
+    content: "|";
+    margin: 0 10px; /* Space around the separator */
+    color: #cccccc; /* Very light grey for a subtle separator */
+    font-weight: normal;
+    font-size: 0.9em; /* Slightly larger and more visible separator */
+}
+
+.nav-category-content a {
+    display: inline-block; /* Allows for padding and hover effects */
+    padding: 3px 6px; /* Slightly more padding for a cleaner look */
+    text-decoration: none;
+    color: #333333; /* Stronger dark grey for improved clarity and prominence */
+    background-color: transparent; /* No background by default */
+    border: none; /* No border for a flat look */
+    border-radius: 3px; /* Minimal roundness */
+    box-shadow: none; /* Ensure no shadow */
+    transition: all 0.2s ease-out; /* Smooth transition for hover effects */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.0em; /* Clearer font size for better readability */
+}
+
+.nav-category-content a:hover {
+    color: #007bff; /* Professional blue on hover */
+    background-color: #e6f7ff; /* Very light blue background highlight on hover */
+    text-decoration: underline; /* Standard underline for clarity */
+    /* Removed transform and box-shadow specific to 3D effect */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #navigation-list {
+        padding: 20px;
+        margin-top: 25px;
+    }
+    #navigation-list h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    .nav-category-title {
+        font-size: 1.1em;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+    .nav-category-title::after {
+        content: none; /* Ensure custom line is hidden if it was re-added */
+    }
+    .nav-category-content {
+        flex-direction: column; /* Stack links vertically */
+        gap: 6px; /* Smaller vertical gap for mobile */
+    }
+    .nav-category-content li {
+        width: 100%; /* Full width for stacked links */
+        display: block; /* Change back to block for proper stacking */
+        margin-bottom: 0; /* No extra margin when stacked */
+    }
+    .nav-category-content li:not(:first-child)::before {
+        content: ""; /* Remove the separator when stacked vertically */
+        margin: 0;
+    }
+    .nav-category-content a {
+        padding: 5px 8px; /* More padding for clickable area on mobile */
+        display: block; /* Make the link take full width */
+        white-space: normal; /* Allow text to wrap */
+        background-color: transparent; /* Ensure no background for stacking */
+        box-shadow: none; /* Ensure no shadows on mobile */
+    }
+    .nav-category-content a:hover {
+        background-color: #f0f0f0; /* Slight background on hover for mobile */
+    }
+}

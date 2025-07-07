@@ -1,0 +1,25 @@
+.breadcrumb-container {
+    display: flex; /* For alignment */
+    align-items: center;
+}
+.breadcrumb {
+    display: flex;
+    align-items: center; /* Added to vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Minimal margin */
+    font-size: 0.9em;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+    white-space: nowrap; /* Prevent breaking of link text */
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.breadcrumb .separator {
+    margin: 0 4px; /* Reduced horizontal margin */
+    color: #6c757d;
+}

@@ -1,0 +1,94 @@
+/* google_search.css */
+
+.main-header {
+    background-color: #e6f7ff; /* 柔和的天蓝色，比原来的浅灰色更具活力 */
+    padding: 20px;
+    border-bottom: 1px solid #cce5ff; /* 调整底部边框颜色以匹配新背景 */
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 更明显的柔和阴影效果 */
+    border-radius: 10px; /* 略微增大圆角，增加柔和感 */
+}
+
+.main-header h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.main-header p {
+    color: #666;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.main-header a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+.google-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap; /* 允许在小屏幕上换行 */
+}
+
+#google-search-input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 70%; /* 默认宽度 */
+    max-width: 400px; /* 最大宽度 */
+    margin-right: 10px;
+    box-sizing: border-box; /* 包含padding和border在宽度内 */
+}
+
+#google-search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#google-search-button:hover {
+    background-color: #0056b3;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .main-header {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .main-header h2 {
+        font-size: 1.5em;
+    }
+
+    .google-search-container {
+        flex-direction: column; /* 在小屏幕上垂直堆叠 */
+    }
+
+    #google-search-input {
+        width: 100%; /* 占据全宽 */
+        margin-right: 0;
+        margin-bottom: 10px; /* 按钮上方留白 */
+    }
+
+    #google-search-button {
+        width: 100%; /* 按钮占据全宽 */
+    }
+}

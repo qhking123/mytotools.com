@@ -12,80 +12,10 @@ const unitConversions = {
     'mi': 1609.34  // 1 mile = 1609.34 meters
 };
 
-
-import { setLanguage, currentLanguage, loadTranslations as commonLoadTranslations } from '/common.js'; // 导入 common.js 的函数
-
 let inputValueEl, inputUnitEl, outputUnitEl, outputResultEl, swapUnitsBtn;
 // 移除 langSelector, 因为它在此文件中未被初始化或使用
 let isInitialized = false; // 标记是否已经初始化
 let translations = {}; // 存储加载的语言包
-
-// 异步加载语言文件并应用翻译
-/*
-async function loadAndApplyTranslations(lang) {
-    try {
-        const response = await fetch(`./lang/${lang}.json`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        translations = await response.json();
-        currentLanguage = lang; // 确保 currentLanguage 同步
-        applyTranslations(); // 加载成功后立即应用翻译
-
-        // 如果工具已经初始化，重新执行一次转换以更新错误信息等
-        if (isInitialized) {
-            convertLength();
-        }
-        return true;
-    } catch (error) {
-        console.error(`Failed to load translations for ${lang}:`, error);
-        return false;
-    }
-}*/
-
-// 应用翻译到页面元素
-/* 
-function applyTranslations() {
-    // 翻译常规文本内容
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.dataset.i18n;
-        if (translations[key]) {
-            element.textContent = translations[key];
-        }
-    });
-
-    // 翻译 placeholder 属性
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-        const key = element.dataset.i18nPlaceholder;
-        if (translations[key]) {
-            element.placeholder = translations[key];
-        }
-    });
-
-    // 特殊处理单位下拉菜单的选项
-    const units = ['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'];
-    units.forEach(unit => {
-        const optionEls = document.querySelectorAll(`#inputUnit option[value="${unit}"], #outputUnit option[value="${unit}"]`);
-        optionEls.forEach(optionEl => {
-            const key = `unit_${unit}`;
-            if (translations[key]) {
-                optionEl.textContent = translations[key];
-            }
-        });
-    });
-
-    // 更新页面标题和 meta 描述（如果它们有 data-i18n 属性并且已经被加载）
-    const titleElement = document.querySelector('title');
-    if (titleElement && titleElement.dataset.i18n && translations[titleElement.dataset.i18n]) {
-        titleElement.textContent = translations[titleElement.dataset.i18n];
-    }
-    const metaDescriptionElement = document.querySelector('meta[name="description"]');
-    if (metaDescriptionElement && metaDescriptionElement.dataset.i18n && translations[metaDescriptionElement.dataset.i18n]) {
-        metaDescriptionElement.setAttribute('content', translations[metaDescriptionElement.dataset.i18n]);
-    }
-}
-*/
-
 
 
 // 初始化元素和事件监听器
@@ -157,20 +87,29 @@ function swapUnits() {
 
 
 // 将初始化逻辑封装在一个可导出的函数中
-export async function initMeterToCmConverter(input, output) {
+export async function initMeterToCmConverter(fromUnit, toUnit, inputDefaultVal) {
     // 转换工具的 HTML 现在是静态的，所以我们只需要初始化元素
     initializeElements();
 
     // 默认设置为米到厘米，如果需要
-    if (inputUnitEl && outputUnitEl) {
-        if(input)
-            inputUnitEl.value = input;
+    if (inputUnitEl) {
+        if(fromUnit)
+            inputUnitEl.value = fromUnit;
         else
             inputUnitEl.value = 'm';
-        if(output)
-            outputUnitEl.value = output;
+    }
+
+    if (outputUnitEl) {        
+        if(toUnit)
+            outputUnitEl.value = toUnit;
         else
             outputUnitEl.value = 'cm';
-        convertLength();
     }
+
+    if (inputValueEl) {
+        if(inputDefaultVal)
+            inputValueEl.value = inputDefaultVal;        
+    }
+    
+    convertLength();
 }
