@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYC7QK9J1X"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SYC7QK9J1X');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM to Feet Converter</title>
+    <meta name="description" content="Centimeters to Feet (cm to ft) converter and how to convert.">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #left-panel {
+            width: 250px;
+            background-color: #f4f4f4;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            padding: 10px 0;
+            flex-shrink: 0;
+        }
+        #language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+        }
+        #language-switcher select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        /* 侧边栏样式 */
+        .category-title {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #e0e0e0;
+            border-bottom: 1px solid #ccc;
+            user-select: none;
+        }
+        .category-title:hover {
+            background-color: #d0d0d0;
+        }
+        .category-content {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #fcfcfc;
+        }
+        .category-content.active {
+            max-height: 500px; /* 足够大以显示所有内容 */
+            transition: max-height 0.3s ease-in;
+        }
+        .category-content li {
+            padding: 0;
+        }
+        .category-content a {
+            display: block;
+            padding: 8px 25px;
+            text-decoration: none;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .category-content a:hover {
+            background-color: #e9e9e9;
+        }
+        /* 高亮样式 */
+        .category-content a[style*="background-color: rgb(208, 208, 208)"],
+        .category-content a[style*="background-color: #d0d0d0"] {
+            font-weight: bold;
+        }
+        /* 页脚样式 */
+        .page-footer {
+            margin-top: 50px; /* 恢复固定外边距 */
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #777;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+        }
+        .page-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="/templates/converter_tool.css">
+    <link rel="stylesheet" href="/sidebar.css">
+    <link rel="stylesheet" href="/templates/google_search.css">
+    <link rel="stylesheet" href="/templates/breadcrumb.css">
+    <style>
+        .content-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .content-section h3 {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .content-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .content-section ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .content-section table th,
+        .content-section table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .content-section table th {
+            background-color: #e2e2e2;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content-section table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .step-description {
+            background-color: #e9f7fd;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="language-switcher">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+
+    <div id="left-panel" class="sidebar">
+        <a href="/" class="home-button">
+            首页
+        </a>
+        <ul>
+            <li>
+                <div class="category-title" data-category="unit-conversion">
+                    <span data-i18n="category_unitConversion">Unit Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="unit-conversion-content">
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">area Conversion</a></li>
+                </ul>
+            </li>
+    
+            <li>
+                <div class="category-title" data-category="weight-conversion">
+                    <span data-i18n="category_weightConversion">Weight Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="weight-conversion-content">
+                    <li><a href="kg-to-lbs.html" data-i18n="kgToPounds">kg to lbs</a></li>
+                    <li><a href="lbs-to-kg.html" data-i18n="poundsToKg">lbs to kg</a></li>
+                    <li><a href="grams-to-ounces.html" data-i18n="gramsToOunces">grams to ounces</a></li>
+                    <li><a href="grams-to-pounds.html" data-i18n="gramsToPounds">grams to pounds</a></li>
+                    <li><a href="oz-to-grams.html" data-i18n="ouncesToGrams">oz to grams</a></li>
+                    <li><a href="oz-to-lbs.html" data-i18n="ouncesToPounds">oz to lbs</a></li>
+                    <li><a href="lb-to-oz.html" data-i18n="poundsToOunces">lb to oz</a></li>
+                    <li><a href="lb-to-kg.html" data-i18n="lbToKg">lb to kg</a></li>
+                    <li><a href="100kg-to-lbs.html" data-i18n="_100kgToLbs">100kg to lbs</a></li>
+                    <li><a href="32kg-to-lbs.html" data-i18n="_32kgToLbs">32kg to lbs</a></li>
+                </ul>
+            </li>
+    
+            <li>
+                <div class="category-title" data-category="length-conversion">
+                    <span data-i18n="category_lengthConversion">Length Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="length-conversion-content">
+                    <li><a href="/cm-to-feet.html" data-i18n="cmToFeet">cm to feet</a></li>
+                    <li><a href="/cm-to-ft.html" data-i18n="cmToFeetInches">cm to ft</a></li>
+                    <li><a href="/cm-to-inches.html" data-i18n="cmToInches">cm to inches</a></li>
+                    <li><a href="/cm-to-m.html" data-i18n="cmToMm">cm to mm</a></li>
+                    <li><a href="/ft-to-cm.html" data-i18n="feetInchesToCm">ft to cm</a></li>
+                    <li><a href="/ft-to-meters.html" data-i18n="feetInchesToMeters">ft to meters</a></li>
+                    <li><a href="/ft-to-mm.html" data-i18n="feetInchesToMm">ft to mm</a></li>
+                    <li><a href="/feet-to-cm.html" data-i18n="feetToCm">feet to cm</a></li>
+                    <li><a href="/feet-to-mm.html" data-i18n="feetToMm">feet to mm</a></li>
+                    <li><a href="/feet-to-inches.html" data-i18n="feetToInches">feet to inches</a></li>
+                    <li><a href="/feet-to-meters.html" data-i18n="feetToMeters">feet to meters</a></li>
+                    <li><a href="/cm-to-inch.html" data-i18n="heightConverter">Height Converter</a></li>
+                    <li><a href="/inches-to-cm.html"data-i18n="inchesToCm">inches to cm</a></li>
+                    <li><a href="/inches-to-feet.html" data-i18n="inchesToFeet">inches to feet</a></li>
+                    <li><a href="/in-to-m.html" data-i18n="inchesToMeters">in to m</a></li>
+                    <li><a href="/inch-to-mm.html" data-i18n="inchesToMm">Inche to mm</a></li>
+                    <li><a href="/km-to-miles.html" data-i18n="kmToMiles">km to miles</a></li>
+                    <li><a href="/meters-to-feet.html" data-i18n="metersToFeet">meters to feet</a></li>
+                    <li><a href="/meters-in-to-cm.html" data-i18n="metersToFeetInches">meters in to cm</a></li>
+                    <li><a href="/meters-to-inches.html"data-i18n="metersToInches">meters to inches</a></li>
+                    <li><a href="/miles-to-km.html" data-i18n="milesToKm">miles to km</a></li>
+                    <li><a href="/mm-to-cm.html" data-i18n="mmToCm">mm to cm</a></li>
+                    <li><a href="/mm-to-inches.html" data-i18n="mmToInches">mm to inches</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="category-title" data-category="temperature-conversion">
+                    <span data-i18n="category_temperatureConversion">Temperature Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="temperature-conversion-content">
+                    <li><a href="celsius-to-fahrenheit.html" data-i18n="celsiusToFahrenheit">celsius to fahrenheit</a></li>
+                    <li><a href="celcius-to-kelvin.html" data-i18n="celsiusToKelvin">celsius to kelvin</a></li>
+                    <li><a href="fahrenheit-to-celsius.html" data-i18n="fahrenheitToCelsius">fahrenheit to celsius</a></li>
+                    <li><a href="fahrenheit-to-kelvin.html" data-i18n="fahrenheitToKelvin">fahrenheit to kelvin</a></li>
+                    <li><a href="kelvin-to-celcius.html" data-i18n="kelvinToCelsius">kelvin to celsius</a></li>
+                    <li><a href="kelvin-to-fahrenheit.html" data-i18n="kelvinToFahrenheit">kelvin to fahrenheit</a></li>
+                    <li><a href="180-c-to-f.html" data-i18n="zeroCToF">180 c to f</a></li>
+                    <li><a href="30-celsius-to-fahrenheit.html" data-i18n="thirtyCToF">30 celsius to fahrenheit</a></li>
+                    <li><a href="40c-to-f.html" data-i18n="tenCToF">40c to f</a></li>
+                    <li><a href="20-celsius-to-fahrenheit.html" data-i18n="twentyCToF">20 celsius to fahrenheit</a></li>
+                    <li><a href="200-celsius-to-fahrenheit.html" data-i18n="oneHundredCToF">200 celsius to fahrenheit</a></li>
+                    <li><a href="26-celsius-to-fahrenheit.html" data-i18n="zeroFToC">26 celsius to fahrenheit</a></li>
+                    <li><a href="35-celsius-to-fahrenheit.html" data-i18n="tenFToC">35 celsius to fahrenheit</a></li>
+                    <li><a href="37-celsius-to-fahrenheit.html" data-i18n="twentyFToC">37 celsius to fahrenheit</a></li>
+                    
+                    <!-- <li><a href="#" data-src="https://www.example.com/celsius-to-rankine" data-i18n="celsiusToRankine">Celsius to Rankine</a></li>                    
+                    <li><a href="#" data-src="https://www.example.com/fahrenheit-to-rankine" data-i18n="fahrenheitToRankine">Fahrenheit to Rankine</a></li>
+                    <li><a href="#" data-src="https://www.example.com/kelvin-to-rankine" data-i18n="kelvinToRankine">Kelvin to Rankine</a></li>
+                    <li><a href="#" data-src="https://www.example.com/rankine-to-fahrenheit" data-i18n="rankineToFahrenheit">Rankine to Fahrenheit</a></li>
+                    <li><a href="#" data-src="https://www.example.com/rankine-to-celsius" data-i18n="rankineToCelsius">Rankine to Celsius</a></li>
+                    <li><a href="#" data-src="https://www.example.com/rankine-to-kelvin" data-i18n="rankineToKelvin">Rankine to Kelvin</a></li>
+                    <li><a href="#" data-src="https://www.example.com/celsius-to-kelvin-calc" data-i18n="celsiusToKelvinCalc">Celsius to Kelvin calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/celsius-to-fahrenheit-calc" data-i18n="celsiusToFahrenheitCalc">Celsius to Fahrenheit calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/fahrenheit-to-celsius-calc" data-i18n="fahrenheitToCelsiusCalc">Fahrenheit to Celsius calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/fahrenheit-to-kelvin-calc" data-i18n="fahrenheitToKelvinCalc">Fahrenheit to Kelvin calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/kelvin-to-celsius-calc" data-i18n="kelvinToCelsiusCalc">Kelvin to Celsius calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/kelvin-to-fahrenheit-calc" data-i18n="kelvinToFahrenheitCalc">Kelvin to Fahrenheit calculation</a></li>
+                    <li><a href="#" data-src="https://www.example.com/30f-to-c" data-i18n="thirtyFToC">30 Fahrenheit to Celsius</a></li>-->
+                    
+                </ul>
+            </li>
+
+            <li>
+                <div class="category-title" data-category="volume-conversion">
+                    <span data-i18n="volume_temperatureConversion">Volume Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="volume-conversion-content">
+                    <li><a href="liters-to-gallons.html" data-i18n="liters_to_gallons">liters to gallons</a></li>
+                    <li><a href="gallons-to-liters.html" data-i18n="gallons_to_liters">gallons to liters</a></li>
+                    <li><a href="tablespoons-to-cups.html" data-i18n="tablespoons_to_cups">tablespoons to cups</a></li>
+                    <li><a href="cups-to-tablespoons.html" data-i18n="cups_to_tablespoons">cups to tablespoons</a></li>
+                    <li><a href="liter-to-gallon.html" data-i18n="liter_to_gallon">liter to gallon</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="category-title" data-category="speed-conversion">
+                    <span data-i18n="speed_temperatureConversion">Speed Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="speed-conversion-content">
+                    <li><a href="knots-to-mph.html" data-i18n="knots_to_mph">knots to mph</a></li>
+                    <li><a href="mph-to-feet-per-second.html" data-i18n="mph_to_feet_per_second">mph to feet per second</a></li>
+                    <li><a href="mph-to-kph.html" data-i18n="mph_to_kph">mph to kph</a></li>
+                    <li><a href="feet-per-second-to-mph.html" data-i18n="feet_per_second_to_mph">feet per second to mph</a></li>
+                    <li><a href="kph-to-mph.html" data-i18n="kph_to_mph">kph to mph</a></li>
+                </ul>
+            </li>            
+
+            <li>
+                <div class="category-title" data-category="area-conversion">
+                    <span data-i18n="area_temperatureConversion">Area Conversion</span> <span class="toggle-icon">▶</span>
+                </div>
+                <ul class="category-content" id="area-conversion-content">
+                    <li><a href="square-meter-to-square-feet.html" data-i18n="square_meter_to_square_feet">square meter to square feet</a></li>
+                    <li><a href="square-feet-to-square-meter.html" data-i18n="square_feet_to_square_meter">square feet to square meter</a></li>
+                    <li><a href="square-feet-to-acres.html" data-i18n="square_feet_to_acres">square feet to acres</a></li>
+                    <li><a href="acres-to-square-feet.html" data-i18n="acres_to_square_feet">acres to square feet</a></li>
+                    <li><a href="acres-to-hectare.html" data-i18n="acres_to_hectare">acres to hectare</a></li>
+                </ul>
+            </li>
+    
+            
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">首页</a>
+                <span class="separator">-></span>
+                <a href="length-conversion.html" data-i18n="category_lengthConversion">Length Conversion</a>
+                <span class="separator">-></span>Current Page
+            </nav>
+        </div>
+        
+        <div id="converter-tool-container">
+            <div class="main-header">
+                <h2 data-i18n="websiteTitle">My Tools Website</h2>
+                <p data-i18n="websiteDescription">提供各种实用在线转换和计算工具，助您轻松解决日常生活和工作中的单位换算、数据计算等问题。</p>
+                <div class="google-search-container">
+                    <input type="text" id="google-search-input" placeholder="Google 站内搜索..." data-i18n="googleSearchPlaceholder">
+                    <button id="google-search-button" data-i18n="googleSearchButton">搜索</button>
+                </div>                
+            </div>
+            <div class="container">
+                <h1 data-i18n="h1_main_title">Length Unit Converter</h1>
+                <div class="input-group">
+                    <label for="inputValue" data-i18n="label_input_value">Input Value:</label>
+                    <input type="number" id="inputValue" value="1" data-i18n-placeholder="placeholder_input_value" placeholder="Enter the value to convert">
+                    <label for="inputUnit" style="margin-top: 15px;" data-i18n="label_input_unit">Original Unit:</label>
+                    <select id="inputUnit">
+                        <option value="mm" data-i18n="unit_mm">Millimeter (mm)</option>
+                        <option value="cm" data-i18n="unit_cm">Centimeter (cm)</option>
+                        <option value="m" selected data-i18n="unit_m">Meter (m)</option>
+                        <option value="km" data-i18n="unit_km">Kilometer (km)</option>
+                        <option value="in" data-i18n="unit_in">Inch (in)</option>
+                        <option value="ft" data-i18n="unit_ft">Foot (ft)</option>
+                        <option value="yd" data-i18n="unit_yd">Yard (yd)</option>
+                        <option value="mi" data-i18n="unit_mi">Mile (mi)</option>
+                    </select>
+                </div>
+
+                <div class="swap-button-container">
+                    <button id="swapUnitsBtn" class="swap-button" data-i18n="swap_units_button">⇅ Swap Units</button>
+                </div>
+
+                <div class="output-group">
+                    <label for="outputUnit" data-i18n="label_output_unit">Target Unit:</label>
+                    <select id="outputUnit">
+                        <option value="mm" data-i18n="unit_mm">Millimeter (mm)</option>
+                        <option value="cm" selected data-i18n="unit_cm">Centimeter (cm)</option>
+                        <option value="m" data-i18n="unit_m">Meter (m)</option>
+                        <option value="km" data-i18n="unit_km">Kilometer (km)</option>
+                        <option value="in" data-i18n="unit_in">Inch (in)</option>
+                        <option value="ft" data-i18n="unit_ft">Foot (ft)</option>
+                        <option value="yd" data-i18n="unit_yd">Yard (yd)</option>
+                        <option value="mi" data-i18n="unit_mi">Mile (mi)</option>
+                    </select>
+                    <label style="margin-top: 15px;" data-i18n="label_conversion_result">Conversion Result:</label>
+                    <div id="outputResult" class="output-result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>How to Convert 164 Centimeters to Feet</h2>
+            <p>Converting centimeters to feet is a common task, especially when dealing with international measurements. Here's a step-by-step guide to convert 164 cm to feet.</p>
+
+            <h3>Step 1: Understand the Conversion Factor</h3>
+            <div class="step-description">
+                <p>The fundamental conversion factor you need to know is that <span class="highlight">1 foot is equal to 30.48 centimeters</span>. Conversely, 1 centimeter is approximately 0.0328084 feet.</p>
+                <p>Formula: $1 \text{ foot} = 30.48 \text{ cm}$</p>
+                <p>Or: $1 \text{ cm} = \frac{1}{30.48} \text{ feet} \approx 0.0328084 \text{ feet}$</p>
+            </div>
+
+            <h3>Step 2: Convert Centimeters to Feet</h3>
+            <div class="step-description">
+                <p>To convert 164 cm to feet, divide 164 by the conversion factor (30.48 cm/foot).</p>
+                <p>Formula: $\text{Feet} = \frac{\text{Centimeters}}{\text{30.48}}$</p>
+                <p>Calculation: $\text{Feet} = \frac{164}{30.48} \approx 5.379 \text{ feet}$</p>
+            </div>
+
+            <h3>Step 3: Convert the Decimal Part of Feet to Inches</h3>
+            <div class="step-description">
+                <p>Since feet are often expressed in feet and inches, we need to convert the decimal part of the feet into inches. There are <span class="highlight">12 inches in 1 foot</span>.</p>
+                <p>Formula: $\text{Inches (from decimal)} = \text{Decimal part of feet} \times 12$</p>
+                <p>From Step 2, the total feet is approximately 5.379 feet. The whole number is 5 feet. The decimal part is $0.379$.</p>
+                <p>Calculation: $\text{Inches} = 0.379 \times 12 \approx 4.548 \text{ inches}$</p>
+            </div>
+
+            <h3>Step 4: Combine Feet and Inches</h3>
+            <div class="step-description">
+                <p>Now, combine the whole number of feet from Step 2 with the calculated inches from Step 3.</p>
+                <p>Result: $164 \text{ cm} \approx 5 \text{ feet and } 4.55 \text{ inches}$</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Why Are Many People Searching for 170 Centimeters to Feet?</h2>
+            <p>The search for "170 cm to feet" (or similar heights like 164 cm) is very common for several reasons:</p>
+            <ul>
+                <li><strong>International Travel and Communication:</strong> Many countries use the metric system (centimeters), while others, notably the United States, use the imperial system (feet and inches). People often need to convert their height for travel forms, communicating with people from different regions, or understanding measurements abroad.</li>
+                <li><strong>Online Shopping and Sizing:</strong> Apparel, furniture, and other products, especially when purchased internationally, might list dimensions in either centimeters or feet/inches. Consumers need to convert to understand if an item fits their needs or their physical space.</li>
+                <li><strong>Health and Fitness Tracking:</strong> Heights are frequently measured in centimeters in medical contexts globally. However, for personal tracking, fitness apps, or communication with healthcare providers in imperial-system countries, conversion is necessary.</li>
+                <li><strong>Media and Entertainment:</strong> Character heights in movies, games, or books might be given in one system, leading fans to convert for better visualization or comparison.</li>
+                <li><strong>Personal Curiosity:</strong> Many individuals are simply curious about what their height (or someone else's) would be in a different measurement system.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Centimeters to Feet, Inches, and Feet+Inches Conversion Table</h2>
+            <p>Below is a conversion table for common heights from centimeters to feet, inches, and the combination of feet and inches.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Centimeters (cm)</th>
+                        <th>Feet (decimal)</th>
+                        <th>Inches (decimal)</th>
+                        <th>Feet and Inches</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>150</td><td>4.92</td><td>59.06</td><td>4 ft 11.06 in</td></tr>
+                    <tr><td>151</td><td>4.95</td><td>59.45</td><td>4 ft 11.45 in</td></tr>
+                    <tr><td>152</td><td>4.99</td><td>59.84</td><td>4 ft 11.84 in</td></tr>
+                    <tr><td>153</td><td>5.02</td><td>60.24</td><td>5 ft 0.24 in</td></tr>
+                    <tr><td>154</td><td>5.05</td><td>60.63</td><td>5 ft 0.63 in</td></tr>
+                    <tr><td>155</td><td>5.09</td><td>61.02</td><td>5 ft 1.02 in</td></tr>
+                    <tr><td>156</td><td>5.12</td><td>61.42</td><td>5 ft 1.42 in</td></tr>
+                    <tr><td>157</td><td>5.15</td><td>61.81</td><td>5 ft 1.81 in</td></tr>
+                    <tr><td>158</td><td>5.18</td><td>62.20</td><td>5 ft 2.20 in</td></tr>
+                    <tr><td>159</td><td>5.22</td><td>62.60</td><td>5 ft 2.60 in</td></tr>
+                    <tr><td>160</td><td>5.25</td><td>62.99</td><td>5 ft 2.99 in</td></tr>
+                    <tr><td>161</td><td>5.28</td><td>63.39</td><td>5 ft 3.39 in</td></tr>
+                    <tr><td>162</td><td>5.31</td><td>63.78</td><td>5 ft 3.78 in</td></tr>
+                    <tr><td>163</td><td>5.35</td><td>64.17</td><td>5 ft 4.17 in</td></tr>
+                    <tr><td>164</td><td>5.38</td><td>64.57</td><td>5 ft 4.57 in</td></tr>
+                    <tr><td>165</td><td>5.41</td><td>64.96</td><td>5 ft 4.96 in</td></tr>
+                    <tr><td>166</td><td>5.45</td><td>65.35</td><td>5 ft 5.35 in</td></tr>
+                    <tr><td>167</td><td>5.48</td><td>65.75</td><td>5 ft 5.75 in</td></tr>
+                    <tr><td>168</td><td>5.51</td><td>66.14</td><td>5 ft 6.14 in</td></tr>
+                    <tr><td>169</td><td>5.54</td><td>66.54</td><td>5 ft 6.54 in</td></tr>
+                    <tr><td>170</td><td>5.58</td><td>66.93</td><td>5 ft 6.93 in</td></tr>
+                    <tr><td>171</td><td>5.61</td><td>67.32</td><td>5 ft 7.32 in</td></tr>
+                    <tr><td>172</td><td>5.64</td><td>67.72</td><td>5 ft 7.72 in</td></tr>
+                    <tr><td>173</td><td>5.68</td><td>68.11</td><td>5 ft 8.11 in</td></tr>
+                    <tr><td>174</td><td>5.71</td><td>68.50</td><td>5 ft 8.50 in</td></tr>
+                    <tr><td>175</td><td>5.74</td><td>68.90</td><td>5 ft 8.90 in</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Centimeter (cm)</h2>
+            <p>The <span class="highlight">centimeter (cm)</span> is a unit of length in the metric system, equal to one hundredth of a meter. It is widely used around the world for everyday measurements.</p>
+            <h3>History and Origin</h3>
+            <p>The metric system, from which the centimeter derives, was first adopted in France in the late 18th century during the French Revolution. It was designed to be a universal and coherent system of measurement, based on natural phenomena rather than arbitrary standards. The meter was originally defined as one ten-millionth of the distance from the North Pole to the Equator along the meridian passing through Paris.</p>
+            <h3>Current Usage</h3>
+            <p>Centimeters are a practical unit for many applications, including:</p>
+            <ul>
+                <li>Measuring height and clothing sizes.</li>
+                <li>Dimensions of small to medium-sized objects (e.g., paper, books, small electronics).</li>
+                <li>In scientific and medical fields for precision measurements.</li>
+                <li>In construction and engineering, particularly in metric-system countries.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Foot (ft)</h2>
+            <p>The <span class="highlight">foot (ft)</span> is a unit of length in the imperial and U.S. customary systems of measurement. It is defined as exactly 0.3048 meters.</p>
+            <h3>History and Origin</h3>
+            <p>The foot as a unit of length has a long and varied history, with its origins dating back to ancient civilizations. Historically, it was literally based on the length of a human foot, though its exact length varied considerably by region and over time. Different "feet" existed across Europe before standardization.</p>
+            <p>The modern international foot, used in the United States and the United Kingdom, was defined in 1959 by an international agreement as precisely 0.3048 meters.</p>
+            <h3>Current Usage</h3>
+            <p>The foot is primarily used in:</p>
+            <ul>
+                <li>The United States for most everyday measurements, including height, distance, and construction.</li>
+                <li>The United Kingdom and Canada, though these countries have largely adopted the metric system, feet and inches are still commonly used for height and some other traditional measurements.</li>
+                <li>Aviation and sailing for altitude and depth measurements.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Important Considerations When Converting 164 cm to Feet</h2>
+            <ul>
+                <li><strong>Precision:</strong> Depending on the context, the level of precision needed for the conversion can vary. For everyday use, "5 feet 4.5 inches" is usually sufficient. For engineering or scientific applications, more decimal places (e.g., 5.379265 feet) might be required.</li>
+                <li><strong>Rounding:</strong> Be mindful of how you round your final answer. Rounding to too few decimal places can introduce errors, while too many might be unnecessary.</li>
+                <li><strong>Context:</strong> Understand why you are converting. Is it for a legal document, a casual conversation, or a precise measurement? The context often dictates the appropriate format (e.g., decimal feet vs. feet and inches).</li>
+                <li><strong>Common Misconception:</strong> A common mistake is to simply take the decimal part of the feet and treat it as inches (e.g., assuming 5.37 feet means 5 feet and 3.7 inches). Remember, the decimal part of feet must be multiplied by 12 to get inches.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Fun Facts About 164 cm to Feet Conversion</h2>
+            <ul>
+                <li>A person who is 164 cm tall is roughly the average height for a woman in many parts of the world, making this a very relatable conversion.</li>
+                <li>The height of 164 cm is approximately the length of a standard single bed in many metric countries (190-200 cm), if laid out across.</li>
+                <li>If you stack about 16-17 standard LEGO bricks (which are around 1 cm tall each), you would get a height close to 164 cm!</li>
+                <li>The difference between 164 cm and 170 cm (the other number mentioned in the prompt) is only 6 cm, which is less than 2.5 inches. This highlights how small differences in metric heights can translate into seemingly larger differences when expressed in feet and inches, especially with the 'jump' between full inches.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Why is 164 Centimeters to Feet Conversion Important?</h2>
+            <p>The ability to convert 164 cm to feet (and vice-versa) holds significant practical importance across various scenarios:</p>
+            <ul>
+                <li><strong>Global Understanding:</strong> In an increasingly interconnected world, understanding both metric and imperial measurements fosters better communication and avoids confusion, especially when interacting with people from different measurement system backgrounds.</li>
+                <li><strong>Travel and Relocation:</strong> When traveling or moving to countries that use a different measurement system, knowing your height in the local units is crucial for things like official documents, clothing sizes, or even just describing yourself.</li>
+                <li><strong>Health and Medical Records:</strong> Medical records in many countries use centimeters. For individuals or healthcare professionals in countries using feet and inches, conversion ensures accurate understanding of patient data.</li>
+                <li><strong>Construction and Design:</strong> While specific projects will adhere to one system, general understanding of conversions helps in reviewing international blueprints, adapting designs, or sourcing materials globally.</li>
+                <li><strong>Education:</strong> Learning unit conversions is a fundamental part of mathematics and science education, helping students grasp proportional reasoning and the relationship between different measurement systems.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Common Misconceptions and Errors in 164 cm to Feet Conversion</h2>
+            <ul>
+                <li><strong>Direct Decimal Interpretation:</strong> The most common mistake is assuming that the decimal part of a foot measurement directly represents inches. For example, $5.5 \text{ feet}$ is not $5 \text{ feet } 5 \text{ inches}$, but rather $5 \text{ feet } 6 \text{ inches}$ (since $0.5 \times 12 = 6$).</li>
+                <li><strong>Incorrect Conversion Factor:</strong> Using an imprecise or incorrect conversion factor (e.g., $1 \text{ cm} = 0.03 \text{ feet}$ instead of $0.0328084 \text{ feet}$) can lead to inaccuracies, especially over larger measurements.</li>
+                <li><strong>Forgetting to Convert Decimal to Inches:</strong> Some people convert to decimal feet and stop there, forgetting the final step of converting the fractional part into inches for a more intuitive "feet and inches" reading.</li>
+                <li><strong>Rounding Too Early:</strong> Rounding intermediate calculation steps can compound errors. It's best to carry more decimal places during calculations and round only the final result.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Impact of 164 cm to Feet Conversion on Specific Industries</h2>
+            <ul>
+                <li><strong>Fashion and Apparel:</strong> International clothing sizes often require converting body measurements (like height) from centimeters to feet and inches for a global customer base. Tailors and designers also deal with this frequently.</li>
+                <li><strong>Film and Television Production:</strong> When casting actors or building sets, height specifications might need to be converted depending on the origin of the production or the actors involved.</li>
+                <li><strong>Sports and Athletics:</strong> Athlete profiles, performance statistics, and equipment specifications (e.g., pole vault heights, basketball rim height) often vary in unit representation depending on the country or league, requiring conversions.</li>
+                <li><strong>Healthcare and Medical Device Manufacturing:</strong> Patient measurements, medical device dimensions (e.g., bed lengths, wheelchair sizes), and ergonomic designs frequently necessitate accurate conversions between metric and imperial systems for global compatibility and patient safety.</li>
+                <li><strong>Real Estate and Architecture:</strong> While property dimensions are typically standardized within a country, international clients or multi-national architectural firms might need conversions to understand property sizes and building specifications.</li>
+            </ul>
+        </div>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 MyToTools.com. All rights reserved.</p>
+        </footer>
+
+        </div>
+    <script type="module">
+        // 确保 common.js 和 sidebar.js 的路径正确
+        import { loadTranslations, setLanguage, currentLanguage, highlightCurrentLink } from '/common.js';
+        import { initMeterToCmConverter } from '/templates/converter_tool.js'; // 导入新的初始化函数
+        import { attachSidebarEventListeners } from '/sidebar.js'; // 导入 attachSidebarEventListeners
+
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            const languageSelect = document.getElementById('language-select');
+
+            // 1. 加载所有翻译
+            await loadTranslations();
+
+            // 2. 初始化语言选择器到当前语言
+            languageSelect.value = currentLanguage;
+
+            // 3. 直接附加侧边栏事件监听器，因为 HTML 是静态加载的
+            attachSidebarEventListeners();
+
+            // 4. 高亮当前页面
+            highlightCurrentLink();
+
+            // 关键：在通用语言和侧边栏初始化后，再初始化转换工具
+            await initMeterToCmConverter("cm", "ft", 164);
+
+            // 5. 应用翻译到当前页面的所有内容 (包括 length.html 自身元素和 converter_tool 加载的元素)
+            setLanguage(currentLanguage);
+
+            // 6. 为语言切换器添加事件监听
+            languageSelect.addEventListener('change', (event) => {
+                setLanguage(event.target.value);
+                highlightCurrentLink(); // 切换语言后重新高亮
+            });
+        });
+
+    </script>
+    <script src="/templates/google_search.js"></script>
+</body>
+</html>

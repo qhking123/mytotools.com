@@ -110,9 +110,10 @@
             text-decoration: underline;
         }
     </style>
+    <link rel="stylesheet" href="/templates/temperature-converter.css">
     <link rel="stylesheet" href="/sidebar.css">
     <link rel="stylesheet" href="/templates/google_search.css">
-    <link rel="stylesheet" href="/templates/temperature-converter.css"> </head>
+    <link rel="stylesheet" href="/templates/breadcrumb.css">
 </head>
 <body>
     <div id="language-switcher">
@@ -133,12 +134,12 @@
                     <span data-i18n="category_unitConversion">Unit Conversion</span> <span class="toggle-icon">▶</span>
                 </div>
                 <ul class="category-content" id="unit-conversion-content">
-                    <li><a href="#" data-src="/cm-to-feet.html" data-i18n="lengthConversion">Length Conversion</a></li>
-                    <li><a href="#" data-src="celsius-to-fahrenheit.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
-                    <li><a href="#" data-src="kg-to-lbs.html" data-i18n="weightConversion">Weight Conversion</a></li>
-                    <li><a href="#" data-src="liters-to-gallons.html" data-i18n="volumeConversion">Volume Conversion</a></li>
-                    <li><a href="#" data-src="knots-to-mph.html" data-i18n="speedConversion">speed Conversion</a></li>
-                    <li><a href="#" data-src="square-meter-to-square-feet.html" data-i18n="areaConversion">area Conversion</a></li>
+                    <li><a href="length-conversion.html" data-i18n="lengthConversion">Length Conversion</a></li>
+                    <li><a href="temperature-conversion.html" data-i18n="temperatureConversion">Temperature Conversion</a></li>
+                    <li><a href="weight-conversion.html" data-i18n="weightConversion">Weight Conversion</a></li>
+                    <li><a href="volume-conversion.html" data-i18n="volumeConversion">Volume Conversion</a></li>
+                    <li><a href="speed-conversion.html" data-i18n="speedConversion">speed Conversion</a></li>
+                    <li><a href="area-conversion.html" data-i18n="areaConversion">area Conversion</a></li>
                 </ul>
             </li>
     
@@ -272,6 +273,14 @@
     </div>
 
     <div class="main-content">
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">首页</a>
+                <span class="separator">-></span>
+                <a href="temperature-conversion.html" data-i18n="category_temperatureConversion">Temperature Conversion</a>
+                <span class="separator">-></span>Current Page
+            </nav>
+        </div>
 
         <div class="main-header">
             <h2 data-i18n="websiteTitle">My Tools Website</h2>
