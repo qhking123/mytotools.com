@@ -37,64 +37,12 @@ export function setLanguage(lang) {
             console.warn(`Missing translation for key: '${key}' in language: '${lang}'.`);
         }
     });
-    if (translations[lang] && translations[lang].pageTitle) {
-        document.title = translations[lang].pageTitle;
-    }
+    // if (translations[lang] && translations[lang].pageTitle) {
+    //     document.title = translations[lang].pageTitle;
+    // }
     document.documentElement.lang = lang;
     localStorage.setItem('preferredLanguage', lang);
 }
-
-/**
- * Loads the sidebar HTML and attaches event listeners.
- * Also handles highlighting the current page's link.
- * @param {Function} setLanguageFunc - The setLanguage function from the main script.
- * @param {string} currentLang - The current language code.
- */
-/*
-export async function loadSidebarAndHighlight(setLanguageFunc, currentLang) {
-    const leftPanel = document.getElementById('left-panel');
-    const sidebarLoadStatus = document.getElementById('sidebar-load-status'); // 如果有这个元素
-
-    if (!leftPanel) {
-        console.error("Left panel not found. Cannot load sidebar.");
-        return;
-    }
-
-    try {
-        if (sidebarLoadStatus) {
-            sidebarLoadStatus.textContent = 'Loading navigation...';
-            sidebarLoadStatus.style.color = 'blue';
-        }
-
-        const response = await fetch('/sidebar.html'); // 使用绝对路径
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status} (${response.statusText})`);
-        }
-        const sidebarHtml = await response.text();
-        leftPanel.innerHTML = sidebarHtml;
-
-        if (sidebarLoadStatus) {
-            sidebarLoadStatus.textContent = ''; // Clear status
-        }
-        
-        // 应用翻译
-        setLanguageFunc(currentLang);
-
-        // 附加侧边栏事件监听器
-        attachSidebarEventListeners(setLanguageFunc, currentLang); // 注意：sidebar.js 内部会再次调用 setLanguageFunc
-
-        // 高亮当前页面链接
-        highlightCurrentLink();
-
-    } catch (error) {
-        console.error("Error loading sidebar:", error);
-        if (sidebarLoadStatus) {
-            sidebarLoadStatus.textContent = `Error loading navigation. Please try again. Details: ${error.message}`;
-            sidebarLoadStatus.style.color = 'red';
-        }
-    }
-}
-*/
 
 
 export function highlightCurrentLink() { // 导出此函数
